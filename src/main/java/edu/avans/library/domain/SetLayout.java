@@ -53,11 +53,11 @@ public class SetLayout {
 		subcenterpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		centerpanel.add(subcenterpanel);
 					
-		Component[] total_grid_fields = centerpanel.getComponents();
-		totalgridfieldsint = total_grid_fields.length-1;
+		Component[] totalgridfields = centerpanel.getComponents();
+		totalgridfieldsint = totalgridfields.length-1;
 					
-		if(total_grid_fields[0] instanceof JPanel){
-		    JPanel gridField = ((JPanel)total_grid_fields[0]);
+		if(totalgridfields[0] instanceof JPanel){
+		    JPanel gridField = ((JPanel)totalgridfields[0]);
 		    gridField.getWidth();
 		    gridField.getHeight();
 
