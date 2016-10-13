@@ -244,21 +244,21 @@ public final class JavaGUI {
             centerpanel.removeAll();
             frame.repaint();
             
-            ProgramMgr GetData = new ProgramMgr();
-            GetData.mgrreaddata();
+            ProgramMgr getdata = new ProgramMgr();
+            getdata.mgrreaddata();
             
-            SetImages SetImagesPanel = new SetImages();
-            SetImagesPanel.setimagesrightpanel();
+            SetImages setimagespanel = new SetImages();
+            setimagespanel.setimagesrightpanel();
                         
-            ProgramMgr MgrCenterLayout = new ProgramMgr();
-            MgrCenterLayout.mgrsetlayout();
+            ProgramMgr mgrcenterlayout = new ProgramMgr();
+            mgrcenterlayout.mgrsetlayout();
             
             });
                     subbottompanel.add(combo);
                     frame.repaint();
                     menustatus = true;
                 } else {
-                    bottompanel.setBounds(x, (y+(screenheight-(navpanel+20))),screenwidth, navpanel);
+                    bottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
                     subbottompanel.setVisible(false);
@@ -295,8 +295,8 @@ public final class JavaGUI {
 
         	@Override
             public void mouseReleased(MouseEvent evt){
-        ProgramMgr MgrSaveXML = new ProgramMgr();
-        MgrSaveXML.mgrwritedata();
+        ProgramMgr mgrsavexml = new ProgramMgr();
+        mgrsavexml.mgrwritedata();
             }
         });
         bottompanel.add(savebutton);
@@ -311,8 +311,7 @@ public final class JavaGUI {
         resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
         resetbutton.setMargin(new Insets(0, 0, 0, 0));
         resetbutton.setBorder(null);
-        resetbutton.addMouseListener(new MouseAdapter()
-        {
+        resetbutton.addMouseListener(new MouseAdapter(){
         	@Override
             public void mouseEntered(MouseEvent evt){
                 resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
@@ -356,8 +355,8 @@ public final class JavaGUI {
             }
         	@Override
             public void mouseReleased(MouseEvent evt){
-        ProgramMgr MgrNewLayout = new ProgramMgr();
-        MgrNewLayout.mgrautolayout();
+        ProgramMgr mgrnewlayout = new ProgramMgr();
+        mgrnewlayout.mgrautolayout();
             }
             
         });
