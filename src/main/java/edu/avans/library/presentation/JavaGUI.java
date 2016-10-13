@@ -22,7 +22,6 @@ public final class JavaGUI {
     SetPath setallpaths = new SetPath();
     private final String imageresource = setallpaths.getImageresource();
     private final String stepdataresource = setallpaths.getStepdataresource();
-    private final String stepdataoutput = setallpaths.getStepdataoutput();
 
     public static JFrame frame;
     public static JPanel bottompanel;
@@ -203,13 +202,13 @@ public final class JavaGUI {
                 specbuttonlocked.setVisible(true);
                 frame.repaint();
                 if (menustatus==false){
-                    bottompanel.setBounds(x, (y+(screenheight-(navpanel+110))),screenwidth, navpanel);
+                    bottompanel.setBounds(x, y+screenheight-navpanel-110,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
                     
                     subbottompanel = new JPanel(null);
                     subbottompanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-                    subbottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
+                    subbottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
                     frame.add(subbottompanel);
                     subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
                     
@@ -230,7 +229,7 @@ public final class JavaGUI {
         
                      //EVENTS
             combo.addActionListener((ActionEvent arg0) -> {
-            bottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
+            bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
             bottompanel.revalidate();
             bottompanel.repaint();
             subbottompanel.setVisible(false);
