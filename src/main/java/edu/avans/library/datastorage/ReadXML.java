@@ -19,6 +19,7 @@ import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -61,7 +62,7 @@ public class ReadXML {
 		    itemsyresvalue = eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent();
 		}
 	    }
-	} catch (IOException e) {
+	} catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
 	    System.err.println("Caught IOException: " + e.getMessage());
 	}
     }
