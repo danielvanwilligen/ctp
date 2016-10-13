@@ -34,7 +34,7 @@ import javax.swing.TransferHandler;
 
 public class SetImages {
     
-    public void SetImagesRightPanel (){
+    public void setimagesrightpanel (){
 	File imagelocation = new File(SetPath.stepdataresource+name);
 	String[] filenamelist = imagelocation.list();
 	for (int i = 0; i < filenamelist.length; i++) {
@@ -46,7 +46,7 @@ public class SetImages {
 		currentimagewidth = placeimage.getIconWidth();
 		currentimageheight = placeimage.getIconHeight();
 		newimagewidth = 290;
-		newimageheigth = Math.round(((currentimageheight * newimagewidth)/currentimagewidth));
+		newimageheigth = Math.round((currentimageheight * newimagewidth)/currentimagewidth);
 		Image newimg = image.getScaledInstance(newimagewidth, newimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
 		placeimage = new ImageIcon(newimg);
 		img = new JLabel(placeimage);
@@ -64,8 +64,8 @@ public class SetImages {
 		itemsyresvalueint = Math.round(Integer.parseInt(itemsyresvalue));
 		setgridx = 5;
 		setgridy = 5;
-		newpanelwidth = ((centerpanelwidth-((itemsxresvalueint+1)*5))/itemsxresvalueint);
-		newpanelheight = ((centerpanelheight-((itemsyresvalueint+1)*5))/itemsyresvalueint);
+		newpanelwidth = (centerpanelwidth-((itemsxresvalueint+1)*5))/itemsxresvalueint;
+		newpanelheight = (centerpanelheight-((itemsyresvalueint+1)*5))/itemsyresvalueint;
 		centerpanel.removeAll();
 	    }
 	}

@@ -254,7 +254,7 @@ public final class JavaGUI {
 			GetData.mgrreaddata();
 			
 			SetImages SetImagesPanel = new SetImages();
-			SetImagesPanel.SetImagesRightPanel();
+			SetImagesPanel.setimagesrightpanel();
 						
 			ProgramMgr MgrCenterLayout = new ProgramMgr();
 			MgrCenterLayout.mgrsetlayout();
