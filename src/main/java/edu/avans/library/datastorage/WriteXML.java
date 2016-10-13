@@ -33,7 +33,7 @@ public class WriteXML {
 		JavaGUI.cleanfirstimage = JavaGUI.imagesequencearray[0].split("null");
 	    }
             JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + "<JOB>" + JavaGUI.enter;
-            for (int i = 0; i < JavaGUI.total_grid_fields_int; i++) {
+            for (int i = 0; i < JavaGUI.totalgridfieldsint; i++) {
                 if (i==0){
 		    if (savecounter<1){
 			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.enter; 

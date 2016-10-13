@@ -4,10 +4,10 @@ import static edu.avans.library.presentation.JavaGUI.bleedres;
 import static edu.avans.library.presentation.JavaGUI.customerres;
 import static edu.avans.library.presentation.JavaGUI.dieshaperes;
 import static edu.avans.library.presentation.JavaGUI.heightres;
-import static edu.avans.library.presentation.JavaGUI.items_xres;
-import static edu.avans.library.presentation.JavaGUI.items_xres_value;
-import static edu.avans.library.presentation.JavaGUI.items_yres;
-import static edu.avans.library.presentation.JavaGUI.items_yres_value;
+import static edu.avans.library.presentation.JavaGUI.itemsxres;
+import static edu.avans.library.presentation.JavaGUI.itemsxresvalue;
+import static edu.avans.library.presentation.JavaGUI.itemsyres;
+import static edu.avans.library.presentation.JavaGUI.itemsyresvalue;
 import static edu.avans.library.presentation.JavaGUI.mfgres;
 import static edu.avans.library.presentation.JavaGUI.name;
 import static edu.avans.library.presentation.JavaGUI.ordernrres;
@@ -55,14 +55,14 @@ public class ReadXML {
 		    customerres.setText(eElement.getElementsByTagName("customer").item(0).getTextContent());
 		    widthres.setText(eElement.getElementsByTagName("cylinderwidth").item(0).getTextContent());
 		    heightres.setText(eElement.getElementsByTagName("cylinderheight").item(0).getTextContent());
-		    items_xres.setText(eElement.getElementsByTagName("items_on_cylinder_x").item(0).getTextContent());
-		    items_yres.setText(eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent());
+		    itemsxres.setText(eElement.getElementsByTagName("items_on_cylinder_x").item(0).getTextContent());
+		    itemsyres.setText(eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent());
 		    mfgres.setText(eElement.getElementsByTagName("mfg").item(0).getTextContent());
 		    singleres.setText(eElement.getElementsByTagName("single").item(0).getTextContent());
 		    dieshaperes.setText(eElement.getElementsByTagName("bleed").item(0).getTextContent());
 		    bleedres.setText(eElement.getElementsByTagName("dieshape").item(0).getTextContent());
-		    items_xres_value = eElement.getElementsByTagName("items_on_cylinder_x").item(0).getTextContent();
-		    items_yres_value = eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent();
+		    itemsxresvalue = eElement.getElementsByTagName("items_on_cylinder_x").item(0).getTextContent();
+		    itemsyresvalue = eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent();
 		}
 	    }
 	} catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

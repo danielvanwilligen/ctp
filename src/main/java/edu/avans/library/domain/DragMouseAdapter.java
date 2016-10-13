@@ -1,13 +1,13 @@
 package edu.avans.library.domain;
 
 import static edu.avans.library.presentation.JavaGUI.centerpanel;
-import static edu.avans.library.presentation.JavaGUI.dragdrop_placecounter;
+import static edu.avans.library.presentation.JavaGUI.dragdropplacecounter;
 import static edu.avans.library.presentation.JavaGUI.draggedimagename;
-import static edu.avans.library.presentation.JavaGUI.new_image_height;
-import static edu.avans.library.presentation.JavaGUI.new_image_width;
+import static edu.avans.library.presentation.JavaGUI.newimageheight;
+import static edu.avans.library.presentation.JavaGUI.newimagewidth;
 import static edu.avans.library.presentation.JavaGUI.savebutton;
 import static edu.avans.library.presentation.JavaGUI.savebuttonlocked;
-import static edu.avans.library.presentation.JavaGUI.total_grid_fields_int;
+import static edu.avans.library.presentation.JavaGUI.totalgridfieldsint;
 
 import java.awt.Component;
 import java.awt.Image;
@@ -36,12 +36,12 @@ public class DragMouseAdapter extends MouseAdapter {
 	Image image = newdraggedimage.getImage();
 	    
 	Component[] total_grid_fields = centerpanel.getComponents();
-	total_grid_fields_int = total_grid_fields.length-1;
+	totalgridfieldsint = total_grid_fields.length-1;
 	JPanel gridField = ((JPanel)total_grid_fields[0]);
-	new_image_width = gridField.getWidth()-10;
-	new_image_height = gridField.getHeight()-10;
+	newimagewidth = gridField.getWidth()-10;
+	newimageheight = gridField.getHeight()-10;
 	    
-	Image newimg = image.getScaledInstance(new_image_width, new_image_height,  java.awt.Image.SCALE_SMOOTH); 
+	Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
 	ImageIcon placeimage = new ImageIcon(newimg);
 	JLabel componentreplace = new JLabel(placeimage);
 	   
@@ -49,7 +49,7 @@ public class DragMouseAdapter extends MouseAdapter {
 	handler.exportAsDrag(c, e, TransferHandler.COPY);
 	    
 	Component[] newtotal_grid_fields = centerpanel.getComponents();
-	total_grid_fields_int = newtotal_grid_fields.length-1;
+	totalgridfieldsint = newtotal_grid_fields.length-1;
 	if(newtotal_grid_fields[0] instanceof JPanel){
 	    JPanel newgridField = ((JPanel)newtotal_grid_fields[0]);
 	    Component[] newgridlabel = newgridField.getComponents();
@@ -59,8 +59,8 @@ public class DragMouseAdapter extends MouseAdapter {
 	}
 
 	// SET COUNTER
-	dragdrop_placecounter = dragdrop_placecounter+1;
-	if (dragdrop_placecounter>=total_grid_fields_int){
+	dragdropplacecounter = dragdropplacecounter+1;
+	if (dragdropplacecounter>=totalgridfieldsint){
 	    savebutton.setVisible(true);
 	    savebuttonlocked.setVisible(false);
 	}

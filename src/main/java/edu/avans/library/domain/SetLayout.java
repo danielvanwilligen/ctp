@@ -22,7 +22,7 @@ import static edu.avans.library.presentation.JavaGUI.screenwidth;
 import static edu.avans.library.presentation.JavaGUI.setgridx;
 import static edu.avans.library.presentation.JavaGUI.setgridy;
 import static edu.avans.library.presentation.JavaGUI.subcenterpanel;
-import static edu.avans.library.presentation.JavaGUI.total_grid_fields_int;
+import static edu.avans.library.presentation.JavaGUI.totalgridfieldsint;
 import static edu.avans.library.presentation.JavaGUI.x;
 import static edu.avans.library.presentation.JavaGUI.y;
 import java.awt.Color;
@@ -54,7 +54,7 @@ public class SetLayout {
 		centerpanel.add(subcenterpanel);
 					
 		Component[] total_grid_fields = centerpanel.getComponents();
-		total_grid_fields_int = total_grid_fields.length-1;
+		totalgridfieldsint = total_grid_fields.length-1;
 					
 		if(total_grid_fields[0] instanceof JPanel){
 		    JPanel gridField = ((JPanel)total_grid_fields[0]);

@@ -41,8 +41,8 @@ public final class JavaGUI {
     public static JLabel customerres;
     public static JLabel widthres;
     public static JLabel heightres;
-    public static JLabel items_xres;
-    public static JLabel items_yres;
+    public static JLabel itemsxres;
+    public static JLabel itemsyres;
     public static JLabel mfgres;
     public static JLabel singleres;
     public static JLabel dieshaperes;
@@ -53,8 +53,8 @@ public final class JavaGUI {
     public static JButton savebutton;
     public static JButton resetbutton;
     public static JButton autobutton;
-    public static String items_xres_value;
-    public static String items_yres_value;
+    public static String itemsxresvalue;
+    public static String itemsyresvalue;
     public static String pathnameimage;
     public static String xmloutput;
     public static String[] imagesequencearray;
@@ -62,14 +62,14 @@ public final class JavaGUI {
     public static double itemsover;
     public static int gridplacecounter;
     public static int childcounter;
-    public static int dragdrop_placecounter = 0;
+    public static int dragdropplacecounter = 0;
     public static final String enter = "\n";
     public static final String tab = "\t";
-    public static  double total_grid_fields_int;
-    public static  double items_to_place_int;
+    public static  double totalgridfieldsint;
+    public static  double itemstoplaceint;
     public static String imagesequence;
-    public static int new_image_width;
-    public static int new_image_height;
+    public static int newimagewidth;
+    public static int newimageheight;
     public static String draggedimagename;
     public static Image draggedimage;
     public static int x;
@@ -80,14 +80,14 @@ public final class JavaGUI {
     public static int screenheight;
     public static String name;
     public static boolean menustatus;
-    public static int bgcr_SideMenu;
-    public static int bgcg_SideMenu;
-    public static int bgcb_SideMenu;
+    public static int bgcrSideMenu;
+    public static int bgcgSideMenu;
+    public static int bgcbSideMenu;
     public static int black10r;
     public static int black10g;
     public static int black10b;
     public static String datestamp;
-    public static int current_image_width;
+    public static int currentimagewidth;
     public static int currentimageheight;
     public static int newimageheigth;
     public static int centerpanelwidth;
@@ -115,9 +115,9 @@ public final class JavaGUI {
         menustatus = false;
         
         // black 20%
-        bgcr_SideMenu = 210;
-        bgcg_SideMenu = 211;
-        bgcb_SideMenu = 212;
+        bgcrSideMenu = 210;
+        bgcgSideMenu = 211;
+        bgcbSideMenu = 212;
         
         // black 10%
         black10r = 236;
@@ -157,7 +157,7 @@ public final class JavaGUI {
 	
         // Set right panel
         rightpanel = new JPanel();
-        rightpanel.setBackground(new Color(bgcr_SideMenu,bgcg_SideMenu,bgcb_SideMenu));
+        rightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
         rightpanel.setBounds((x+(screenwidth-navsidepanel)), (y+navpanel),navsidepanel, ((screenheight-(2*navpanel))-20));
         rightpanel.setLayout(null);
         
@@ -172,7 +172,7 @@ public final class JavaGUI {
         
         // Set sub right panel
         subrightpanel = new JPanel();
-        subrightpanel.setBackground(new Color(bgcr_SideMenu,bgcg_SideMenu,bgcb_SideMenu));
+        subrightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
         subrightpanel.setBounds(x, (y+90),navsidepanel, ((screenheight-(2*navpanel))-110)); // DONT SET ???
         subrightpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         rightpanel.add(subrightpanel);
@@ -214,7 +214,7 @@ public final class JavaGUI {
                     
                     // Set bottom panel
                     subbottompanel = new JPanel(null);
-                    subbottompanel.setBackground(new Color(bgcr_SideMenu,bgcg_SideMenu,bgcb_SideMenu));
+                    subbottompanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
                     subbottompanel.setBounds(x, (y+(screenheight-(navpanel+20))),screenwidth, navpanel);
                     frame.add(subbottompanel);
                     subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -383,7 +383,7 @@ public final class JavaGUI {
         
         // Set left panel
         leftpanel = new JPanel();
-        leftpanel.setBackground(new Color(bgcr_SideMenu,bgcg_SideMenu,bgcb_SideMenu));
+        leftpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
         leftpanel.setBounds(x, (y+navpanel),navsidepanel, ((screenheight-(2*navpanel))-20));
         leftpanel.setLayout(null);
         
@@ -421,15 +421,15 @@ public final class JavaGUI {
         height.setLocation(30, 240);
         leftpanel.add(height);
         
-        JLabel items_x = new JLabel("ITEMS X", JLabel.LEFT);
-        items_x.setSize(100 ,30);
-        items_x.setLocation(30, 270);
-        leftpanel.add(items_x);
+        JLabel itemsx = new JLabel("ITEMS X", JLabel.LEFT);
+        itemsx.setSize(100 ,30);
+        itemsx.setLocation(30, 270);
+        leftpanel.add(itemsx);
         
-        JLabel items_y = new JLabel("ITEMS Y", JLabel.LEFT);
-        items_y.setSize(100 ,30);
-        items_y.setLocation(30, 300);
-        leftpanel.add(items_y);
+        JLabel itemsy = new JLabel("ITEMS Y", JLabel.LEFT);
+        itemsy.setSize(100 ,30);
+        itemsy.setLocation(30, 300);
+        leftpanel.add(itemsy);
         
         JLabel mfg = new JLabel("MFG", JLabel.LEFT);
         mfg.setSize(100 ,30);
@@ -476,15 +476,15 @@ public final class JavaGUI {
         heightdd.setLocation(130, 240);
         leftpanel.add(heightdd);
         
-        JLabel items_xdd = new JLabel(":", JLabel.LEFT);
-        items_xdd.setSize(10, 30);
-        items_xdd.setLocation(130, 270);
-        leftpanel.add(items_xdd);
+        JLabel itemsxdd = new JLabel(":", JLabel.LEFT);
+        itemsxdd.setSize(10, 30);
+        itemsxdd.setLocation(130, 270);
+        leftpanel.add(itemsxdd);
         
-        JLabel items_ydd = new JLabel(":", JLabel.LEFT);
-        items_ydd.setSize(10, 30);
-        items_ydd.setLocation(130, 300);
-        leftpanel.add(items_ydd);
+        JLabel itemsydd = new JLabel(":", JLabel.LEFT);
+        itemsydd.setSize(10, 30);
+        itemsydd.setLocation(130, 300);
+        leftpanel.add(itemsydd);
         
         JLabel mfgdd = new JLabel(":", JLabel.LEFT);
         mfgdd.setSize(10, 30);
@@ -531,15 +531,15 @@ public final class JavaGUI {
         heightres.setLocation(140, 240);
         leftpanel.add(heightres);
         
-        items_xres = new JLabel("-", JLabel.LEFT);
-        items_xres.setSize(100 ,30);
-        items_xres.setLocation(140, 270);
-        leftpanel.add(items_xres);
+        itemsxres = new JLabel("-", JLabel.LEFT);
+        itemsxres.setSize(100 ,30);
+        itemsxres.setLocation(140, 270);
+        leftpanel.add(itemsxres);
         
-        items_yres = new JLabel("-", JLabel.LEFT);
-        items_yres.setSize(100 ,30);
-        items_yres.setLocation(140, 300);
-        leftpanel.add(items_yres);
+        itemsyres = new JLabel("-", JLabel.LEFT);
+        itemsyres.setSize(100 ,30);
+        itemsyres.setLocation(140, 300);
+        leftpanel.add(itemsyres);
         
         mfgres = new JLabel("-", JLabel.LEFT);
         mfgres.setSize(100 ,30); 

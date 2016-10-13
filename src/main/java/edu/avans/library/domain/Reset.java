@@ -26,8 +26,8 @@ public class Reset {
 	JavaGUI.customerres.setText("-");
 	JavaGUI.widthres.setText("-");
 	JavaGUI.heightres.setText("-");
-	JavaGUI.items_xres.setText("-");
-	JavaGUI.items_yres.setText("-");
+	JavaGUI.itemsxres.setText("-");
+	JavaGUI.itemsyres.setText("-");
 	JavaGUI.mfgres.setText("-");
 	JavaGUI.singleres.setText("-");
 	JavaGUI.dieshaperes.setText("-");

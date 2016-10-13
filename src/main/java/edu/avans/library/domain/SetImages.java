@@ -4,15 +4,15 @@ import static edu.avans.library.presentation.JavaGUI.centerpanelheight;
 import static edu.avans.library.presentation.JavaGUI.centerpanelwidth;
 import static edu.avans.library.presentation.JavaGUI.centerpanel;
 import static edu.avans.library.presentation.JavaGUI.currentimageheight;
-import static edu.avans.library.presentation.JavaGUI.current_image_width;
+import static edu.avans.library.presentation.JavaGUI.currentimagewidth;
 import static edu.avans.library.presentation.JavaGUI.img;
-import static edu.avans.library.presentation.JavaGUI.items_xres_value;
+import static edu.avans.library.presentation.JavaGUI.itemsxresvalue;
 import static edu.avans.library.presentation.JavaGUI.itemsxresvalueint;
-import static edu.avans.library.presentation.JavaGUI.items_yres_value;
+import static edu.avans.library.presentation.JavaGUI.itemsyresvalue;
 import static edu.avans.library.presentation.JavaGUI.itemsyresvalueint;
 import static edu.avans.library.presentation.JavaGUI.name;
 import static edu.avans.library.presentation.JavaGUI.newimageheigth;
-import static edu.avans.library.presentation.JavaGUI.new_image_width;
+import static edu.avans.library.presentation.JavaGUI.newimagewidth;
 import static edu.avans.library.presentation.JavaGUI.newpanelheight;
 import static edu.avans.library.presentation.JavaGUI.newpanelwidth;
 import static edu.avans.library.presentation.JavaGUI.placeimage;
@@ -43,11 +43,11 @@ public class SetImages {
 		// SCALE IMAGE
 		placeimage = new ImageIcon(SetPath.stepdataresource+name+"/"+filenamelist[i]);
 		Image image = placeimage.getImage();
-		current_image_width = placeimage.getIconWidth();
+		currentimagewidth = placeimage.getIconWidth();
 		currentimageheight = placeimage.getIconHeight();
-		new_image_width = 290;
-		newimageheigth = Math.round(((currentimageheight * new_image_width)/current_image_width));
-		Image newimg = image.getScaledInstance(new_image_width, newimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+		newimagewidth = 290;
+		newimageheigth = Math.round(((currentimageheight * newimagewidth)/currentimagewidth));
+		Image newimg = image.getScaledInstance(newimagewidth, newimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
 		placeimage = new ImageIcon(newimg);
 		img = new JLabel(placeimage);
 		img.setName(filenamelist[i]);
@@ -60,8 +60,8 @@ public class SetImages {
 				
 		centerpanelwidth = centerpanel.getWidth();
 		centerpanelheight = centerpanel.getHeight();
-		itemsxresvalueint = Math.round(Integer.parseInt(items_xres_value));
-		itemsyresvalueint = Math.round(Integer.parseInt(items_yres_value));
+		itemsxresvalueint = Math.round(Integer.parseInt(itemsxresvalue));
+		itemsyresvalueint = Math.round(Integer.parseInt(itemsyresvalue));
 		setgridx = 5;
 		setgridy = 5;
 		newpanelwidth = ((centerpanelwidth-((itemsxresvalueint+1)*5))/itemsxresvalueint);
