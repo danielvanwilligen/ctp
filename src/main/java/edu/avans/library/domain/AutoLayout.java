@@ -40,7 +40,7 @@ public class AutoLayout {
         Component[] totalgridfields = centerpanel.getComponents();
         totalgridfieldsint = totalgridfields.length-1;
         // CALCULATE HOW MANY TIMES TO PLACE ONE ITEM
-        double placecount = Math.floor((totalgridfieldsint/itemstoplaceint));
+        double placecount = Math.floor(totalgridfieldsint/itemstoplaceint);
 
         frame.repaint();
                 
