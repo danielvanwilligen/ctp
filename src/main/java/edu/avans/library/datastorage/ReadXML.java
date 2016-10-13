@@ -16,12 +16,17 @@ import static edu.avans.library.presentation.JavaGUI.specnrres;
 import static edu.avans.library.presentation.JavaGUI.widthres;
 import edu.avans.library.domain.SetPath;
 import java.io.File;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  * Avans Java Proftaak
@@ -32,8 +37,6 @@ import org.w3c.dom.NodeList;
 public class ReadXML {
 
     public void getXMLData() {
-	//ReadXML getdatafromxml = new ReadXML();
-	//getdatafromxml.getXMLData();
 	// read xml
 	try {
 	    File fXmlFile = new File(SetPath.stepdataresource+name+"/xml/"+name+".xml");
@@ -62,8 +65,8 @@ public class ReadXML {
 		    items_yres_value = eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent();
 		}
 	    }
-	} catch (Exception e) {
-	    String error = e.toString();
+	} catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
+	    JOptionPane.showMessageDialog(null,"Could not open the xml document."); 
 	}
     }
 
