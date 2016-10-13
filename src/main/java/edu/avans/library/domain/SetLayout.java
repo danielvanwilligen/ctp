@@ -57,7 +57,7 @@ public class SetLayout {
         totalgridfieldsint = totalgridfields.length-1;
                     
         if(totalgridfields[0] instanceof JPanel){
-            JPanel gridField = ((JPanel)totalgridfields[0]);
+            JPanel gridField = (JPanel)totalgridfields[0];
             gridField.getWidth();
             gridField.getHeight();
 
@@ -85,13 +85,13 @@ public class SetLayout {
     }
     // Set subcenter panel        
     subcenterpanel = new JPanel();
-    subcenterpanel.setBounds(x, y,(screenwidth-(2*navsidepanel)), ((screenheight-(2*navpanel))-20));
+    subcenterpanel.setBounds(x, y,screenwidth-(2*navsidepanel), screenheight-(2*navpanel)-20);
     subcenterpanel.setLayout(null);
     centerpanel.add(subcenterpanel);
                 
     ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
     img = new JLabel(icon1);
-    img.setBounds(x, y,(screenwidth-(2*navsidepanel)), ((screenheight-(2*navpanel))-15));
+    img.setBounds(x, y,(screenwidth-2*navsidepanel), screenheight-(2*navpanel)-15);
     subcenterpanel.add(img);
     frame.repaint();
     }
