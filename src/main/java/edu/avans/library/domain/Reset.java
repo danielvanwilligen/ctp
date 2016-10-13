@@ -33,13 +33,9 @@ public class Reset {
 	JavaGUI.singleres.setText("-");
 	JavaGUI.dieshaperes.setText("-");
 	JavaGUI.bleedres.setText("-");
-	
-	
-	
 	JavaGUI.subrightpanel.removeAll();
         JavaGUI.centerpanel.removeAll();
 	JavaGUI.centerpanel.repaint();
-        //frame.repaint();
                 
         // Set subcenter panel
 	JavaGUI.centerpanel.removeAll();

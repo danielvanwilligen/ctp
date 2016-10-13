@@ -45,7 +45,7 @@ public class SetImages {
 		Image image = placeimage.getImage();
 		current_image_width = placeimage.getIconWidth();
 		current_image_height = placeimage.getIconHeight();
-		new_image_width = 290; //290
+		new_image_width = 290;
 		new_image_heigth = Math.round(((current_image_height * new_image_width)/current_image_width));
 		Image newimg = image.getScaledInstance(new_image_width, new_image_heigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
 		placeimage = new ImageIcon(newimg);

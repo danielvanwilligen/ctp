@@ -26,7 +26,6 @@ import edu.avans.library.domain.SetPath;
 public class WriteXML {
     
     public void writedata() {
-	//JOptionPane.showMessageDialog(null,imagesequence); 
 	try {
 	    JavaGUI.xmloutput = "<JOBS>" + JavaGUI.enter;
             JavaGUI.imagesequencearray = imagesequence.split("#");

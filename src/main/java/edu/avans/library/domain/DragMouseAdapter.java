@@ -44,25 +44,17 @@ public class DragMouseAdapter extends MouseAdapter {
 	Image newimg = image.getScaledInstance(new_image_width, new_image_height,  java.awt.Image.SCALE_SMOOTH); 
 	ImageIcon placeimage = new ImageIcon(newimg);
 	JLabel componentreplace = new JLabel(placeimage);
-	    
-	//JOptionPane.showMessageDialog(null,placeimage);
-	//JOptionPane.showMessageDialog(null,c.getName());
-	//JOptionPane.showMessageDialog(null,componentreplace);
 	   
 	TransferHandler handler = c.getTransferHandler();
 	handler.exportAsDrag(c, e, TransferHandler.COPY);
 	    
 	Component[] newtotal_grid_fields = centerpanel.getComponents();
 	total_grid_fields_int = newtotal_grid_fields.length-1;
-	//for (int i = 0; i < newtotal_grid_fields.length-1; i++) {
 	if(newtotal_grid_fields[0] instanceof JPanel){
 	    JPanel newgridField = ((JPanel)newtotal_grid_fields[0]);
 	    Component[] newgridlabel = newgridField.getComponents();
 	    if(newgridlabel[0] instanceof JLabel){
 		JLabel placeitem = ((JLabel)newgridlabel[0]);
-		//if ("blanco".equals(placeitem.getName())){
-		//    JOptionPane.showMessageDialog(null,placeitem.getName());
-		//}
 	    }
 	}
 
