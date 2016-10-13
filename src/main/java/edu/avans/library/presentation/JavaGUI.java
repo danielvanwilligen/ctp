@@ -144,7 +144,7 @@ public final class JavaGUI {
         resetbutton = new JButton();
         autobutton = new JButton();
         
-    // Set bottom panel
+    	// Set bottom panel
         bottompanel = new JPanel();
         bottompanel.setBackground(Color.WHITE);
         bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
@@ -182,21 +182,21 @@ public final class JavaGUI {
         specbutton.setBorder(null);
 
         specbutton.addMouseListener(new MouseAdapter(){
-        @Override
+        	@Override
             public void mouseEntered(MouseEvent evt){
                 specbutton.setIcon(new ImageIcon(imageresource+"spec_hover.png"));
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
             
-        @Override
+        	@Override
             public void mouseExited(MouseEvent evt){
                 specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
 
-        @Override
+        	@Override
             public void mouseReleased(MouseEvent evt){
         
                 specbutton.setVisible(false);
@@ -207,10 +207,9 @@ public final class JavaGUI {
                     bottompanel.revalidate();
                     bottompanel.repaint();
                     
-                    // Set bottom panel
                     subbottompanel = new JPanel(null);
                     subbottompanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-                    subbottompanel.setBounds(x, (y+(screenheight-(navpanel+20))),screenwidth, navpanel);
+                    subbottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
                     frame.add(subbottompanel);
                     subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
                     
@@ -230,8 +229,8 @@ public final class JavaGUI {
                     combo.setRenderer(new ImagesTextRenderer());
         
                      //EVENTS
-                    combo.addActionListener((ActionEvent arg0) -> {
-            bottompanel.setBounds(x, (y+(screenheight-(navpanel+20))),screenwidth, navpanel);
+            combo.addActionListener((ActionEvent arg0) -> {
+            bottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
             bottompanel.revalidate();
             bottompanel.repaint();
             subbottompanel.setVisible(false);
@@ -280,21 +279,21 @@ public final class JavaGUI {
         savebutton.setMargin(new Insets(0, 0, 0, 0));
         savebutton.setBorder(null);
         savebutton.addMouseListener(new MouseAdapter(){
-        @Override
+        	@Override
             public void mouseEntered(MouseEvent evt){
                 savebutton.setIcon(new ImageIcon(imageresource+"save_hover.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
             
-        @Override
+        	@Override
             public void mouseExited(MouseEvent evt){
                 savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
 
-        @Override
+        	@Override
             public void mouseReleased(MouseEvent evt){
         ProgramMgr MgrSaveXML = new ProgramMgr();
         MgrSaveXML.mgrwritedata();
@@ -314,20 +313,20 @@ public final class JavaGUI {
         resetbutton.setBorder(null);
         resetbutton.addMouseListener(new MouseAdapter()
         {
-        @Override
+        	@Override
             public void mouseEntered(MouseEvent evt){
                 resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
                 resetbutton.setMargin(new Insets(0, 0, 0, 0));
                 resetbutton.setBorder(null);
             }
             
-        @Override
+        	@Override
             public void mouseExited(MouseEvent evt){
                 resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
                 resetbutton.setMargin(new Insets(0, 0, 0, 0));
                 resetbutton.setBorder(null);
             }
-        @Override
+        	@Override
             public void mouseReleased(MouseEvent evt){
         // RESET THE INTERFACE
         ProgramMgr mgrresetGuiInterface = new ProgramMgr();
@@ -342,20 +341,20 @@ public final class JavaGUI {
         autobutton.setMargin(new Insets(0, 0, 0, 0));
         autobutton.setBorder(null);
         autobutton.addMouseListener(new MouseAdapter(){
-        @Override
+        	@Override
             public void mouseEntered(MouseEvent evt){
                 autobutton.setIcon(new ImageIcon(imageresource+"auto_hover.png"));
                 autobutton.setMargin(new Insets(0, 0, 0, 0));
                 autobutton.setBorder(null);
             }
             
-        @Override
+        	@Override
             public void mouseExited(MouseEvent evt){
                 autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
                 autobutton.setMargin(new Insets(0, 0, 0, 0));
                 autobutton.setBorder(null);
             }
-        @Override
+        	@Override
             public void mouseReleased(MouseEvent evt){
         ProgramMgr MgrNewLayout = new ProgramMgr();
         MgrNewLayout.mgrautolayout();
