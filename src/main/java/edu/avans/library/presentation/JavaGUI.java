@@ -147,7 +147,7 @@ public final class JavaGUI {
     // Set bottom panel
         bottompanel = new JPanel();
         bottompanel.setBackground(Color.WHITE);
-        bottompanel.setBounds(x, (y+(screenheight-(navpanel+20))),screenwidth, navpanel);
+        bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
         frame.add(bottompanel);
         bottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         
@@ -158,7 +158,7 @@ public final class JavaGUI {
         // Set right panel
         rightpanel = new JPanel();
         rightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        rightpanel.setBounds((x+(screenwidth-navsidepanel)), (y+navpanel),navsidepanel, ((screenheight-(2*navpanel))-20));
+        rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
         rightpanel.setLayout(null);
         
         ImageIcon rigthinfoheader = new ImageIcon(imageresource+"images.png");
@@ -173,7 +173,7 @@ public final class JavaGUI {
         // Set sub right panel
         subrightpanel = new JPanel();
         subrightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        subrightpanel.setBounds(x, (y+90),navsidepanel, ((screenheight-(2*navpanel))-110)); // DONT SET ???
+        subrightpanel.setBounds(x, y+90,navsidepanel, screenheight-2*navpanel-110);
         subrightpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         rightpanel.add(subrightpanel);
     
@@ -181,33 +181,28 @@ public final class JavaGUI {
         specbutton.setMargin(new Insets(0, 0, 0, 0));
         specbutton.setBorder(null);
 
-        specbutton.addMouseListener(new MouseAdapter()
-        {
+        specbutton.addMouseListener(new MouseAdapter(){
         @Override
-            public void mouseEntered(MouseEvent evt)
-            {
+            public void mouseEntered(MouseEvent evt){
                 specbutton.setIcon(new ImageIcon(imageresource+"spec_hover.png"));
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
             
         @Override
-            public void mouseExited(MouseEvent evt)
-            {
+            public void mouseExited(MouseEvent evt){
                 specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
 
         @Override
-            public void mouseReleased(MouseEvent evt)
-            {
+            public void mouseReleased(MouseEvent evt){
         
                 specbutton.setVisible(false);
                 specbuttonlocked.setVisible(true);
                 frame.repaint();
-                if (menustatus==false)
-                {
+                if (menustatus==false){
                     bottompanel.setBounds(x, (y+(screenheight-(navpanel+110))),screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
@@ -284,27 +279,23 @@ public final class JavaGUI {
         savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
         savebutton.setMargin(new Insets(0, 0, 0, 0));
         savebutton.setBorder(null);
-        savebutton.addMouseListener(new MouseAdapter()
-        {
+        savebutton.addMouseListener(new MouseAdapter(){
         @Override
-            public void mouseEntered(MouseEvent evt)
-            {
+            public void mouseEntered(MouseEvent evt){
                 savebutton.setIcon(new ImageIcon(imageresource+"save_hover.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
             
         @Override
-            public void mouseExited(MouseEvent evt)
-            {
+            public void mouseExited(MouseEvent evt){
                 savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
 
         @Override
-            public void mouseReleased(MouseEvent evt)
-            {
+            public void mouseReleased(MouseEvent evt){
         ProgramMgr MgrSaveXML = new ProgramMgr();
         MgrSaveXML.mgrwritedata();
             }
@@ -324,23 +315,20 @@ public final class JavaGUI {
         resetbutton.addMouseListener(new MouseAdapter()
         {
         @Override
-            public void mouseEntered(MouseEvent evt)
-            {
+            public void mouseEntered(MouseEvent evt){
                 resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
                 resetbutton.setMargin(new Insets(0, 0, 0, 0));
                 resetbutton.setBorder(null);
             }
             
         @Override
-            public void mouseExited(MouseEvent evt)
-            {
+            public void mouseExited(MouseEvent evt){
                 resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
                 resetbutton.setMargin(new Insets(0, 0, 0, 0));
                 resetbutton.setBorder(null);
             }
         @Override
-            public void mouseReleased(MouseEvent evt)
-            {
+            public void mouseReleased(MouseEvent evt){
         // RESET THE INTERFACE
         ProgramMgr mgrresetGuiInterface = new ProgramMgr();
         mgrresetGuiInterface.mgrreset();
@@ -353,26 +341,22 @@ public final class JavaGUI {
         autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
         autobutton.setMargin(new Insets(0, 0, 0, 0));
         autobutton.setBorder(null);
-        autobutton.addMouseListener(new MouseAdapter()
-        {
+        autobutton.addMouseListener(new MouseAdapter(){
         @Override
-            public void mouseEntered(MouseEvent evt)
-            {
+            public void mouseEntered(MouseEvent evt){
                 autobutton.setIcon(new ImageIcon(imageresource+"auto_hover.png"));
                 autobutton.setMargin(new Insets(0, 0, 0, 0));
                 autobutton.setBorder(null);
             }
             
         @Override
-            public void mouseExited(MouseEvent evt)
-            {
+            public void mouseExited(MouseEvent evt){
                 autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
                 autobutton.setMargin(new Insets(0, 0, 0, 0));
                 autobutton.setBorder(null);
             }
         @Override
-            public void mouseReleased(MouseEvent evt)
-            {
+            public void mouseReleased(MouseEvent evt){
         ProgramMgr MgrNewLayout = new ProgramMgr();
         MgrNewLayout.mgrautolayout();
             }
@@ -384,7 +368,7 @@ public final class JavaGUI {
         // Set left panel
         leftpanel = new JPanel();
         leftpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        leftpanel.setBounds(x, (y+navpanel),navsidepanel, ((screenheight-(2*navpanel))-20));
+        leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
         leftpanel.setLayout(null);
         
     
@@ -567,18 +551,18 @@ public final class JavaGUI {
         // Set center panel
         centerpanel = new JPanel();
         centerpanel.setBackground(Color.GRAY);
-        centerpanel.setBounds((x+navsidepanel), ((y+navpanel)),(screenwidth-(2*navsidepanel)), ((screenheight-(2*navpanel))-20));
+        centerpanel.setBounds(x+navsidepanel, y+navpanel,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
         centerpanel.setLayout(null);
         frame.add(centerpanel);
         
         // Set subcenter panel
         subcenterpanel = new JPanel();
-        subcenterpanel.setBounds(x, y,(screenwidth-(2*navsidepanel)), ((screenheight-(2*navpanel))-20));
+        subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
         subcenterpanel.setLayout(null);
         centerpanel.add(subcenterpanel);
         ImageIcon icon1 = new ImageIcon(imageresource+"fuji_bg_scale.png");
         img = new JLabel(icon1);
-        img.setBounds(x, y,(screenwidth-(2*navsidepanel)), ((screenheight-(2*navpanel))-15));
+        img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
         subcenterpanel.add(img);
         frame.repaint();
         
@@ -603,8 +587,7 @@ public final class JavaGUI {
         toppanel.setLayout(new FlowLayout(FlowLayout.LEFT));
     }
     
-    private DefaultComboBoxModel populate()
-    {
+    private DefaultComboBoxModel populate(){
         // Fill the combobox dynamicly
         // Data folder
         // Read folder structure
