@@ -15,30 +15,30 @@ import javax.swing.JPanel;
 public class Reset {
 
     public void resetgui(){
-	JavaGUI.savebutton.setVisible(false);
+    JavaGUI.savebutton.setVisible(false);
         JavaGUI.savebuttonlocked.setVisible(false);
         JavaGUI.resetbutton.setVisible(false);
         JavaGUI.autobutton.setVisible(false);
         JavaGUI.specbutton.setVisible(true);
         JavaGUI.specbuttonlocked.setVisible(false);
-	JavaGUI.specnrres.setText("-");
-	JavaGUI.ordernrres.setText("-");
-	JavaGUI.customerres.setText("-");
-	JavaGUI.widthres.setText("-");
-	JavaGUI.heightres.setText("-");
-	JavaGUI.itemsxres.setText("-");
-	JavaGUI.itemsyres.setText("-");
-	JavaGUI.mfgres.setText("-");
-	JavaGUI.singleres.setText("-");
-	JavaGUI.dieshaperes.setText("-");
-	JavaGUI.bleedres.setText("-");
-	JavaGUI.subrightpanel.removeAll();
+    JavaGUI.specnrres.setText("-");
+    JavaGUI.ordernrres.setText("-");
+    JavaGUI.customerres.setText("-");
+    JavaGUI.widthres.setText("-");
+    JavaGUI.heightres.setText("-");
+    JavaGUI.itemsxres.setText("-");
+    JavaGUI.itemsyres.setText("-");
+    JavaGUI.mfgres.setText("-");
+    JavaGUI.singleres.setText("-");
+    JavaGUI.dieshaperes.setText("-");
+    JavaGUI.bleedres.setText("-");
+    JavaGUI.subrightpanel.removeAll();
         JavaGUI.centerpanel.removeAll();
-	JavaGUI.centerpanel.repaint();
+    JavaGUI.centerpanel.repaint();
                 
         // Set subcenter panel
-	JavaGUI.centerpanel.removeAll();
-	JavaGUI.centerpanel.repaint();
+    JavaGUI.centerpanel.removeAll();
+    JavaGUI.centerpanel.repaint();
 
         JavaGUI.subcenterpanel = new JPanel();
         JavaGUI.subcenterpanel.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(2*JavaGUI.navsidepanel), JavaGUI.screenheight-(2*JavaGUI.navpanel)-20);
@@ -49,8 +49,8 @@ public class Reset {
         JavaGUI.img.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(2*JavaGUI.navsidepanel), JavaGUI.screenheight-(2*JavaGUI.navpanel)-15);
         JavaGUI.subcenterpanel.add(JavaGUI.img);
         JavaGUI.frame.repaint();
-	JavaGUI.imagesequence = "";
-	
+    JavaGUI.imagesequence = "";
+    
     }
     
 }

@@ -13,33 +13,33 @@ public class SetPath {
     public static String stepdataoutput;
     
     public SetPath(){
-	
+    
     }
     
     public String getImageresource(){
-	imageresource = "/Users/danielvanwilligenmbp/NetBeansProjects/ctp/src/main/resources/images/";
-	return imageresource;
+    imageresource = "/Users/danielvanwilligenmbp/NetBeansProjects/ctp/src/main/resources/images/";
+    return imageresource;
     }
     
     public String getStepdataresource(){
-	stepdataresource = "/Users/danielvanwilligenmbp/Documents/stepdata/";
-	return stepdataresource;
+    stepdataresource = "/Users/danielvanwilligenmbp/Documents/stepdata/";
+    return stepdataresource;
     }
     
     public String getStepdataoutput(){
-	stepdataoutput = "/Users/danielvanwilligenmbp/Documents/stepdataoutput/";
-	return stepdataoutput;
+    stepdataoutput = "/Users/danielvanwilligenmbp/Documents/stepdataoutput/";
+    return stepdataoutput;
     }
     
     public void setImageresource(String setImageresource) {
-	imageresource = setImageresource;
+    imageresource = setImageresource;
     }
     
     public void setStepdataresource(String setStepdataresource) {
-	stepdataresource = setStepdataresource;
+    stepdataresource = setStepdataresource;
     }
     
     public void setStepdataoutput(String setStepdataoutput) {
-	stepdataoutput = setStepdataoutput;
+    stepdataoutput = setStepdataoutput;
     } 
 }

@@ -26,20 +26,20 @@ import edu.avans.library.domain.SetPath;
 public class WriteXML {
     
     public void writedata() {
-	try {
-	    JavaGUI.xmloutput = "<JOBS>" + JavaGUI.enter;
+    try {
+        JavaGUI.xmloutput = "<JOBS>" + JavaGUI.enter;
             JavaGUI.imagesequencearray = imagesequence.split("#");
-	    if (savecounter<1){
-		JavaGUI.cleanfirstimage = JavaGUI.imagesequencearray[0].split("null");
-	    }
+        if (savecounter<1){
+        JavaGUI.cleanfirstimage = JavaGUI.imagesequencearray[0].split("null");
+        }
             JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + "<JOB>" + JavaGUI.enter;
             for (int i = 0; i < JavaGUI.totalgridfieldsint; i++) {
                 if (i==0){
-		    if (savecounter<1){
-			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.enter; 
-		    } else {
-			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+".pdfsta</FileName>" + JavaGUI.enter; 
-		    }
+            if (savecounter<1){
+            JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.enter; 
+            } else {
+            JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+".pdfsta</FileName>" + JavaGUI.enter; 
+            }
                 } else {
                     JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[i]+".pdfsta</FileName>" + JavaGUI.enter;
                 }
@@ -50,12 +50,12 @@ public class WriteXML {
                 JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + "</JOB>" + JavaGUI.enter;
             }
             JavaGUI.xmloutput = JavaGUI.xmloutput + "</JOBS>" + JavaGUI.enter;
-		
+        
             //SAVE FUNCTION
-	    datestamp = "";
-	    SetDate calldate = new SetDate("timestamp");
-	    datestamp = calldate.toString();
-		
+        datestamp = "";
+        SetDate calldate = new SetDate("timestamp");
+        datestamp = calldate.toString();
+        
             File newXMLFile = new File(SetPath.stepdataoutput+datestamp+"_"+specnrres.getText()+".xml");
             try (FileWriter fw = new FileWriter(newXMLFile)) {
                 fw.write(JavaGUI.xmloutput);
@@ -72,13 +72,13 @@ public class WriteXML {
                 JOptionPane.showMessageDialog(null,"Could not move the document."); 
             }
                 
-		// RESET THE INTERFACE
-		ProgramMgr mgrresetGuiInterface = new ProgramMgr();
-		mgrresetGuiInterface.mgrreset();
-	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null,e); 
-	}
-	savecounter = savecounter+1;
+        // RESET THE INTERFACE
+        ProgramMgr mgrresetGuiInterface = new ProgramMgr();
+        mgrresetGuiInterface.mgrreset();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null,e); 
+    }
+    savecounter = savecounter+1;
     }
     
 }

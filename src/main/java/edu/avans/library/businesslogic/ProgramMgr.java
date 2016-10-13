@@ -15,28 +15,28 @@ import edu.avans.library.domain.SetLayout;
 public class ProgramMgr {
     
     public void mgrwritedata() {
-	WriteXML savexml = new WriteXML();
-	savexml.writedata();
+    WriteXML savexml = new WriteXML();
+    savexml.writedata();
     }
     
     public void mgrreaddata() {
-	ReadXML getdata = new ReadXML();
-	getdata.getXMLData();
+    ReadXML getdata = new ReadXML();
+    getdata.getXMLData();
     }
     
     public void mgrreset() {
-	Reset resetguiinterface = new Reset();
-	resetguiinterface.resetgui();
+    Reset resetguiinterface = new Reset();
+    resetguiinterface.resetgui();
     }
     
     public void mgrsetlayout() {
-	SetLayout centerlayout = new SetLayout();
-	centerlayout.createlayout();
+    SetLayout centerlayout = new SetLayout();
+    centerlayout.createlayout();
     }
     
     public void mgrautolayout(){
-	AutoLayout newlayout = new AutoLayout();
-	newlayout.automaticlayout();
+    AutoLayout newlayout = new AutoLayout();
+    newlayout.automaticlayout();
     }
     
 }
