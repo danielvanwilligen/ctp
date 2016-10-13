@@ -9,6 +9,7 @@ import edu.avans.library.domain.ImagesNText;
 import edu.avans.library.domain.ImagesTextRenderer;
 import edu.avans.library.domain.SetImages;
 import edu.avans.library.businesslogic.ProgramMgr;
+import static edu.avans.library.domain.SetPath.stepdataoutput;
 
 /**
  * Avans Java Proftaak
@@ -22,7 +23,8 @@ public final class JavaGUI {
     SetPath setallpaths = new SetPath();
     private final String imageresource = setallpaths.getImageresource();
     private final String stepdataresource = setallpaths.getStepdataresource();
-
+    private final String stepdataoutput = setallpaths.getStepdataoutput();
+    
     public static JFrame frame;
     public static JPanel bottompanel;
     public static JPanel subbottompanel;
