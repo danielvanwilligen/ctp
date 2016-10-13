@@ -16,17 +16,12 @@ import static edu.avans.library.presentation.JavaGUI.specnrres;
 import static edu.avans.library.presentation.JavaGUI.widthres;
 import edu.avans.library.domain.SetPath;
 import java.io.File;
-import java.io.IOException;
-import javax.swing.JOptionPane;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 /**
  * Avans Java Proftaak
@@ -35,7 +30,7 @@ import org.xml.sax.SAXException;
  */
 
 public class ReadXML {
-
+    
     public void getXMLData() {
     // read xml
     try {
@@ -66,7 +61,6 @@ public class ReadXML {
         }
         }
     } catch (Exception e) {
-        throw new RuntimeException(e);
     }
     }
 
