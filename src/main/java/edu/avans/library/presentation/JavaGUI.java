@@ -251,13 +251,13 @@ public final class JavaGUI {
 			frame.repaint();
 			
 			ProgramMgr GetData = new ProgramMgr();
-			GetData.MgrReadData();
+			GetData.mgrreaddata();
 			
 			SetImages SetImagesPanel = new SetImages();
 			SetImagesPanel.SetImagesRightPanel();
 						
 			ProgramMgr MgrCenterLayout = new ProgramMgr();
-			MgrCenterLayout.MgrSetLayout();
+			MgrCenterLayout.mgrsetlayout();
 			
 		    });
                     subbottompanel.add(combo);
@@ -306,7 +306,7 @@ public final class JavaGUI {
             public void mouseReleased(MouseEvent evt)
             {
 		ProgramMgr MgrSaveXML = new ProgramMgr();
-		MgrSaveXML.MgrWriteData();
+		MgrSaveXML.mgrwritedata();
             }
         });
         bottompanel.add(savebutton);
@@ -342,8 +342,8 @@ public final class JavaGUI {
             public void mouseReleased(MouseEvent evt)
             {
 		// RESET THE INTERFACE
-		ProgramMgr MgrResetGuiInterface = new ProgramMgr();
-		MgrResetGuiInterface.MgrReset();
+		ProgramMgr mgrresetGuiInterface = new ProgramMgr();
+		mgrresetGuiInterface.mgrreset();
 		
             }
         });
@@ -374,7 +374,7 @@ public final class JavaGUI {
             public void mouseReleased(MouseEvent evt)
             {
 		ProgramMgr MgrNewLayout = new ProgramMgr();
-		MgrNewLayout.MgrAutoLayout();
+		MgrNewLayout.mgrautolayout();
             }
             
         });

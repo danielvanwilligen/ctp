@@ -73,8 +73,8 @@ public class WriteXML {
             }
                 
 		// RESET THE INTERFACE
-		ProgramMgr MgrResetGuiInterface = new ProgramMgr();
-		MgrResetGuiInterface.MgrReset();
+		ProgramMgr mgrresetGuiInterface = new ProgramMgr();
+		mgrresetGuiInterface.mgrreset();
 	} catch (Exception e) {
 	    JOptionPane.showMessageDialog(null,e); 
 	}
