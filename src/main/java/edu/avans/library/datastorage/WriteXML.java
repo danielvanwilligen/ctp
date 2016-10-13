@@ -76,7 +76,7 @@ public class WriteXML {
         ProgramMgr mgrresetGuiInterface = new ProgramMgr();
         mgrresetGuiInterface.mgrreset();
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(null,e); 
+        throw new RuntimeException(e);
     }
     savecounter = savecounter+1;
     }

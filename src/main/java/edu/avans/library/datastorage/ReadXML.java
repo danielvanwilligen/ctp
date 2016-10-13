@@ -65,8 +65,8 @@ public class ReadXML {
             itemsyresvalue = eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent();
         }
         }
-    } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
-        JOptionPane.showMessageDialog(null,"Could not open the xml document."); 
+    } catch (Exception e) {
+        throw new RuntimeException(e);
     }
     }
 
