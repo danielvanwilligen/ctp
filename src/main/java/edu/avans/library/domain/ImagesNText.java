@@ -8,8 +8,7 @@ import javax.swing.Icon;
  * @version 1.0
  */
 
-public class ImagesNText
-{
+public class ImagesNText{
     public Icon img;
     public String name;
     

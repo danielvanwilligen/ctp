@@ -19,12 +19,8 @@ public class SetDate {
     private String minutes;
     private String seconds;
     
-    public SetDate(){
-	
-    }
-    
-    public SetDate(String SetTimeStamp) {
-	timestamp= SetTimeStamp;
+    public SetDate(String settimestamp) {
+	timestamp= settimestamp;
     }
     
     public String getYear(){

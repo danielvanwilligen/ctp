@@ -13,8 +13,7 @@ import javax.swing.ListCellRenderer;
  * @version 1.0
  */
 
-public class ImagesTextRenderer extends JLabel implements ListCellRenderer
-{
+public class ImagesTextRenderer extends JLabel implements ListCellRenderer {
     @Override
     public Component getListCellRendererComponent(JList list, Object val, int index, boolean selected, boolean focused){
         
@@ -25,12 +24,10 @@ public class ImagesTextRenderer extends JLabel implements ListCellRenderer
         setIcon(it.getImg());
         setText(it.getName());
 
-        if(selected)
-        {
+        if(selected){
             setBackground(list.getSelectionBackground());
             setForeground(Color.BLUE);
-        } else
-        {
+        } else {
             setBackground(list.getBackground());
             setForeground(list.getForeground());
         }
