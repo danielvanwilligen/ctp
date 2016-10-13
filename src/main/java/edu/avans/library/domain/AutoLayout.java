@@ -40,7 +40,7 @@ public class AutoLayout {
         Component[] totalgridfields = centerpanel.getComponents();
         totalgridfieldsint = totalgridfields.length-1;
         // CALCULATE HOW MANY TIMES TO PLACE ONE ITEM
-        double place_count = Math.floor((totalgridfieldsint/itemstoplaceint));
+        double placecount = Math.floor((totalgridfieldsint/itemstoplaceint));
 
         frame.repaint();
                 
@@ -51,7 +51,7 @@ public class AutoLayout {
 
         for (int i = 0; i < itemstoplace.length; i++) {
             // SCALE IMAGE
-            for (int j = 0; j < place_count; j++) {
+            for (int j = 0; j < placecount; j++) {
                 if (itemstoplace.length>1){
 		    int imagecounter = 1000 + gridplacecounter;
 		    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
@@ -69,7 +69,7 @@ public class AutoLayout {
                 placeimage = new ImageIcon(newimg);
                 img = new JLabel(placeimage);
                 if(totalgridfields[childcounter] instanceof JPanel){
-                    JPanel gridField = ((JPanel)totalgridfields[childcounter]);
+                    JPanel gridField = (JPanel)totalgridfields[childcounter];
                     gridField.removeAll();
                     gridField.add(img);
                     frame.repaint();
@@ -79,11 +79,11 @@ public class AutoLayout {
             gridplacecounter = gridplacecounter +1;
         }
         gridplacecounter = gridplacecounter -1;
-        itemsover = totalgridfieldsint-(itemstoplaceint*place_count);
+        itemsover = totalgridfieldsint-(itemstoplaceint*placecount);
         gridplacecounter = 1;
         for (int i = 0; i < itemsover; i++) {
             if (itemstoplace.length>1){
-		int imagecounter = 1000 + gridplacecounter;
+				int imagecounter = 1000 + gridplacecounter;
                 pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
                 imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
             } else {
