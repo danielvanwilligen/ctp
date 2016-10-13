@@ -14,8 +14,7 @@ import javax.swing.JPanel;
 
 public class Reset {
 
-    public void resetgui()
-    {
+    public void resetgui(){
 	JavaGUI.savebutton.setVisible(false);
         JavaGUI.savebuttonlocked.setVisible(false);
         JavaGUI.resetbutton.setVisible(false);
@@ -42,12 +41,12 @@ public class Reset {
 	JavaGUI.centerpanel.repaint();
 
         JavaGUI.subcenterpanel = new JPanel();
-        JavaGUI.subcenterpanel.setBounds(JavaGUI.x, JavaGUI.y,(JavaGUI.screenwidth-(2*JavaGUI.navsidepanel)), ((JavaGUI.screenheight-(2*JavaGUI.navpanel))-20));
+        JavaGUI.subcenterpanel.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(2*JavaGUI.navsidepanel), JavaGUI.screenheight-(2*JavaGUI.navpanel)-20);
         JavaGUI.subcenterpanel.setLayout(null);
         JavaGUI.centerpanel.add(JavaGUI.subcenterpanel);
         ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
         JavaGUI.img = new JLabel(icon1);
-        JavaGUI.img.setBounds(JavaGUI.x, JavaGUI.y,(JavaGUI.screenwidth-(2*JavaGUI.navsidepanel)), ((JavaGUI.screenheight-(2*JavaGUI.navpanel))-15));
+        JavaGUI.img.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(2*JavaGUI.navsidepanel), JavaGUI.screenheight-(2*JavaGUI.navpanel)-15);
         JavaGUI.subcenterpanel.add(JavaGUI.img);
         JavaGUI.frame.repaint();
 	JavaGUI.imagesequence = "";
