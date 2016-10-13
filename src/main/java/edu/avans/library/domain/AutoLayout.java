@@ -34,11 +34,11 @@ public class AutoLayout {
         savebuttonlocked.setVisible(false);
                 
         // GET ITEM COUNT
-        Component[] items_to_place = subrightpanel.getComponents();
-        itemstoplaceint = items_to_place.length;
+        Component[] itemstoplace = subrightpanel.getComponents();
+        itemstoplaceint = itemstoplace.length;
         // GET GRID COUNT
-        Component[] total_grid_fields = centerpanel.getComponents();
-        totalgridfieldsint = total_grid_fields.length-1;
+        Component[] totalgridfields = centerpanel.getComponents();
+        totalgridfieldsint = totalgridfields.length-1;
         // CALCULATE HOW MANY TIMES TO PLACE ONE ITEM
         double place_count = Math.floor((totalgridfieldsint/itemstoplaceint));
 
@@ -47,31 +47,29 @@ public class AutoLayout {
         gridplacecounter = 1;
         childcounter = 0;
 
-        String name_of_item_to_place = specnrres.getText();
+        String nameofitemtoplace = specnrres.getText();
 
-        for (int i = 0; i < items_to_place.length; i++) {
+        for (int i = 0; i < itemstoplace.length; i++) {
             // SCALE IMAGE
             for (int j = 0; j < place_count; j++) {
-                if (items_to_place.length>1){
+                if (itemstoplace.length>1){
 		    int imagecounter = 1000 + gridplacecounter;
-		    pathnameimage = SetPath.stepdataresource+name_of_item_to_place+"/"+name_of_item_to_place+"_"+imagecounter+".png";
-		    imagesequence = imagesequence +name_of_item_to_place+"_"+imagecounter+"#";
+		    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
+		    imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
                 } else {
-		    pathnameimage = SetPath.stepdataresource+name_of_item_to_place+"/"+name_of_item_to_place+".png";
-                    imagesequence = imagesequence +name_of_item_to_place+"#";
+		    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+".png";
+                    imagesequence = imagesequence +nameofitemtoplace+"#";
                 }
                 ImageIcon placeimage = new ImageIcon(pathnameimage);
                 Image image = placeimage.getImage();
-                int currentimagewidth = placeimage.getIconWidth();
-                int currentimageheight = placeimage.getIconHeight();
-                int newimagewidth = total_grid_fields[0].getWidth()-10;
-                int newimageheight = total_grid_fields[0].getHeight()-10;
+                int newimagewidth = totalgridfields[0].getWidth()-10;
+                int newimageheight = totalgridfields[0].getHeight()-10;
                 // Check if it's a Jpanel
                 Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
                 placeimage = new ImageIcon(newimg);
                 img = new JLabel(placeimage);
-                if(total_grid_fields[childcounter] instanceof JPanel){
-                    JPanel gridField = ((JPanel)total_grid_fields[childcounter]);
+                if(totalgridfields[childcounter] instanceof JPanel){
+                    JPanel gridField = ((JPanel)totalgridfields[childcounter]);
                     gridField.removeAll();
                     gridField.add(img);
                     frame.repaint();
@@ -81,29 +79,27 @@ public class AutoLayout {
             gridplacecounter = gridplacecounter +1;
         }
         gridplacecounter = gridplacecounter -1;
-        itemsover = (totalgridfieldsint-(itemstoplaceint*place_count));
+        itemsover = totalgridfieldsint-(itemstoplaceint*place_count);
         gridplacecounter = 1;
         for (int i = 0; i < itemsover; i++) {
-            if (items_to_place.length>1){
+            if (itemstoplace.length>1){
 		int imagecounter = 1000 + gridplacecounter;
-                pathnameimage = SetPath.stepdataresource+name_of_item_to_place+"/"+name_of_item_to_place+"_"+imagecounter+".png";
-                imagesequence = imagesequence +name_of_item_to_place+"_"+imagecounter+"#";
+                pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
+                imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
             } else {
-                pathnameimage = SetPath.stepdataresource+name_of_item_to_place+"/"+name_of_item_to_place+".png";
-                imagesequence = imagesequence +name_of_item_to_place+"#";
+                pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+".png";
+                imagesequence = imagesequence +nameofitemtoplace+"#";
             }
             ImageIcon placeimage = new ImageIcon(pathnameimage);
             Image image = placeimage.getImage();
-            int currentimagewidth = placeimage.getIconWidth();
-            int currentimageheight = placeimage.getIconHeight();
-            int newimagewidth = total_grid_fields[0].getWidth()-10;
-            int newimageheight = total_grid_fields[0].getHeight()-10;
+            int newimagewidth = totalgridfields[0].getWidth()-10;
+            int newimageheight = totalgridfields[0].getHeight()-10;
             // Check if it's a Jpanel
             Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
             placeimage = new ImageIcon(newimg);
             img = new JLabel(placeimage);
-            if(total_grid_fields[childcounter] instanceof JPanel){
-                JPanel gridField = ((JPanel)total_grid_fields[childcounter]);
+            if(totalgridfields[childcounter] instanceof JPanel){
+                JPanel gridField = (JPanel)totalgridfields[childcounter];
                 gridField.removeAll();
                 gridField.add(img);
                 frame.repaint();
