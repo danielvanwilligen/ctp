@@ -63,7 +63,7 @@ public class AutoLayout {
                 ImageIcon placeimage = new ImageIcon(pathnameimage);
                 Image image = placeimage.getImage();
                 int current_image_width = placeimage.getIconWidth();
-                int current_image_height = placeimage.getIconHeight();
+                int currentimageheight = placeimage.getIconHeight();
                 int new_image_width = total_grid_fields[0].getWidth()-10;
                 int new_image_height = total_grid_fields[0].getHeight()-10;
                 // Check if it's a Jpanel
@@ -95,7 +95,7 @@ public class AutoLayout {
             ImageIcon placeimage = new ImageIcon(pathnameimage);
             Image image = placeimage.getImage();
             int current_image_width = placeimage.getIconWidth();
-            int current_image_height = placeimage.getIconHeight();
+            int currentimageheight = placeimage.getIconHeight();
             int new_image_width = total_grid_fields[0].getWidth()-10;
             int new_image_height = total_grid_fields[0].getHeight()-10;
             // Check if it's a Jpanel

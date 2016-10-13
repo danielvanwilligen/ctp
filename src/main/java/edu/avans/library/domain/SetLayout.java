@@ -4,23 +4,23 @@ import static edu.avans.library.presentation.JavaGUI.black10b;
 import static edu.avans.library.presentation.JavaGUI.black10g;
 import static edu.avans.library.presentation.JavaGUI.black10r;
 import static edu.avans.library.presentation.JavaGUI.centerpanel;
-import static edu.avans.library.presentation.JavaGUI.current_blancoimage_height;
-import static edu.avans.library.presentation.JavaGUI.current_blancoimage_width;
+import static edu.avans.library.presentation.JavaGUI.currentblancoimageheight;
+import static edu.avans.library.presentation.JavaGUI.currentblancoimagewidth;
 import static edu.avans.library.presentation.JavaGUI.frame;
 import static edu.avans.library.presentation.JavaGUI.img;
-import static edu.avans.library.presentation.JavaGUI.items_xres_value_int;
-import static edu.avans.library.presentation.JavaGUI.items_yres_value_int;
+import static edu.avans.library.presentation.JavaGUI.itemsxresvalueint;
+import static edu.avans.library.presentation.JavaGUI.itemsyresvalueint;
 import static edu.avans.library.presentation.JavaGUI.navpanel;
 import static edu.avans.library.presentation.JavaGUI.navsidepanel;
-import static edu.avans.library.presentation.JavaGUI.new_blancoimage_heigth;
-import static edu.avans.library.presentation.JavaGUI.new_blancoimage_width;
-import static edu.avans.library.presentation.JavaGUI.new_panel_height;
-import static edu.avans.library.presentation.JavaGUI.new_panel_width;
+import static edu.avans.library.presentation.JavaGUI.newblancoimageheigth;
+import static edu.avans.library.presentation.JavaGUI.newblancoimagewidth;
+import static edu.avans.library.presentation.JavaGUI.newpanelheight;
+import static edu.avans.library.presentation.JavaGUI.newpanelwidth;
 import static edu.avans.library.presentation.JavaGUI.placeimage;
 import static edu.avans.library.presentation.JavaGUI.screenheight;
 import static edu.avans.library.presentation.JavaGUI.screenwidth;
-import static edu.avans.library.presentation.JavaGUI.set_grid_x;
-import static edu.avans.library.presentation.JavaGUI.set_grid_y;
+import static edu.avans.library.presentation.JavaGUI.setgridx;
+import static edu.avans.library.presentation.JavaGUI.setgridy;
 import static edu.avans.library.presentation.JavaGUI.subcenterpanel;
 import static edu.avans.library.presentation.JavaGUI.total_grid_fields_int;
 import static edu.avans.library.presentation.JavaGUI.x;
@@ -43,13 +43,13 @@ import javax.swing.TransferHandler;
 public class SetLayout {
     
     public void createlayout(){
-	for (int k = 0; k < items_yres_value_int; k++) {
-	    for (int j = 0; j < items_xres_value_int; j++) {
+	for (int k = 0; k < itemsyresvalueint; k++) {
+	    for (int j = 0; j < itemsxresvalueint; j++) {
 		// Set sub center panel
 		subcenterpanel = new JPanel();
 					
 		subcenterpanel.setBackground(new Color(black10r,black10g,black10b));
-		subcenterpanel.setBounds(set_grid_x, set_grid_y,new_panel_width,new_panel_height);
+		subcenterpanel.setBounds(setgridx, setgridy,newpanelwidth,newpanelheight);
 		subcenterpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		centerpanel.add(subcenterpanel);
 					
@@ -63,11 +63,11 @@ public class SetLayout {
 
 		    ImageIcon placeblancoimage = new ImageIcon(SetPath.imageresource+"blanco.png");
 		    Image blancoimage = placeblancoimage.getImage();
-		    current_blancoimage_width = placeblancoimage.getIconWidth();
-		    current_blancoimage_height = placeblancoimage.getIconHeight();
-		    new_blancoimage_width = gridField.getWidth()-10;
-		     new_blancoimage_heigth = gridField.getHeight()-10;
-		    Image newblancoimg = blancoimage.getScaledInstance(new_blancoimage_width, new_blancoimage_heigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+		    currentblancoimagewidth = placeblancoimage.getIconWidth();
+		    currentblancoimageheight = placeblancoimage.getIconHeight();
+		    newblancoimagewidth = gridField.getWidth()-10;
+		     newblancoimageheigth = gridField.getHeight()-10;
+		    Image newblancoimg = blancoimage.getScaledInstance(newblancoimagewidth, newblancoimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
 		    placeimage = new ImageIcon(newblancoimg);
 		    img = new JLabel(placeimage);
 		    img.setTransferHandler(new TransferHandler("icon"));
@@ -78,10 +78,10 @@ public class SetLayout {
 					
 		frame.revalidate();
 		frame.repaint();
-		set_grid_x = set_grid_x + new_panel_width + 5;
+		setgridx = setgridx + newpanelwidth + 5;
 	    }
-	    set_grid_x = 5;
-	    set_grid_y = set_grid_y + new_panel_height + 5;
+	    setgridx = 5;
+	    setgridy = setgridy + newpanelheight + 5;
 	}
 	// Set subcenter panel		
 	subcenterpanel = new JPanel();
