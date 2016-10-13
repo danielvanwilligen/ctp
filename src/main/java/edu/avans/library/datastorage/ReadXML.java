@@ -33,7 +33,7 @@ import org.xml.sax.SAXException;
  */
 
 public class ReadXML {
-    public void getXMLData() throws ParserConfigurationException, SAXException {
+    public void getXMLData() throws ParserConfigurationException, SAXException, IOException {
 	// read xml
 	try {
 	    File fXmlFile = new File(SetPath.stepdataresource+name+"/xml/"+name+".xml");
@@ -63,7 +63,7 @@ public class ReadXML {
 		}
 	    }
 	} catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
-	    System.err.println("Caught IOException: " + e.getMessage());
+	    throw e;
 	}
     }
 }
