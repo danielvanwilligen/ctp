@@ -1,5 +1,6 @@
 package edu.avans.library.datastorage;
 
+import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 import static edu.avans.library.presentation.JavaGUI.bleedres;
 import static edu.avans.library.presentation.JavaGUI.customerres;
 import static edu.avans.library.presentation.JavaGUI.dieshaperes;
@@ -16,6 +17,7 @@ import static edu.avans.library.presentation.JavaGUI.specnrres;
 import static edu.avans.library.presentation.JavaGUI.widthres;
 import edu.avans.library.domain.SetPath;
 import java.io.File;
+import java.util.function.Supplier;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -61,6 +63,7 @@ public class ReadXML {
         }
         }
     } catch (Exception e) {
+	LOGGER.info((Supplier<String>) e);
     }
     }
 
