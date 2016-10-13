@@ -1,5 +1,4 @@
 package edu.avans.library.datastorage;
-
 import static edu.avans.library.presentation.JavaGUI.bleedres;
 import static edu.avans.library.presentation.JavaGUI.customerres;
 import static edu.avans.library.presentation.JavaGUI.dieshaperes;
