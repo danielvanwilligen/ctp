@@ -9,7 +9,6 @@ import edu.avans.library.domain.ImagesNText;
 import edu.avans.library.domain.ImagesTextRenderer;
 import edu.avans.library.domain.SetImages;
 import edu.avans.library.businesslogic.ProgramMgr;
-import static edu.avans.library.domain.SetPath.stepdataoutput;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
@@ -110,146 +109,143 @@ public final class JavaGUI {
     public static ImageIcon placeimage;
     public static int savecounter = 0;
     
-    public JavaGUI()
-    {
+    public JavaGUI(){
        gui();
     }
     
-    public void gui()
-    {
-        menustatus = false;
-        
-        // black 20%
-        bgcrSideMenu = 210;
-        bgcgSideMenu = 211;
-        bgcbSideMenu = 212;
-        
-        // black 10%
-        black10r = 236;
-        black10g = 236;
-        black10b = 236;
-        
-        navpanel = 90;
-        navsidepanel = 300;
-        x = 0;
-        y = 0;
-        screenwidth = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
-        screenheight = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;
-        
-        // Set Main frame
-        frame = new JFrame("Step and Repeat");
-        frame.setVisible(true);
-        frame.setSize(screenwidth,screenheight);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-        
-        //Create Buttons
-        specbutton = new JButton();
-        savebutton = new JButton();
-        resetbutton = new JButton();
-        autobutton = new JButton();
-        
-    	// Set bottom panel
-        bottompanel = new JPanel();
-        bottompanel.setBackground(Color.WHITE);
-        bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
-        frame.add(bottompanel);
-        bottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        
-        ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer.png");
-        img = new JLabel(bottomspacer);
-        bottompanel.add(img);
-    
-        // Set right panel
-        rightpanel = new JPanel();
-        rightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
-        rightpanel.setLayout(null);
-        
-        ImageIcon rigthinfoheader = new ImageIcon(imageresource+"images.png");
-        JLabel  imgimages = new JLabel(rigthinfoheader);
-        imgimages.setSize(300, 90);
-        imgimages.setLocation(0, 0);
-        rightpanel.add(imgimages);
-        rightpanel.revalidate();
-        frame.repaint();
-        frame.add(rightpanel);
-        
-        // Set sub right panel
-        subrightpanel = new JPanel();
-        subrightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        subrightpanel.setBounds(x, y+90,navsidepanel, screenheight-2*navpanel-110);
-        subrightpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        rightpanel.add(subrightpanel);
-    
-        specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
-        specbutton.setMargin(new Insets(0, 0, 0, 0));
-        specbutton.setBorder(null);
+    public void gui(){
+	 menustatus = false;
 
-        specbutton.addMouseListener(new MouseAdapter(){
-        	@Override
-            public void mouseEntered(MouseEvent evt){
-                specbutton.setIcon(new ImageIcon(imageresource+"spec_hover.png"));
-                specbutton.setMargin(new Insets(0, 0, 0, 0));
-                specbutton.setBorder(null);
-            }
-            
-        	@Override
-            public void mouseExited(MouseEvent evt){
-                specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
-                specbutton.setMargin(new Insets(0, 0, 0, 0));
-                specbutton.setBorder(null);
-            }
+	// black 20%
+	bgcrSideMenu = 210;
+	bgcgSideMenu = 211;
+	bgcbSideMenu = 212;
 
-        	@Override
-            public void mouseReleased(MouseEvent evt){
-        
-                specbutton.setVisible(false);
-                specbuttonlocked.setVisible(true);
-                frame.repaint();
-                if (menustatus==false){
-                    bottompanel.setBounds(x, y+screenheight-navpanel-110,screenwidth, navpanel);
-                    bottompanel.revalidate();
-                    bottompanel.repaint();
+	// black 10%
+	black10r = 236;
+	black10g = 236;
+	black10b = 236;
+
+	navpanel = 90;
+	navsidepanel = 300;
+	x = 0;
+	y = 0;
+	screenwidth = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+	screenheight = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;
+    
+	// Set Main frame
+	frame = new JFrame("Step and Repeat");
+	frame.setVisible(true);
+	frame.setSize(screenwidth,screenheight);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setLayout(null);
+
+	//Create Buttons
+	specbutton = new JButton();
+	savebutton = new JButton();
+	resetbutton = new JButton();
+	autobutton = new JButton();
+
+	// Set bottom panel
+	bottompanel = new JPanel();
+	bottompanel.setBackground(Color.WHITE);
+	bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
+	frame.add(bottompanel);
+	bottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+	ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer.png");
+	img = new JLabel(bottomspacer);
+	bottompanel.add(img);
+
+	// Set right panel
+	rightpanel = new JPanel();
+	rightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
+	rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
+	rightpanel.setLayout(null);
+
+	ImageIcon rigthinfoheader = new ImageIcon(imageresource+"images.png");
+	JLabel  imgimages = new JLabel(rigthinfoheader);
+	imgimages.setSize(300, 90);
+	imgimages.setLocation(0, 0);
+	rightpanel.add(imgimages);
+	rightpanel.revalidate();
+	frame.repaint();
+	frame.add(rightpanel);
+
+	// Set sub right panel
+	subrightpanel = new JPanel();
+	subrightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
+	subrightpanel.setBounds(x, y+90,navsidepanel, screenheight-2*navpanel-110);
+	subrightpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+	rightpanel.add(subrightpanel);
+
+	specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
+	specbutton.setMargin(new Insets(0, 0, 0, 0));
+	specbutton.setBorder(null);
+
+	specbutton.addMouseListener(new MouseAdapter(){
+	    @Override
+	    public void mouseEntered(MouseEvent evt){
+		specbutton.setIcon(new ImageIcon(imageresource+"spec_hover.png"));
+		specbutton.setMargin(new Insets(0, 0, 0, 0));
+		specbutton.setBorder(null);
+	    }
+
+	    @Override
+	    public void mouseExited(MouseEvent evt){
+		specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
+		specbutton.setMargin(new Insets(0, 0, 0, 0));
+		specbutton.setBorder(null);
+	    }
+
+	    @Override
+	    public void mouseReleased(MouseEvent evt){
+		specbutton.setVisible(false);
+		specbuttonlocked.setVisible(true);
+		frame.repaint();
+		if (menustatus==false){
+		    bottompanel.setBounds(x, y+screenheight-navpanel-110,screenwidth, navpanel);
+		    bottompanel.revalidate();
+		    bottompanel.repaint();
+
+		    subbottompanel = new JPanel(null);
+		    subbottompanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
+		    subbottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
+		    frame.add(subbottompanel);
+		    subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+		    ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer_gray.png");
+		    img = new JLabel(bottomspacer);
+		    subbottompanel.add(img);
                     
-                    subbottompanel = new JPanel(null);
-                    subbottompanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-                    subbottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
-                    frame.add(subbottompanel);
-                    subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-                    
-                    ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer_gray.png");
-                    img = new JLabel(bottomspacer);
-                    subbottompanel.add(img);
-                    
-                    final JComboBox combo = new JComboBox();
-                    
-            // SIZE HEIGTH DOES NOT WORK
-            Dimension preferredSize = combo.getPreferredSize();
-            preferredSize.height = 100;
-            preferredSize.width = 200;
-            combo.setPreferredSize(preferredSize);
-                    
-                    combo.setModel(populate());
-                    combo.setRenderer(new ImagesTextRenderer());
-        
-                     //EVENTS
-            combo.addActionListener((ActionEvent arg0) -> {
-            bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
-            bottompanel.revalidate();
-            bottompanel.repaint();
-            subbottompanel.setVisible(false);
-            savebutton.setVisible(false);
-            savebuttonlocked.setVisible(true);
-            resetbutton.setVisible(true);
-            autobutton.setVisible(true);
-            menustatus = false;
-            name=((ImagesNText)combo.getSelectedItem()).getName();
-            subrightpanel.removeAll();
-            centerpanel.removeAll();
-            frame.repaint();
+		    final JComboBox combo = new JComboBox();
+
+		    // SIZE HEIGTH DOES NOT WORK
+		    Dimension preferredSize = combo.getPreferredSize();
+		    preferredSize.height = 100;
+		    preferredSize.width = 200;
+		    combo.setPreferredSize(preferredSize);
+
+		    combo.setModel(populate());
+		    combo.setRenderer(new ImagesTextRenderer());
+
+		    //EVENTS
+		    combo.addActionListener((ActionEvent arg0) -> {
+			bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
+			bottompanel.revalidate();
+			bottompanel.repaint();
+			subbottompanel.setVisible(false);
+			savebutton.setVisible(false);
+			savebuttonlocked.setVisible(true);
+			resetbutton.setVisible(true);
+			autobutton.setVisible(true);
+			menustatus = false;
+			name=((ImagesNText)combo.getSelectedItem()).getName();
+			subrightpanel.removeAll();
+			centerpanel.removeAll();
+			frame.repaint();
             
-            ProgramMgr getdata = new ProgramMgr();
+			ProgramMgr getdata = new ProgramMgr();
 			try {
 			    getdata.mgrreaddata();
 			} catch (ParserConfigurationException ex) {
@@ -259,137 +255,134 @@ public final class JavaGUI {
 			} catch (IOException ex) {
 			    Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
 			}
-            
-            SetImages setimagespanel = new SetImages();
-            setimagespanel.setimagesrightpanel();
-                        
-            ProgramMgr mgrcenterlayout = new ProgramMgr();
-            mgrcenterlayout.mgrsetlayout();
-            
-            });
-                    subbottompanel.add(combo);
-                    frame.repaint();
-                    menustatus = true;
-                } else {
-                    bottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
-                    bottompanel.revalidate();
-                    bottompanel.repaint();
-                    subbottompanel.setVisible(false);
-                    frame.repaint();
-                    menustatus = false;
-                }
-            }
-        });
-        bottompanel.add(specbutton);
-        
-        //SET SPECBUTTON LOCKED
-        ImageIcon speclocked = new ImageIcon(imageresource+"speclocked.png");
-        specbuttonlocked = new JLabel(speclocked);
-        bottompanel.add(specbuttonlocked);
-        specbuttonlocked.setVisible(false);
-        
-        savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
-        savebutton.setMargin(new Insets(0, 0, 0, 0));
-        savebutton.setBorder(null);
-        savebutton.addMouseListener(new MouseAdapter(){
-        	@Override
-            public void mouseEntered(MouseEvent evt){
-                savebutton.setIcon(new ImageIcon(imageresource+"save_hover.png"));
-                savebutton.setMargin(new Insets(0, 0, 0, 0));
-                savebutton.setBorder(null);
-            }
-            
-        	@Override
-            public void mouseExited(MouseEvent evt){
-                savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
-                savebutton.setMargin(new Insets(0, 0, 0, 0));
-                savebutton.setBorder(null);
-            }
 
-        	@Override
-            public void mouseReleased(MouseEvent evt){
-        ProgramMgr mgrsavexml = new ProgramMgr();
-        mgrsavexml.mgrwritedata();
-            }
-        });
-        bottompanel.add(savebutton);
-        savebutton.setVisible(false);
-        
-        //SET SPECBUTTON LOCKED
-        ImageIcon savelocked = new ImageIcon(imageresource+"savelocked.png");
-        savebuttonlocked = new JLabel(savelocked);
-        bottompanel.add(savebuttonlocked);
-        savebuttonlocked.setVisible(false);
+			SetImages setimagespanel = new SetImages();
+			setimagespanel.setimagesrightpanel();
 
-        resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
-        resetbutton.setMargin(new Insets(0, 0, 0, 0));
-        resetbutton.setBorder(null);
-        resetbutton.addMouseListener(new MouseAdapter(){
-        	@Override
-            public void mouseEntered(MouseEvent evt){
-                resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
-                resetbutton.setMargin(new Insets(0, 0, 0, 0));
-                resetbutton.setBorder(null);
-            }
-            
-        	@Override
-            public void mouseExited(MouseEvent evt){
-                resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
-                resetbutton.setMargin(new Insets(0, 0, 0, 0));
-                resetbutton.setBorder(null);
-            }
-        	@Override
-            public void mouseReleased(MouseEvent evt){
-        // RESET THE INTERFACE
-        ProgramMgr mgrresetGuiInterface = new ProgramMgr();
-        mgrresetGuiInterface.mgrreset();
-        
-            }
-        });
-        bottompanel.add(resetbutton);
-        resetbutton.setVisible(false);
+			ProgramMgr mgrcenterlayout = new ProgramMgr();
+			mgrcenterlayout.mgrsetlayout();
 
-        autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
-        autobutton.setMargin(new Insets(0, 0, 0, 0));
-        autobutton.setBorder(null);
-        autobutton.addMouseListener(new MouseAdapter(){
-        	@Override
-            public void mouseEntered(MouseEvent evt){
-                autobutton.setIcon(new ImageIcon(imageresource+"auto_hover.png"));
-                autobutton.setMargin(new Insets(0, 0, 0, 0));
-                autobutton.setBorder(null);
-            }
-            
-        	@Override
-            public void mouseExited(MouseEvent evt){
-                autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
-                autobutton.setMargin(new Insets(0, 0, 0, 0));
-                autobutton.setBorder(null);
-            }
-        	@Override
-            public void mouseReleased(MouseEvent evt){
-        ProgramMgr mgrnewlayout = new ProgramMgr();
-        mgrnewlayout.mgrautolayout();
-            }
-            
-        });
-        bottompanel.add(autobutton);
-        autobutton.setVisible(false);
-        
-        // Set left panel
-        leftpanel = new JPanel();
-        leftpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
-        leftpanel.setLayout(null);
-        
-    
-        ImageIcon leftinfoheader = new ImageIcon(imageresource+"info.png");
-        JLabel  imginfo = new JLabel(leftinfoheader);
-        imginfo.setSize(300, 90);
-        imginfo.setLocation(0, 0);
-        leftpanel.add(imginfo);
-        leftpanel.revalidate();
-        leftpanel.repaint();
+		    });
+		    subbottompanel.add(combo);
+		    frame.repaint();
+		    menustatus = true;
+		} else {
+		    bottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
+		    bottompanel.revalidate();
+		    bottompanel.repaint();
+		    subbottompanel.setVisible(false);
+		    frame.repaint();
+		    menustatus = false;
+		}
+	    }
+	});
+	bottompanel.add(specbutton);
+
+	//SET SPECBUTTON LOCKED
+	ImageIcon speclocked = new ImageIcon(imageresource+"speclocked.png");
+	specbuttonlocked = new JLabel(speclocked);
+	bottompanel.add(specbuttonlocked);
+	specbuttonlocked.setVisible(false);
+
+	savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
+	savebutton.setMargin(new Insets(0, 0, 0, 0));
+	savebutton.setBorder(null);
+	savebutton.addMouseListener(new MouseAdapter(){
+	    @Override
+	    public void mouseEntered(MouseEvent evt){
+		savebutton.setIcon(new ImageIcon(imageresource+"save_hover.png"));
+		savebutton.setMargin(new Insets(0, 0, 0, 0));
+		savebutton.setBorder(null);
+	    }
+
+	    @Override
+	    public void mouseExited(MouseEvent evt){
+		savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
+		savebutton.setMargin(new Insets(0, 0, 0, 0));
+		savebutton.setBorder(null);
+	    }
+
+	    @Override
+	    public void mouseReleased(MouseEvent evt){
+		ProgramMgr mgrsavexml = new ProgramMgr();
+		mgrsavexml.mgrwritedata();
+	    }
+	});
+	bottompanel.add(savebutton);
+	savebutton.setVisible(false);
+
+	//SET SPECBUTTON LOCKED
+	ImageIcon savelocked = new ImageIcon(imageresource+"savelocked.png");
+	savebuttonlocked = new JLabel(savelocked);
+	bottompanel.add(savebuttonlocked);
+	savebuttonlocked.setVisible(false);
+
+	resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
+	resetbutton.setMargin(new Insets(0, 0, 0, 0));
+	resetbutton.setBorder(null);
+	resetbutton.addMouseListener(new MouseAdapter(){
+	    @Override
+	    public void mouseEntered(MouseEvent evt){
+		resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
+		resetbutton.setMargin(new Insets(0, 0, 0, 0));
+		resetbutton.setBorder(null);
+	    }
+
+	    @Override
+	    public void mouseExited(MouseEvent evt){
+		resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
+		resetbutton.setMargin(new Insets(0, 0, 0, 0));
+		resetbutton.setBorder(null);
+	    }
+	    @Override
+	    public void mouseReleased(MouseEvent evt){
+		// RESET THE INTERFACE
+		ProgramMgr mgrresetGuiInterface = new ProgramMgr();
+		mgrresetGuiInterface.mgrreset();
+	    }
+	});
+	bottompanel.add(resetbutton);
+	resetbutton.setVisible(false);
+
+	autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
+	autobutton.setMargin(new Insets(0, 0, 0, 0));
+	autobutton.setBorder(null);
+	autobutton.addMouseListener(new MouseAdapter(){
+	    @Override
+	    public void mouseEntered(MouseEvent evt){
+		autobutton.setIcon(new ImageIcon(imageresource+"auto_hover.png"));
+		autobutton.setMargin(new Insets(0, 0, 0, 0));
+		autobutton.setBorder(null);
+	    }
+
+	    @Override
+	    public void mouseExited(MouseEvent evt){
+		autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
+		autobutton.setMargin(new Insets(0, 0, 0, 0));
+		autobutton.setBorder(null);
+	    }
+	    @Override
+	    public void mouseReleased(MouseEvent evt){
+		ProgramMgr mgrnewlayout = new ProgramMgr();
+		mgrnewlayout.mgrautolayout();
+	    }
+	});
+	bottompanel.add(autobutton);
+	autobutton.setVisible(false);
+
+	// Set left panel
+	leftpanel = new JPanel();
+	leftpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
+	leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
+	leftpanel.setLayout(null);
+
+	ImageIcon leftinfoheader = new ImageIcon(imageresource+"info.png");
+	JLabel  imginfo = new JLabel(leftinfoheader);
+	imginfo.setSize(300, 90);
+	imginfo.setLocation(0, 0);
+	leftpanel.add(imginfo);
+	leftpanel.revalidate();
+	leftpanel.repaint();
 
 	int sizex = 100;
 	int sizey = 30;
@@ -471,17 +464,17 @@ public final class JavaGUI {
         bleedres.setSize(sizex ,sizey);
         bleedres.setLocation(positionx, positiony);
         leftpanel.add(bleedres);
-       
+
         frame.repaint();
         frame.add(leftpanel);
-        
+
         // Set center panel
         centerpanel = new JPanel();
         centerpanel.setBackground(Color.GRAY);
         centerpanel.setBounds(x+navsidepanel, y+navpanel,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
         centerpanel.setLayout(null);
         frame.add(centerpanel);
-        
+
         // Set subcenter panel
         subcenterpanel = new JPanel();
         subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
@@ -492,7 +485,7 @@ public final class JavaGUI {
         img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
         subcenterpanel.add(img);
         frame.repaint();
-        
+
         // Set top panel
         toppanel = new JPanel();
         toppanel.setBackground(Color.WHITE);
@@ -513,17 +506,17 @@ public final class JavaGUI {
         toppanel.repaint();
         toppanel.setLayout(new FlowLayout(FlowLayout.LEFT));
     }
-    
+
     private DefaultComboBoxModel populate(){
-        // Fill the combobox dynamicly
-        // Data folder
-        // Read folder structure
-        File file = new File(stepdataresource);
-        String[] specnumber = file.list();
-        DefaultComboBoxModel dm = new DefaultComboBoxModel();
-        for (int i = 1; i < specnumber.length; i++) {
-            dm.addElement(new ImagesNText(new ImageIcon(stepdataresource+"/"+specnumber[i]+"/xml/"+specnumber[i]+"_preview.png"), specnumber[i]));
-        }
-        return dm;
+	// Fill the combobox dynamicly
+	// Data folder
+	// Read folder structure
+	File file = new File(stepdataresource);
+	String[] specnumber = file.list();
+	DefaultComboBoxModel dm = new DefaultComboBoxModel();
+	for (int i = 1; i < specnumber.length; i++) {
+	    dm.addElement(new ImagesNText(new ImageIcon(stepdataresource+"/"+specnumber[i]+"/xml/"+specnumber[i]+"_preview.png"), specnumber[i]));
+	}
+	return dm;
     }
 }
