@@ -16,9 +16,9 @@ import javax.swing.JPanel;
  */
 
 public abstract class DropTargetArea extends JPanel implements DropTargetListener {
-    
+
     public DropTargetArea() {
-    new DropTarget(this, this);
+	new DropTarget(this, this);
     }
 
     @Override
@@ -28,7 +28,7 @@ public abstract class DropTargetArea extends JPanel implements DropTargetListene
     @Override
     public void dragOver(DropTargetDragEvent evt) {
     }
-
+    
     @Override
     public void dragExit(DropTargetEvent evt) {
     }
@@ -39,7 +39,7 @@ public abstract class DropTargetArea extends JPanel implements DropTargetListene
 
     @Override
     public void drop(DropTargetDropEvent evt) {
-    Transferable transferable = evt.getTransferable();
-    JOptionPane.showMessageDialog(null,"Yes");
+	Transferable transferable = evt.getTransferable();
+	JOptionPane.showMessageDialog(null,"Yes");
     }
 }

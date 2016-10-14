@@ -10,6 +10,10 @@ import edu.avans.library.domain.ImagesTextRenderer;
 import edu.avans.library.domain.SetImages;
 import edu.avans.library.businesslogic.ProgramMgr;
 import static edu.avans.library.domain.SetPath.stepdataoutput;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 /**
  * Avans Java Proftaak
@@ -246,7 +250,15 @@ public final class JavaGUI {
             frame.repaint();
             
             ProgramMgr getdata = new ProgramMgr();
-            getdata.mgrreaddata();
+			try {
+			    getdata.mgrreaddata();
+			} catch (ParserConfigurationException ex) {
+			    Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
+			} catch (SAXException ex) {
+			    Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
+			} catch (IOException ex) {
+			    Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
+			}
             
             SetImages setimagespanel = new SetImages();
             setimagespanel.setimagesrightpanel();
@@ -378,9 +390,7 @@ public final class JavaGUI {
         leftpanel.add(imginfo);
         leftpanel.revalidate();
         leftpanel.repaint();
-	
-	
-	
+
 	int sizex = 100;
 	int sizey = 30;
 	int positionx = 30;
