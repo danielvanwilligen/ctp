@@ -378,170 +378,88 @@ public final class JavaGUI {
         leftpanel.add(imginfo);
         leftpanel.revalidate();
         leftpanel.repaint();
+	
+	
+	
+	int sizex = 100;
+	int sizey = 30;
+	int positionx = 30;
+	int positiony = 120;
+	String [] labels = {"SPECNR", "ORDERNR", "CUSTOMER", "WIDTH", "HEIGHT", "ITEMS X", "ITEMS Y", "MFG", "SINGLE", "DIESHAPE", "BLEED"};
+	
+	for (int i = 0; i < 11; i++) {
+	    JLabel leftpanellabel = new JLabel(labels[i], JLabel.LEFT);
+	    leftpanellabel.setSize(sizex ,sizey);
+	    leftpanellabel.setLocation(positionx, positiony);
+	    leftpanel.add(leftpanellabel);
+	    
+	    JLabel doubledot = new JLabel(":", JLabel.LEFT);
+	    sizex = sizex-70;
+	    positionx = positionx+100;
+	    doubledot.setSize(sizex ,sizey);
+	    doubledot.setLocation(positionx, positiony);
+	    leftpanel.add(doubledot);
+	    sizex = sizex+70;
+	    positionx = positionx-100;
+	    
+	    positiony = positiony +30;
+	}
     
-        JLabel specnr = new JLabel("SPECNR.", JLabel.LEFT);
-        specnr.setSize(100 ,30);
-        specnr.setLocation(30, 120);
-        leftpanel.add(specnr);
-        
-        JLabel ordernr = new JLabel("ORDERNR.", JLabel.LEFT);
-        ordernr.setSize(100 ,30);
-        ordernr.setLocation(30, 150);
-        leftpanel.add(ordernr);
-        
-        JLabel customer = new JLabel("CUSTOMER", JLabel.LEFT);
-        customer.setSize(100 ,30);
-        customer.setLocation(30, 180);
-        leftpanel.add(customer);
-        
-        JLabel width = new JLabel("WIDTH", JLabel.LEFT);
-    width.setSize(100 ,30); 
-        width.setLocation(30, 210);
-        leftpanel.add(width);
-        
-        JLabel height = new JLabel("HEIGHT", JLabel.LEFT);
-        height.setSize(100 ,30); 
-        height.setLocation(30, 240);
-        leftpanel.add(height);
-        
-        JLabel itemsx = new JLabel("ITEMS X", JLabel.LEFT);
-        itemsx.setSize(100 ,30);
-        itemsx.setLocation(30, 270);
-        leftpanel.add(itemsx);
-        
-        JLabel itemsy = new JLabel("ITEMS Y", JLabel.LEFT);
-        itemsy.setSize(100 ,30);
-        itemsy.setLocation(30, 300);
-        leftpanel.add(itemsy);
-        
-        JLabel mfg = new JLabel("MFG", JLabel.LEFT);
-        mfg.setSize(100 ,30);
-        mfg.setLocation(30, 330);
-        leftpanel.add(mfg);
-        
-        JLabel single = new JLabel("SINGLE", JLabel.LEFT);
-        single.setSize(100 ,30); 
-        single.setLocation(30, 360);
-        leftpanel.add(single);
-        
-        JLabel dieshape = new JLabel("DIESHAPE", JLabel.LEFT);
-        dieshape.setSize(100 ,30);
-        dieshape.setLocation(30, 390);
-        leftpanel.add(dieshape);
-        
-        JLabel bleed = new JLabel("BLEED", JLabel.LEFT);
-        bleed.setSize(100 ,30);
-        bleed.setLocation(30, 420);
-        leftpanel.add(bleed);
-    
-        JLabel specnrdd = new JLabel(":", JLabel.LEFT);
-        specnrdd.setSize(10, 30);
-        specnrdd.setLocation(130, 120);
-        leftpanel.add(specnrdd);
-        
-        JLabel ordernrdd = new JLabel(":", JLabel.LEFT);
-        ordernrdd.setSize(10, 30);
-        ordernrdd.setLocation(130, 150);
-        leftpanel.add(ordernrdd);
-        
-        JLabel customerdd = new JLabel(":", JLabel.LEFT);
-        customerdd.setSize(10, 30);
-        customerdd.setLocation(130, 180);
-        leftpanel.add(customerdd);
-        
-        JLabel widthdd = new JLabel(":", JLabel.LEFT);
-        widthdd.setSize(10, 30);
-        widthdd.setLocation(130, 210);
-        leftpanel.add(widthdd);
-        
-        JLabel heightdd = new JLabel(":", JLabel.LEFT);
-        heightdd.setSize(10, 30);
-        heightdd.setLocation(130, 240);
-        leftpanel.add(heightdd);
-        
-        JLabel itemsxdd = new JLabel(":", JLabel.LEFT);
-        itemsxdd.setSize(10, 30);
-        itemsxdd.setLocation(130, 270);
-        leftpanel.add(itemsxdd);
-        
-        JLabel itemsydd = new JLabel(":", JLabel.LEFT);
-        itemsydd.setSize(10, 30);
-        itemsydd.setLocation(130, 300);
-        leftpanel.add(itemsydd);
-        
-        JLabel mfgdd = new JLabel(":", JLabel.LEFT);
-        mfgdd.setSize(10, 30);
-        mfgdd.setLocation(130, 330);
-        leftpanel.add(mfgdd);
-        
-        JLabel singledd = new JLabel(":", JLabel.LEFT);
-        singledd.setSize(10, 30);
-        singledd.setLocation(130, 360);
-        leftpanel.add(singledd);
-        
-        JLabel dieshapedd = new JLabel(":", JLabel.LEFT);
-        dieshapedd.setSize(10, 30);
-        dieshapedd.setLocation(130, 390);
-        leftpanel.add(dieshapedd);
-        
-        JLabel bleeddd = new JLabel(":", JLabel.LEFT);
-        bleeddd.setSize(10, 30);
-        bleeddd.setLocation(130, 420);
-        leftpanel.add(bleeddd);
-        
+	positionx = positionx+110;
+        positiony = 120;
         specnrres = new JLabel("-", JLabel.LEFT);
-        specnrres.setSize(100 ,30); 
-        specnrres.setLocation(140, 120);
+        specnrres.setSize(sizex ,sizey); 
+        specnrres.setLocation(positionx, positiony);
         leftpanel.add(specnrres);
-        
+        positiony = positiony +30;
         ordernrres = new JLabel("-", JLabel.LEFT);
-        ordernrres.setSize(100 ,30);
-        ordernrres.setLocation(140, 150);
+        ordernrres.setSize(sizex ,sizey);
+        ordernrres.setLocation(positionx, positiony);
         leftpanel.add(ordernrres);
-        
+        positiony = positiony +30;
         customerres = new JLabel("-", JLabel.LEFT);
-        customerres.setSize(100 ,30); 
-        customerres.setLocation(140, 180);
+        customerres.setSize(sizex ,sizey); 
+        customerres.setLocation(positionx, positiony);
         leftpanel.add(customerres);
-        
+        positiony = positiony +30;
         widthres = new JLabel("-", JLabel.LEFT);
-        widthres.setSize(100 ,30);
-        widthres.setLocation(140, 210);
+        widthres.setSize(sizex ,sizey);
+        widthres.setLocation(positionx, positiony);
         leftpanel.add(widthres);
-        
+        positiony = positiony +30;
         heightres = new JLabel("-", JLabel.LEFT);
-        heightres.setSize(100 ,30);
-        heightres.setLocation(140, 240);
+        heightres.setSize(sizex ,sizey);
+        heightres.setLocation(positionx, positiony);
         leftpanel.add(heightres);
-        
+        positiony = positiony +30;
         itemsxres = new JLabel("-", JLabel.LEFT);
-        itemsxres.setSize(100 ,30);
-        itemsxres.setLocation(140, 270);
+        itemsxres.setSize(sizex ,sizey);
+        itemsxres.setLocation(positionx, positiony);
         leftpanel.add(itemsxres);
-        
+        positiony = positiony +30;
         itemsyres = new JLabel("-", JLabel.LEFT);
-        itemsyres.setSize(100 ,30);
-        itemsyres.setLocation(140, 300);
+        itemsyres.setSize(sizex ,sizey);
+        itemsyres.setLocation(positionx, positiony);
         leftpanel.add(itemsyres);
-        
+        positiony = positiony +30;
         mfgres = new JLabel("-", JLabel.LEFT);
-        mfgres.setSize(100 ,30); 
-        mfgres.setLocation(140, 330);
+        mfgres.setSize(sizex ,sizey); 
+        mfgres.setLocation(positionx, positiony);
         leftpanel.add(mfgres);
-        
+        positiony = positiony +30;
         singleres = new JLabel("-", JLabel.LEFT);
-        singleres.setSize(100 ,30);
-        singleres.setLocation(140, 360);
+        singleres.setSize(sizex ,sizey);
+        singleres.setLocation(positionx, positiony);
         leftpanel.add(singleres);
-        
+        positiony = positiony +30;
         dieshaperes = new JLabel("-", JLabel.LEFT);
-        dieshaperes.setSize(100 ,30);
-        dieshaperes.setLocation(140, 390);
+        dieshaperes.setSize(sizex ,sizey);
+        dieshaperes.setLocation(positionx, positiony);
         leftpanel.add(dieshaperes);
-        
+        positiony = positiony +30;
         bleedres = new JLabel("-", JLabel.LEFT);
-        bleedres.setSize(100 ,30);
-        bleedres.setLocation(140, 420);
+        bleedres.setSize(sizex ,sizey);
+        bleedres.setLocation(positionx, positiony);
         leftpanel.add(bleedres);
        
         frame.repaint();
