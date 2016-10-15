@@ -39,6 +39,10 @@ import javax.swing.TransferHandler;
 
 public class SetLayout {
     
+    /**
+    * createlayout
+    * createlayout creates a grid layout in the centerpanel 
+    */
     public void createlayout(){
     for (int k = 0; k < itemsyresvalueint; k++) {
         for (int j = 0; j < itemsxresvalueint; j++) {

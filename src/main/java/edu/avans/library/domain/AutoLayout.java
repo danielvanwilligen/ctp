@@ -28,7 +28,10 @@ import javax.swing.JPanel;
  */
 
 public class AutoLayout {
-    
+    /**
+    * automaticlayout
+    * automaticlayout creates an automatic image layout in the centerpanel
+    */
     public void automaticlayout() {
     savebutton.setVisible(true);
         savebuttonlocked.setVisible(false);

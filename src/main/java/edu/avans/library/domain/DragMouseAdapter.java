@@ -25,7 +25,12 @@ import javax.swing.TransferHandler;
  * @version 1.0
  */
 
-public class DragMouseAdapter extends MouseAdapter {    
+public class DragMouseAdapter extends MouseAdapter { 
+    /**
+    * mousePressed drag
+    * mousePressed drag selects the image where the mouse is pressed
+     * @param e
+    */
     @Override
     public void mousePressed(MouseEvent e) {
 	JComponent c = (JComponent) e.getSource();

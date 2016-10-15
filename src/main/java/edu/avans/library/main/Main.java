@@ -13,6 +13,11 @@ public class Main {
     private Main() {
     }
     
+    /**
+    * GUI Start
+    * StartUP the gui 
+     * @param args
+    */
     public static void main(String[] args) {
     new JavaGUI();
     }

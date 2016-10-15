@@ -24,6 +24,10 @@ import edu.avans.library.domain.SetPath;
  */
 
 public class WriteXML {
+    /**
+    * writedata
+    * writedata writes xml data to the harddrive
+    */
     public void writedata() {
 	try {
 	    JavaGUI.xmloutput = "<JOBS>" + JavaGUI.enter;

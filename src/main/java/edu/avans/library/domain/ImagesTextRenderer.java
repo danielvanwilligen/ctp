@@ -14,6 +14,13 @@ import javax.swing.ListCellRenderer;
  */
 
 public class ImagesTextRenderer extends JLabel implements ListCellRenderer {
+    /**
+    * getListCellRendererComponent
+    * getListCellRendererComponent sets the image icon and the text of the combobox 
+     * @param val
+     * @param selected
+     * @param focused
+    */
     @Override
     public Component getListCellRendererComponent(JList list, Object val, int index, boolean selected, boolean focused){
         

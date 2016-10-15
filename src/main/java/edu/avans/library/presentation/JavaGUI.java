@@ -21,8 +21,11 @@ import org.xml.sax.SAXException;
  */
 
 public final class JavaGUI {
-
-    // Get Paths for SetPath Class
+    
+    /**
+    * Global variables
+    * Creates global variables which can be called in all classes 
+    */
     SetPath setallpaths = new SetPath();
     private final String imageresource = setallpaths.getImageresource();
     private final String stepdataresource = setallpaths.getStepdataresource();
@@ -107,6 +110,9 @@ public final class JavaGUI {
        gui();
     }
     
+    /**
+    * Build gui
+    */
     public void gui(){
 	 menustatus = false;
 
@@ -173,10 +179,13 @@ public final class JavaGUI {
 	subrightpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 	rightpanel.add(subrightpanel);
 
+	/**
+	* Specbutton
+	* Orderbutton will show the submenu 
+	*/
 	specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
 	specbutton.setMargin(new Insets(0, 0, 0, 0));
 	specbutton.setBorder(null);
-
 	specbutton.addMouseListener(new MouseAdapter(){
 	    @Override
 	    public void mouseEntered(MouseEvent evt){
@@ -192,6 +201,10 @@ public final class JavaGUI {
 		specbutton.setBorder(null);
 	    }
 
+	    /**
+	    * Specbutton mousereleased
+	    * Create the submenu 
+	    */
 	    @Override
 	    public void mouseReleased(MouseEvent evt){
 		specbutton.setVisible(false);
@@ -268,6 +281,7 @@ public final class JavaGUI {
 		    frame.repaint();
 		    menustatus = false;
 		}
+		
 	    }
 	});
 	bottompanel.add(specbutton);
@@ -278,6 +292,10 @@ public final class JavaGUI {
 	bottompanel.add(specbuttonlocked);
 	specbuttonlocked.setVisible(false);
 
+	/**
+	* Savebutton
+	* Savebutton will be created 
+	*/
 	savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
 	savebutton.setMargin(new Insets(0, 0, 0, 0));
 	savebutton.setBorder(null);
@@ -311,6 +329,10 @@ public final class JavaGUI {
 	bottompanel.add(savebuttonlocked);
 	savebuttonlocked.setVisible(false);
 
+	/**
+	* Resetbutton
+	* Resetbutton will be created 
+	*/
 	resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
 	resetbutton.setMargin(new Insets(0, 0, 0, 0));
 	resetbutton.setBorder(null);
@@ -338,6 +360,10 @@ public final class JavaGUI {
 	bottompanel.add(resetbutton);
 	resetbutton.setVisible(false);
 
+	/**
+	* Autobutton
+	* Autobutton will be created creates an automatic layout. 
+	*/
 	autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
 	autobutton.setMargin(new Insets(0, 0, 0, 0));
 	autobutton.setBorder(null);
@@ -500,7 +526,11 @@ public final class JavaGUI {
         toppanel.repaint();
         toppanel.setLayout(new FlowLayout(FlowLayout.LEFT));
     }
-
+    
+    /**
+    * Populate
+    * Populates the combobox in the submenu 
+    */
     private DefaultComboBoxModel populate(){
 	// Fill the combobox dynamicly
 	// Data folder
@@ -513,4 +543,5 @@ public final class JavaGUI {
 	}
 	return dm;
     }
+
 }

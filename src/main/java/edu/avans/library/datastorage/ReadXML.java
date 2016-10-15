@@ -33,6 +33,13 @@ import org.xml.sax.SAXException;
  */
 
 public class ReadXML {
+    /**
+    * getXMLData
+    * getXMLData read xml data from the harddrive
+     * @throws javax.xml.parsers.ParserConfigurationException
+     * @throws org.xml.sax.SAXException
+     * @throws java.io.IOException
+    */
     public void getXMLData() throws ParserConfigurationException, SAXException, IOException {
 	// read xml
 	try {

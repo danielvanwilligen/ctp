@@ -34,6 +34,10 @@ import javax.swing.TransferHandler;
 
 public class SetImages {
     
+    /**
+    * setimagesrightpanel
+    * setimagesrightpanel add images to the right panel 
+    */
     public void setimagesrightpanel (){
     File imagelocation = new File(SetPath.stepdataresource+name);
     String[] filenamelist = imagelocation.list();
