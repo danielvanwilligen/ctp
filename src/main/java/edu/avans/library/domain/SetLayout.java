@@ -1,8 +1,5 @@
 package edu.avans.library.domain;
 
-import static edu.avans.library.presentation.JavaGUI.black10b;
-import static edu.avans.library.presentation.JavaGUI.black10g;
-import static edu.avans.library.presentation.JavaGUI.black10r;
 import static edu.avans.library.presentation.JavaGUI.centerpanel;
 import static edu.avans.library.presentation.JavaGUI.currentblancoimageheight;
 import static edu.avans.library.presentation.JavaGUI.currentblancoimagewidth;
@@ -47,6 +44,11 @@ public class SetLayout {
         for (int j = 0; j < itemsxresvalueint; j++) {
         // Set sub center panel
         subcenterpanel = new JPanel();
+	
+	// black 10%
+	int black10r = 236;
+	int black10g = 236;
+	int black10b = 236;
                     
         subcenterpanel.setBackground(new Color(black10r,black10g,black10b));
         subcenterpanel.setBounds(setgridx, setgridy,newpanelwidth,newpanelheight);

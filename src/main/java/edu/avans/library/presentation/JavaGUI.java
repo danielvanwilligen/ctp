@@ -84,12 +84,6 @@ public final class JavaGUI {
     public static int screenheight;
     public static String name;
     public static boolean menustatus;
-    public static int bgcrSideMenu;
-    public static int bgcgSideMenu;
-    public static int bgcbSideMenu;
-    public static int black10r;
-    public static int black10g;
-    public static int black10b;
     public static String datestamp;
     public static int currentimagewidth;
     public static int currentimageheight;
@@ -117,14 +111,14 @@ public final class JavaGUI {
 	 menustatus = false;
 
 	// black 20%
-	bgcrSideMenu = 210;
-	bgcgSideMenu = 211;
-	bgcbSideMenu = 212;
+	int bgcrSideMenu = 210;
+	int bgcgSideMenu = 211;
+	int bgcbSideMenu = 212;
 
 	// black 10%
-	black10r = 236;
-	black10g = 236;
-	black10b = 236;
+	int black10r = 236;
+	int black10g = 236;
+	int black10b = 236;
 
 	navpanel = 90;
 	navsidepanel = 300;
