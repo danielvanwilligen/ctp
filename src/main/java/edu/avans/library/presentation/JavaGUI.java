@@ -27,23 +27,23 @@ public final class JavaGUI {
     * Creates global variables which can be called in all classes 
     */
     SetPath setallpaths = new SetPath();
-    private final String imageresource = setallpaths.getImageresource();
-    private final String stepdataresource = setallpaths.getStepdataresource();
-    private final String stepdataoutput = setallpaths.getStepdataoutput();
+    private final String IMAGERESOURCE = setallpaths.getImageresource();
+    private final String STEPDATARESOURCE = setallpaths.getStepdataresource();
+    private final String STEPDATAOUTPUT = setallpaths.getStepdataoutput();
+    public static final String ENTER = "\n";
+    public static final String TAB = "\t";
     
     public static JFrame frame;
     public static JPanel bottompanel, subbottompanel, toppanel, leftpanel, centerpanel, subcenterpanel, rightpanel, subrightpanel, rightbuttonpanel, custom;    
     public static JLabel img, specnrres, ordernrres, customerres, widthres, heightres, itemsxres, itemsyres, mfgres, singleres, dieshaperes, bleedres, specbuttonlocked, savebuttonlocked;
     public static JButton specbutton, savebutton, resetbutton, autobutton;
+    public static ImageIcon placeimage;
+    public static Image draggedimage;
     public static String itemsxresvalue, itemsyresvalue, pathnameimage, xmloutput, imagesequence, draggedimagename, name, datestamp;
     public static String[] imagesequencearray, cleanfirstimage;
     public static double itemsover, totalgridfieldsint, itemstoplaceint;
     public static int gridplacecounter, childcounter, newimagewidth, newimageheight, x, y, navpanel, navsidepanel, screenwidth, screenheight, currentimagewidth, currentimageheight, newimageheigth, centerpanelwidth, centerpanelheight, itemsxresvalueint, itemsyresvalueint, setgridx, setgridy, newpanelwidth, newpanelheight, currentblancoimagewidth, currentblancoimageheight, newblancoimagewidth, newblancoimageheigth, savecounter, dragdropplacecounter;
-    public static final String ENTER = "\n";
-    public static final String TAB = "\t";
     public static boolean menustatus;
-    public static ImageIcon placeimage;
-    public static Image draggedimage;
 
     public JavaGUI(){
        gui();
@@ -92,7 +92,7 @@ public final class JavaGUI {
 	frame.add(bottompanel);
 	bottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-	ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer.png");
+	ImageIcon bottomspacer = new ImageIcon(IMAGERESOURCE+"spacer.png");
 	img = new JLabel(bottomspacer);
 	bottompanel.add(img);
 
@@ -102,7 +102,7 @@ public final class JavaGUI {
 	rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
 	rightpanel.setLayout(null);
 
-	ImageIcon rigthinfoheader = new ImageIcon(imageresource+"images.png");
+	ImageIcon rigthinfoheader = new ImageIcon(IMAGERESOURCE+"images.png");
 	JLabel  imgimages = new JLabel(rigthinfoheader);
 	imgimages.setSize(300, 90);
 	imgimages.setLocation(0, 0);
@@ -122,20 +122,20 @@ public final class JavaGUI {
 	* Specbutton
 	* Orderbutton will show the submenu 
 	*/
-	specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
+	specbutton.setIcon(new ImageIcon(IMAGERESOURCE+"spec.png"));
 	specbutton.setMargin(new Insets(0, 0, 0, 0));
 	specbutton.setBorder(null);
 	specbutton.addMouseListener(new MouseAdapter(){
 	    @Override
 	    public void mouseEntered(MouseEvent evt){
-		specbutton.setIcon(new ImageIcon(imageresource+"spec_hover.png"));
+		specbutton.setIcon(new ImageIcon(IMAGERESOURCE+"spec_hover.png"));
 		specbutton.setMargin(new Insets(0, 0, 0, 0));
 		specbutton.setBorder(null);
 	    }
 
 	    @Override
 	    public void mouseExited(MouseEvent evt){
-		specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
+		specbutton.setIcon(new ImageIcon(IMAGERESOURCE+"spec.png"));
 		specbutton.setMargin(new Insets(0, 0, 0, 0));
 		specbutton.setBorder(null);
 	    }
@@ -160,7 +160,7 @@ public final class JavaGUI {
 		    frame.add(subbottompanel);
 		    subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-		    ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer_gray.png");
+		    ImageIcon bottomspacer = new ImageIcon(IMAGERESOURCE+"spacer_gray.png");
 		    img = new JLabel(bottomspacer);
 		    subbottompanel.add(img);
                     
@@ -226,7 +226,7 @@ public final class JavaGUI {
 	bottompanel.add(specbutton);
 
 	//SET SPECBUTTON LOCKED
-	ImageIcon speclocked = new ImageIcon(imageresource+"speclocked.png");
+	ImageIcon speclocked = new ImageIcon(IMAGERESOURCE+"speclocked.png");
 	specbuttonlocked = new JLabel(speclocked);
 	bottompanel.add(specbuttonlocked);
 	specbuttonlocked.setVisible(false);
@@ -235,20 +235,20 @@ public final class JavaGUI {
 	* Savebutton
 	* Savebutton will be created 
 	*/
-	savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
+	savebutton.setIcon(new ImageIcon(IMAGERESOURCE+"save.png"));
 	savebutton.setMargin(new Insets(0, 0, 0, 0));
 	savebutton.setBorder(null);
 	savebutton.addMouseListener(new MouseAdapter(){
 	    @Override
 	    public void mouseEntered(MouseEvent evt){
-		savebutton.setIcon(new ImageIcon(imageresource+"save_hover.png"));
+		savebutton.setIcon(new ImageIcon(IMAGERESOURCE+"save_hover.png"));
 		savebutton.setMargin(new Insets(0, 0, 0, 0));
 		savebutton.setBorder(null);
 	    }
 
 	    @Override
 	    public void mouseExited(MouseEvent evt){
-		savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
+		savebutton.setIcon(new ImageIcon(IMAGERESOURCE+"save.png"));
 		savebutton.setMargin(new Insets(0, 0, 0, 0));
 		savebutton.setBorder(null);
 	    }
@@ -263,7 +263,7 @@ public final class JavaGUI {
 	savebutton.setVisible(false);
 
 	//SET SPECBUTTON LOCKED
-	ImageIcon savelocked = new ImageIcon(imageresource+"savelocked.png");
+	ImageIcon savelocked = new ImageIcon(IMAGERESOURCE+"savelocked.png");
 	savebuttonlocked = new JLabel(savelocked);
 	bottompanel.add(savebuttonlocked);
 	savebuttonlocked.setVisible(false);
@@ -272,20 +272,20 @@ public final class JavaGUI {
 	* Resetbutton
 	* Resetbutton will be created 
 	*/
-	resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
+	resetbutton.setIcon(new ImageIcon(IMAGERESOURCE+"reset.png"));
 	resetbutton.setMargin(new Insets(0, 0, 0, 0));
 	resetbutton.setBorder(null);
 	resetbutton.addMouseListener(new MouseAdapter(){
 	    @Override
 	    public void mouseEntered(MouseEvent evt){
-		resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
+		resetbutton.setIcon(new ImageIcon(IMAGERESOURCE+"reset_hover.png"));
 		resetbutton.setMargin(new Insets(0, 0, 0, 0));
 		resetbutton.setBorder(null);
 	    }
 
 	    @Override
 	    public void mouseExited(MouseEvent evt){
-		resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
+		resetbutton.setIcon(new ImageIcon(IMAGERESOURCE+"reset.png"));
 		resetbutton.setMargin(new Insets(0, 0, 0, 0));
 		resetbutton.setBorder(null);
 	    }
@@ -303,20 +303,20 @@ public final class JavaGUI {
 	* Autobutton
 	* Autobutton will be created creates an automatic layout. 
 	*/
-	autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
+	autobutton.setIcon(new ImageIcon(IMAGERESOURCE+"auto.png"));
 	autobutton.setMargin(new Insets(0, 0, 0, 0));
 	autobutton.setBorder(null);
 	autobutton.addMouseListener(new MouseAdapter(){
 	    @Override
 	    public void mouseEntered(MouseEvent evt){
-		autobutton.setIcon(new ImageIcon(imageresource+"auto_hover.png"));
+		autobutton.setIcon(new ImageIcon(IMAGERESOURCE+"auto_hover.png"));
 		autobutton.setMargin(new Insets(0, 0, 0, 0));
 		autobutton.setBorder(null);
 	    }
 
 	    @Override
 	    public void mouseExited(MouseEvent evt){
-		autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
+		autobutton.setIcon(new ImageIcon(IMAGERESOURCE+"auto.png"));
 		autobutton.setMargin(new Insets(0, 0, 0, 0));
 		autobutton.setBorder(null);
 	    }
@@ -335,7 +335,7 @@ public final class JavaGUI {
 	leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
 	leftpanel.setLayout(null);
 
-	ImageIcon leftinfoheader = new ImageIcon(imageresource+"info.png");
+	ImageIcon leftinfoheader = new ImageIcon(IMAGERESOURCE+"info.png");
 	JLabel  imginfo = new JLabel(leftinfoheader);
 	imginfo.setSize(300, 90);
 	imginfo.setLocation(0, 0);
@@ -439,7 +439,7 @@ public final class JavaGUI {
         subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
         subcenterpanel.setLayout(null);
         centerpanel.add(subcenterpanel);
-        ImageIcon icon1 = new ImageIcon(imageresource+"fuji_bg_scale.png");
+        ImageIcon icon1 = new ImageIcon(IMAGERESOURCE+"fuji_bg_scale.png");
         img = new JLabel(icon1);
         img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
         subcenterpanel.add(img);
@@ -451,14 +451,14 @@ public final class JavaGUI {
         toppanel.setBounds(x, y,screenwidth, navpanel);
         frame.add(toppanel);
         
-        ImageIcon topspacer = new ImageIcon(imageresource+"spacer.png");
+        ImageIcon topspacer = new ImageIcon(IMAGERESOURCE+"spacer.png");
         img = new JLabel(topspacer);
         toppanel.add(img);
         
-        ImageIcon icon2 = new ImageIcon(imageresource+"avans.png");
+        ImageIcon icon2 = new ImageIcon(IMAGERESOURCE+"avans.png");
         img = new JLabel(icon2);
         toppanel.add(img);
-        ImageIcon icon3 = new ImageIcon(imageresource+"stepandrepeat.png");
+        ImageIcon icon3 = new ImageIcon(IMAGERESOURCE+"stepandrepeat.png");
         img = new JLabel(icon3);
         toppanel.add(img);
         toppanel.revalidate();
@@ -474,11 +474,11 @@ public final class JavaGUI {
 	// Fill the combobox dynamicly
 	// Data folder
 	// Read folder structure
-	File file = new File(stepdataresource);
+	File file = new File(STEPDATARESOURCE);
 	String[] specnumber = file.list();
 	DefaultComboBoxModel dm = new DefaultComboBoxModel();
 	for (int i = 1; i < specnumber.length; i++) {
-	    dm.addElement(new ImagesNText(new ImageIcon(stepdataresource+"/"+specnumber[i]+"/xml/"+specnumber[i]+"_preview.png"), specnumber[i]));
+	    dm.addElement(new ImagesNText(new ImageIcon(STEPDATARESOURCE+"/"+specnumber[i]+"/xml/"+specnumber[i]+"_preview.png"), specnumber[i]));
 	}
 	return dm;
     }
