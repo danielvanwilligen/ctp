@@ -27,8 +27,20 @@ public final class JavaGUI {
     * Creates global variables which can be called in all classes 
     */
     SetPath setallpaths = new SetPath();
+    /**
+    * IMAGERESOURCE
+    * Path to GUI resource images 
+    */
     private final String IMAGERESOURCE = setallpaths.getImageresource();
+    /**
+    * STEPDATARESOURCE
+    * Path to order input folder 
+    */
     private final String STEPDATARESOURCE = setallpaths.getStepdataresource();
+    /**
+    * STEPDATAOUTPUT
+    * Path to xml output folder 
+    */
     private final String STEPDATAOUTPUT = setallpaths.getStepdataoutput();
     public static final String ENTER = "\n";
     public static final String TAB = "\t";

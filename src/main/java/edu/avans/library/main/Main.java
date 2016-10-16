@@ -10,6 +10,10 @@ import edu.avans.library.presentation.JavaGUI;
 
 public class Main {
 
+    /**
+    * GUI Start
+    * StartUP the gui
+    */
     private Main() {
     }
     
@@ -19,6 +23,6 @@ public class Main {
      * @param args
     */
     public static void main(String[] args) {
-    new JavaGUI();
+	new JavaGUI();
     }
 }
