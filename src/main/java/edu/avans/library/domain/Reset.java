@@ -51,5 +51,7 @@ public class Reset {
         JavaGUI.subcenterpanel.add(JavaGUI.img);
         JavaGUI.frame.repaint();
 	JavaGUI.imagesequence = "";
+	JavaGUI.frame.repaint();
+	JavaGUI.frame.revalidate();
     }   
 }

@@ -30,29 +30,29 @@ public class WriteXML {
     */
     public void writedata() {
 	try {
-	    JavaGUI.xmloutput = "<JOBS>" + JavaGUI.enter;
+	    JavaGUI.xmloutput = "<JOBS>" + JavaGUI.ENTER;
 	    JavaGUI.imagesequencearray = imagesequence.split("#");
 	    if (savecounter<1){
 		JavaGUI.cleanfirstimage = JavaGUI.imagesequencearray[0].split("null");
 	    }
-	    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + "<JOB>" + JavaGUI.enter;
+	    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + "<JOB>" + JavaGUI.ENTER;
 	    for (int i = 0; i < JavaGUI.totalgridfieldsint; i++) {
 		if (i==0){
 		    if (savecounter<1){
-			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.enter; 
+			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.ENTER; 
 		    } else {
-			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+".pdfsta</FileName>" + JavaGUI.enter; 
+			JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+".pdfsta</FileName>" + JavaGUI.ENTER; 
 		    }
 		} else {
-		    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[i]+".pdfsta</FileName>" + JavaGUI.enter;
+		    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[i]+".pdfsta</FileName>" + JavaGUI.ENTER;
 		}
-		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<Quantity>1</Quantity>" + JavaGUI.enter;
-		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<DieShape>"+JavaGUI.dieshaperes.getText()+"</DieShape>" + JavaGUI.enter;
-		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<Bleed>"+JavaGUI.bleedres.getText()+"</Bleed>" + JavaGUI.enter;
-		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + JavaGUI.tab + "<SingleDie>"+JavaGUI.singleres.getText()+"</SingleDie>" + JavaGUI.enter;
-		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.tab + "</JOB>" + JavaGUI.enter;
+		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<Quantity>1</Quantity>" + JavaGUI.ENTER;
+		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<DieShape>"+JavaGUI.dieshaperes.getText()+"</DieShape>" + JavaGUI.ENTER;
+		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<Bleed>"+JavaGUI.bleedres.getText()+"</Bleed>" + JavaGUI.ENTER;
+		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<SingleDie>"+JavaGUI.singleres.getText()+"</SingleDie>" + JavaGUI.ENTER;
+		JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + "</JOB>" + JavaGUI.ENTER;
 	    }
-	    JavaGUI.xmloutput = JavaGUI.xmloutput + "</JOBS>" + JavaGUI.enter;
+	    JavaGUI.xmloutput = JavaGUI.xmloutput + "</JOBS>" + JavaGUI.ENTER;
         
 	    //SAVE FUNCTION
 	    datestamp = "";
