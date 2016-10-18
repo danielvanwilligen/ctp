@@ -37,11 +37,6 @@ public final class JavaGUI {
     * Path to order input folder 
     */
     private final String stepdataresource = setallpaths.getStepdataresource();
-    /**
-    * STEPDATAOUTPUT
-    * Path to xml output folder 
-    */
-    private final String stepdataoutput = setallpaths.getStepdataoutput();
     public static final String ENTER = "\n";
     public static final String TAB = "\t";
     

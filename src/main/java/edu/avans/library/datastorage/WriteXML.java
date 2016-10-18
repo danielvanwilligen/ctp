@@ -24,15 +24,17 @@ import edu.avans.library.domain.SetPath;
  */
 
 public class WriteXML {
+    SetPath setallpaths = new SetPath();
+    private final String stepdataoutput = setallpaths.getStepdataoutput();
     /**
     * writedata
     * writedata writes xml data to the harddrive
     */
     public static final String TAGNAME ="FileName";
     public static final String EXTENSION =".pdfsta";
-    
+
     public void writedata() {
-    
+
         try {
             JavaGUI.xmloutput = "<JOBS>" + JavaGUI.ENTER;
             JavaGUI.imagesequencearray = imagesequence.split("#");
