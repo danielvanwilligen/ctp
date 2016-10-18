@@ -26,6 +26,9 @@ import javax.swing.TransferHandler;
  */
 
 public class DragMouseAdapter extends MouseAdapter { 
+
+    public static final int NINE = 9;
+    public static final int TEN = 10;
     /**
     * mousePressed drag
     * mousePressed drag selects the image where the mouse is pressed
@@ -36,15 +39,15 @@ public class DragMouseAdapter extends MouseAdapter {
         JComponent c = (JComponent) e.getSource();
 
         draggedimagename = c.getName();
-        String nameshort = draggedimagename.substring(0,9);
+        String nameshort = draggedimagename.substring(0,NINE);
         ImageIcon newdraggedimage = new ImageIcon(SetPath.stepdataresource+nameshort+"/"+draggedimagename);
         Image image = newdraggedimage.getImage();
         
         Component[] totalgridfields = centerpanel.getComponents();
         totalgridfieldsint = totalgridfields.length-1;
         JPanel gridField = (JPanel)totalgridfields[0];
-        newimagewidth = gridField.getWidth()-10;
-        newimageheight = gridField.getHeight()-10;
+        newimagewidth = gridField.getWidth()-TEN;
+        newimageheight = gridField.getHeight()-TEN;
         
         Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
         ImageIcon placeimage = new ImageIcon(newimg);

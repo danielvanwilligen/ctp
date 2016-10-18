@@ -28,6 +28,9 @@ import javax.swing.JPanel;
  */
 
 public class AutoLayout {
+
+    public static final int TEN = 10;
+    public static final int ONETHOUSAND = 1000;
     /**
     * automaticlayout
     * automaticlayout creates an automatic image layout in the centerpanel
@@ -56,7 +59,7 @@ public class AutoLayout {
             // SCALE IMAGE
             for (int j = 0; j < placecount; j++) {
                 if (itemstoplace.length>1){
-                    int imagecounter = 1000 + gridplacecounter;
+                    int imagecounter = ONETHOUSAND + gridplacecounter;
                     pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
                     imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
                 } else {
@@ -65,8 +68,8 @@ public class AutoLayout {
                 }
                 ImageIcon placeimage = new ImageIcon(pathnameimage);
                 Image image = placeimage.getImage();
-                int newimagewidth = totalgridfields[0].getWidth()-10;
-                int newimageheight = totalgridfields[0].getHeight()-10;
+                int newimagewidth = totalgridfields[0].getWidth()-TEN;
+                int newimageheight = totalgridfields[0].getHeight()-TEN;
                 // Check if it's a Jpanel
                 Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
                 placeimage = new ImageIcon(newimg);
@@ -86,7 +89,7 @@ public class AutoLayout {
         gridplacecounter = 1;
         for (int i = 0; i < itemsover; i++) {
             if (itemstoplace.length>1){
-                int imagecounter = 1000 + gridplacecounter;
+                int imagecounter = ONETHOUSAND + gridplacecounter;
                 pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
                 imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
             } else {
@@ -95,8 +98,8 @@ public class AutoLayout {
             }
             ImageIcon placeimage = new ImageIcon(pathnameimage);
             Image image = placeimage.getImage();
-            int newimagewidth = totalgridfields[0].getWidth()-10;
-            int newimageheight = totalgridfields[0].getHeight()-10;
+            int newimagewidth = totalgridfields[0].getWidth()-TEN;
+            int newimageheight = totalgridfields[0].getHeight()-TEN;
             // Check if it's a Jpanel
             Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
             placeimage = new ImageIcon(newimg);

@@ -14,6 +14,9 @@ import javax.swing.ListCellRenderer;
  */
 
 public class ImagesTextRenderer extends JLabel implements ListCellRenderer {
+
+    public static final int SIXTY = 60;
+    public static final int TWOHUNDRED = 200;
     /**
     * getListCellRendererComponent
     * getListCellRendererComponent sets the image icon and the text of the combobox 
@@ -39,7 +42,7 @@ public class ImagesTextRenderer extends JLabel implements ListCellRenderer {
             setForeground(list.getForeground());
         }
         setFont(list.getFont());
-        setPreferredSize(new Dimension(200,60));
+        setPreferredSize(new Dimension(TWOHUNDRED,SIXTY));
         
         
         return this;

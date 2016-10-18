@@ -38,6 +38,13 @@ import javax.swing.TransferHandler;
  */
 
 public class SetLayout {
+
+    public static final int TWO = 2;
+    public static final int FIVE = 5;
+    public static final int TEN = 10;
+    public static final int FIFTEEN = 15;
+    public static final int TWENTY = 20;
+    public static final int TWOHUNDREDTHIRTYSIX = 236;
     
     /**
     * createlayout
@@ -50,9 +57,9 @@ public class SetLayout {
                 subcenterpanel = new JPanel();
     
                 // black 10%
-                int black10r = 236;
-                int black10g = 236;
-                int black10b = 236;
+                int black10r = TWOHUNDREDTHIRTYSIX;
+                int black10g = TWOHUNDREDTHIRTYSIX;
+                int black10b = TWOHUNDREDTHIRTYSIX;
                     
                 subcenterpanel.setBackground(new Color(black10r,black10g,black10b));
                 subcenterpanel.setBounds(setgridx, setgridy,newpanelwidth,newpanelheight);
@@ -71,9 +78,9 @@ public class SetLayout {
                     Image blancoimage = placeblancoimage.getImage();
                     currentblancoimagewidth = placeblancoimage.getIconWidth();
                     currentblancoimageheight = placeblancoimage.getIconHeight();
-                    newblancoimagewidth = gridField.getWidth()-10;
-                    newblancoimageheigth = gridField.getHeight()-10;
-                    Image newblancoimg = blancoimage.getScaledInstance(newblancoimagewidth, newblancoimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+                    newblancoimagewidth = gridField.getWidth()-TEN;
+                    newblancoimageheigth = gridField.getHeight()-TEN;
+                    Image newblancoimg = blancoimage.getScaledInstance(newblancoimagewidth, newblancoimageheigth,  java.awt.Image.SCALE_SMOOTH);
                     placeimage = new ImageIcon(newblancoimg);
                     img = new JLabel(placeimage);
                     img.setTransferHandler(new TransferHandler("icon"));
@@ -84,20 +91,20 @@ public class SetLayout {
                     
                 frame.revalidate();
                 frame.repaint();
-                setgridx = setgridx + newpanelwidth + 5;
+                setgridx = setgridx + newpanelwidth + FIVE;
             }
-            setgridx = 5;
-            setgridy = setgridy + newpanelheight + 5;
+            setgridx = FIVE;
+            setgridy = setgridy + newpanelheight + FIVE;
         }
         // Set subcenter panel        
         subcenterpanel = new JPanel();
-        subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
+        subcenterpanel.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-TWENTY);
         subcenterpanel.setLayout(null);
         centerpanel.add(subcenterpanel);
                 
         ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
         img = new JLabel(icon1);
-        img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
+        img.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-FIFTEEN);
         subcenterpanel.add(img);
         frame.repaint();
     }

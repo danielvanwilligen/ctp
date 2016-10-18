@@ -33,6 +33,9 @@ import javax.swing.TransferHandler;
  */
 
 public class SetImages {
+
+    public static final int FIVE = 5;
+    public static final int TWOHUNDREDNINETY = 290;
     
     /**
     * setimagesrightpanel
@@ -49,7 +52,7 @@ public class SetImages {
                 Image image = placeimage.getImage();
                 currentimagewidth = placeimage.getIconWidth();
                 currentimageheight = placeimage.getIconHeight();
-                newimagewidth = 290;
+                newimagewidth = TWOHUNDREDNINETY;
                 newimageheigth = Math.round((currentimageheight * newimagewidth)/currentimagewidth);
                 Image newimg = image.getScaledInstance(newimagewidth, newimageheigth,  java.awt.Image.SCALE_SMOOTH);
                 placeimage = new ImageIcon(newimg);
@@ -66,10 +69,10 @@ public class SetImages {
                 centerpanelheight = centerpanel.getHeight();
                 itemsxresvalueint = Math.round(Integer.parseInt(itemsxresvalue));
                 itemsyresvalueint = Math.round(Integer.parseInt(itemsyresvalue));
-                setgridx = 5;
-                setgridy = 5;
-                newpanelwidth = (centerpanelwidth-((itemsxresvalueint+1)*5))/itemsxresvalueint;
-                newpanelheight = (centerpanelheight-((itemsyresvalueint+1)*5))/itemsyresvalueint;
+                setgridx = FIVE;
+                setgridy = FIVE;
+                newpanelwidth = (centerpanelwidth-((itemsxresvalueint+1)*FIVE))/itemsxresvalueint;
+                newpanelheight = (centerpanelheight-((itemsyresvalueint+1)*FIVE))/itemsyresvalueint;
                 centerpanel.removeAll();
             }
         }
