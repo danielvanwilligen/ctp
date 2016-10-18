@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import edu.avans.library.domain.SetPath;
+import edu.avans.library.domain.SetVariables;
 
 /**
  * Avans Java Proftaak
@@ -31,20 +32,20 @@ public class WriteXML {
     public void writedata() {
         try {
             JavaGUI.xmloutput = "<JOBS>" + JavaGUI.ENTER;
-            JavaGUI.imagesequencearray = imagesequence.split("#");
+            SetVariables.imagesequencearray = imagesequence.split("#");
             if (savecounter<1){
-                JavaGUI.cleanfirstimage = JavaGUI.imagesequencearray[0].split("null");
+                SetVariables.cleanfirstimage = SetVariables.imagesequencearray[0].split("null");
             }
             JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + "<JOB>" + JavaGUI.ENTER;
             for (int i = 0; i < JavaGUI.totalgridfieldsint; i++) {
                 if (i==0){
                     if (savecounter<1){
-                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.ENTER; 
+                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+SetVariables.cleanfirstimage[1]+".pdfsta</FileName>" + JavaGUI.ENTER; 
                     } else {
-                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+".pdfsta</FileName>" + JavaGUI.ENTER; 
+                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+SetVariables.imagesequencearray[0]+".pdfsta</FileName>" + JavaGUI.ENTER; 
                     }
                 } else {
-                    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[i]+".pdfsta</FileName>" + JavaGUI.ENTER;
+                    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<FileName>"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+SetVariables.imagesequencearray[i]+".pdfsta</FileName>" + JavaGUI.ENTER;
                 }
                 JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<Quantity>1</Quantity>" + JavaGUI.ENTER;
                 JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<DieShape>"+JavaGUI.dieshaperes.getText()+"</DieShape>" + JavaGUI.ENTER;
