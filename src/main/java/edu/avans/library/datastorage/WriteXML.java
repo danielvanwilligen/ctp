@@ -65,7 +65,7 @@ public class WriteXML {
             SetDate calldate = new SetDate("timestamp");
             datestamp = calldate.toString();
 
-            File newXMLFile = new File(SetPath.stepdataoutput+datestamp+"_"+specnrres.getText()+".xml");
+            File newXMLFile = new File(stepdataoutput+datestamp+"_"+specnrres.getText()+".xml");
             try (FileWriter fw = new FileWriter(newXMLFile)) {
                 fw.write(JavaGUI.xmloutput);
                 //ADD COMMENT
@@ -76,7 +76,7 @@ public class WriteXML {
                 JOptionPane.showMessageDialog(null,"Could not save the document."); 
             }
             try {
-                Files.move(new File(SetPath.stepdataresource+JavaGUI.specnrres.getText()).toPath(), new File(SetPath.stepdataoutput+"temp/"+JavaGUI.specnrres.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+                Files.move(new File(SetPath.stepdataresource+JavaGUI.specnrres.getText()).toPath(), new File(stepdataoutput+"temp/"+JavaGUI.specnrres.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException ex) {
         Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null,"Could not move the document."); 
