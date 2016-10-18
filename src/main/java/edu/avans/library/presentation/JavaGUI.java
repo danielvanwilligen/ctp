@@ -90,11 +90,6 @@ public final class JavaGUI {
         int bgcrSideMenu = TWOHUNDREDTEN;
         int bgcgSideMenu = TWOHUNDREDELEVEN;
         int bgcbSideMenu = TWOHUNDREDTWELVE;
-
-        // black 10%
-        int black10r = TWOHUNDREDTHIRTYSIX;
-        int black10g = TWOHUNDREDTHIRTYSIX;
-        int black10b = TWOHUNDREDTHIRTYSIX;
         
         navpanel = NINETY;
         navsidepanel = THREEHUNDRED;
