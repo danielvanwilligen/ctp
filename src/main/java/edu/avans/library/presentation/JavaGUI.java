@@ -31,17 +31,17 @@ public final class JavaGUI {
     * IMAGERESOURCE
     * Path to GUI resource images 
     */
-    private final String IMAGERESOURCE = setallpaths.getImageresource();
+    private final String imageresource = setallpaths.getImageresource();
     /**
     * STEPDATARESOURCE
     * Path to order input folder 
     */
-    private final String STEPDATARESOURCE = setallpaths.getStepdataresource();
+    private final String stepdataresource = setallpaths.getStepdataresource();
     /**
     * STEPDATAOUTPUT
     * Path to xml output folder 
     */
-    private final String STEPDATAOUTPUT = setallpaths.getStepdataoutput();
+    private final String stepdataoutput = setallpaths.getStepdataoutput();
     public static final String ENTER = "\n";
     public static final String TAB = "\t";
     
@@ -123,7 +123,7 @@ public final class JavaGUI {
         frame.add(bottompanel);
         bottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        ImageIcon bottomspacer = new ImageIcon(IMAGERESOURCE+"spacer.png");
+        ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer.png");
         img = new JLabel(bottomspacer);
         bottompanel.add(img);
 
@@ -133,7 +133,7 @@ public final class JavaGUI {
         rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-TWO*navpanel-TWENTY);
         rightpanel.setLayout(null);
 
-        ImageIcon rigthinfoheader = new ImageIcon(IMAGERESOURCE+"images.png");
+        ImageIcon rigthinfoheader = new ImageIcon(imageresource+"images.png");
         JLabel  imgimages = new JLabel(rigthinfoheader);
         imgimages.setSize(THREEHUNDRED, NINETY);
         imgimages.setLocation(0, 0);
@@ -153,20 +153,20 @@ public final class JavaGUI {
         * Specbutton
         * Orderbutton will show the submenu 
         */
-        specbutton.setIcon(new ImageIcon(IMAGERESOURCE+"spec.png"));
+        specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
         specbutton.setMargin(new Insets(0, 0, 0, 0));
         specbutton.setBorder(null);
         specbutton.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseEntered(MouseEvent evt){
-                specbutton.setIcon(new ImageIcon(IMAGERESOURCE+"spec_hover.png"));
+                specbutton.setIcon(new ImageIcon(imageresource+"spec_hover.png"));
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
 
             @Override
             public void mouseExited(MouseEvent evt){
-                specbutton.setIcon(new ImageIcon(IMAGERESOURCE+"spec.png"));
+                specbutton.setIcon(new ImageIcon(imageresource+"spec.png"));
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
@@ -191,7 +191,7 @@ public final class JavaGUI {
                     frame.add(subbottompanel);
                     subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-                    ImageIcon bottomspacer = new ImageIcon(IMAGERESOURCE+"spacer_gray.png");
+                    ImageIcon bottomspacer = new ImageIcon(imageresource+"spacer_gray.png");
                     img = new JLabel(bottomspacer);
                     subbottompanel.add(img);
                     
@@ -257,7 +257,7 @@ public final class JavaGUI {
         bottompanel.add(specbutton);
 
         //SET SPECBUTTON LOCKED
-        ImageIcon speclocked = new ImageIcon(IMAGERESOURCE+"speclocked.png");
+        ImageIcon speclocked = new ImageIcon(imageresource+"speclocked.png");
         specbuttonlocked = new JLabel(speclocked);
         bottompanel.add(specbuttonlocked);
         specbuttonlocked.setVisible(false);
@@ -266,20 +266,20 @@ public final class JavaGUI {
         * Savebutton
         * Savebutton will be created 
         */
-        savebutton.setIcon(new ImageIcon(IMAGERESOURCE+"save.png"));
+        savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
         savebutton.setMargin(new Insets(0, 0, 0, 0));
         savebutton.setBorder(null);
         savebutton.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseEntered(MouseEvent evt){
-                savebutton.setIcon(new ImageIcon(IMAGERESOURCE+"save_hover.png"));
+                savebutton.setIcon(new ImageIcon(imageresource+"save_hover.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
 
             @Override
             public void mouseExited(MouseEvent evt){
-                savebutton.setIcon(new ImageIcon(IMAGERESOURCE+"save.png"));
+                savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
@@ -294,7 +294,7 @@ public final class JavaGUI {
         savebutton.setVisible(false);
 
         //SET SPECBUTTON LOCKED
-        ImageIcon savelocked = new ImageIcon(IMAGERESOURCE+"savelocked.png");
+        ImageIcon savelocked = new ImageIcon(imageresource+"savelocked.png");
         savebuttonlocked = new JLabel(savelocked);
         bottompanel.add(savebuttonlocked);
         savebuttonlocked.setVisible(false);
@@ -303,20 +303,20 @@ public final class JavaGUI {
         * Resetbutton
         * Resetbutton will be created 
         */
-        resetbutton.setIcon(new ImageIcon(IMAGERESOURCE+"reset.png"));
+        resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
         resetbutton.setMargin(new Insets(0, 0, 0, 0));
         resetbutton.setBorder(null);
         resetbutton.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseEntered(MouseEvent evt){
-                resetbutton.setIcon(new ImageIcon(IMAGERESOURCE+"reset_hover.png"));
+                resetbutton.setIcon(new ImageIcon(imageresource+"reset_hover.png"));
                 resetbutton.setMargin(new Insets(0, 0, 0, 0));
                 resetbutton.setBorder(null);
             }
 
             @Override
             public void mouseExited(MouseEvent evt){
-                resetbutton.setIcon(new ImageIcon(IMAGERESOURCE+"reset.png"));
+                resetbutton.setIcon(new ImageIcon(imageresource+"reset.png"));
                 resetbutton.setMargin(new Insets(0, 0, 0, 0));
                 resetbutton.setBorder(null);
             }
@@ -334,20 +334,20 @@ public final class JavaGUI {
         * Autobutton
         * Autobutton will be created creates an automatic layout. 
         */
-        autobutton.setIcon(new ImageIcon(IMAGERESOURCE+"auto.png"));
+        autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
         autobutton.setMargin(new Insets(0, 0, 0, 0));
         autobutton.setBorder(null);
         autobutton.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseEntered(MouseEvent evt){
-                autobutton.setIcon(new ImageIcon(IMAGERESOURCE+"auto_hover.png"));
+                autobutton.setIcon(new ImageIcon(imageresource+"auto_hover.png"));
                 autobutton.setMargin(new Insets(0, 0, 0, 0));
                 autobutton.setBorder(null);
             }
 
             @Override
             public void mouseExited(MouseEvent evt){
-                autobutton.setIcon(new ImageIcon(IMAGERESOURCE+"auto.png"));
+                autobutton.setIcon(new ImageIcon(imageresource+"auto.png"));
                 autobutton.setMargin(new Insets(0, 0, 0, 0));
                 autobutton.setBorder(null);
             }
@@ -366,7 +366,7 @@ public final class JavaGUI {
         leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-TWO*navpanel-TWENTY);
         leftpanel.setLayout(null);
 
-        ImageIcon leftinfoheader = new ImageIcon(IMAGERESOURCE+"info.png");
+        ImageIcon leftinfoheader = new ImageIcon(imageresource+"info.png");
         JLabel  imginfo = new JLabel(leftinfoheader);
         imginfo.setSize(THREEHUNDRED, NINETY);
         imginfo.setLocation(0, 0);
@@ -470,7 +470,7 @@ public final class JavaGUI {
         subcenterpanel.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-TWENTY);
         subcenterpanel.setLayout(null);
         centerpanel.add(subcenterpanel);
-        ImageIcon icon1 = new ImageIcon(IMAGERESOURCE+"fuji_bg_scale.png");
+        ImageIcon icon1 = new ImageIcon(imageresource+"fuji_bg_scale.png");
         img = new JLabel(icon1);
         img.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-FIFTEEN);
         subcenterpanel.add(img);
@@ -482,14 +482,14 @@ public final class JavaGUI {
         toppanel.setBounds(x, y,screenwidth, navpanel);
         frame.add(toppanel);
         
-        ImageIcon topspacer = new ImageIcon(IMAGERESOURCE+"spacer.png");
+        ImageIcon topspacer = new ImageIcon(imageresource+"spacer.png");
         img = new JLabel(topspacer);
         toppanel.add(img);
         
-        ImageIcon icon2 = new ImageIcon(IMAGERESOURCE+"avans.png");
+        ImageIcon icon2 = new ImageIcon(imageresource+"avans.png");
         img = new JLabel(icon2);
         toppanel.add(img);
-        ImageIcon icon3 = new ImageIcon(IMAGERESOURCE+"stepandrepeat.png");
+        ImageIcon icon3 = new ImageIcon(imageresource+"stepandrepeat.png");
         img = new JLabel(icon3);
         toppanel.add(img);
         toppanel.revalidate();
@@ -505,11 +505,11 @@ public final class JavaGUI {
         // Fill the combobox dynamicly
         // Data folder
         // Read folder structure
-        File file = new File(STEPDATARESOURCE);
+        File file = new File(stepdataresource);
         String[] specnumber = file.list();
         DefaultComboBoxModel dm = new DefaultComboBoxModel();
         for (int i = 1; i < specnumber.length; i++) {
-            dm.addElement(new ImagesNText(new ImageIcon(STEPDATARESOURCE+"/"+specnumber[i]+"/xml/"+specnumber[i]+"_preview.png"), specnumber[i]));
+            dm.addElement(new ImagesNText(new ImageIcon(stepdataresource+"/"+specnumber[i]+"/xml/"+specnumber[i]+"_preview.png"), specnumber[i]));
         }
         return dm;
     }
