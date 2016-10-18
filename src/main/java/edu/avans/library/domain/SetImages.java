@@ -39,39 +39,39 @@ public class SetImages {
     * setimagesrightpanel add images to the right panel 
     */
     public void setimagesrightpanel (){
-    File imagelocation = new File(SetPath.stepdataresource+name);
-    String[] filenamelist = imagelocation.list();
-    for (int i = 0; i < filenamelist.length; i++) {
-        if (filenamelist[i].indexOf(".png")>0){
+        File imagelocation = new File(SetPath.stepdataresource+name);
+        String[] filenamelist = imagelocation.list();
+        for (int i = 0; i < filenamelist.length; i++) {
+            if (filenamelist[i].indexOf(".png")>0){
                 
-        // SCALE IMAGE
-        placeimage = new ImageIcon(SetPath.stepdataresource+name+"/"+filenamelist[i]);
-        Image image = placeimage.getImage();
-        currentimagewidth = placeimage.getIconWidth();
-        currentimageheight = placeimage.getIconHeight();
-        newimagewidth = 290;
-        newimageheigth = Math.round((currentimageheight * newimagewidth)/currentimagewidth);
-        Image newimg = image.getScaledInstance(newimagewidth, newimageheigth,  java.awt.Image.SCALE_SMOOTH);
-        placeimage = new ImageIcon(newimg);
-        img = new JLabel(placeimage);
-        img.setName(filenamelist[i]);
-        // SET DRAG AND DROP
-        MouseListener listener = new DragMouseAdapter();
-        img.addMouseListener(listener);
-        img.setTransferHandler(new TransferHandler("icon"));
+                // SCALE IMAGE
+                placeimage = new ImageIcon(SetPath.stepdataresource+name+"/"+filenamelist[i]);
+                Image image = placeimage.getImage();
+                currentimagewidth = placeimage.getIconWidth();
+                currentimageheight = placeimage.getIconHeight();
+                newimagewidth = 290;
+                newimageheigth = Math.round((currentimageheight * newimagewidth)/currentimagewidth);
+                Image newimg = image.getScaledInstance(newimagewidth, newimageheigth,  java.awt.Image.SCALE_SMOOTH);
+                placeimage = new ImageIcon(newimg);
+                img = new JLabel(placeimage);
+                img.setName(filenamelist[i]);
+                // SET DRAG AND DROP
+                MouseListener listener = new DragMouseAdapter();
+                img.addMouseListener(listener);
+                img.setTransferHandler(new TransferHandler("icon"));
                 
-        subrightpanel.add(img);
+                subrightpanel.add(img);
                 
-        centerpanelwidth = centerpanel.getWidth();
-        centerpanelheight = centerpanel.getHeight();
-        itemsxresvalueint = Math.round(Integer.parseInt(itemsxresvalue));
-        itemsyresvalueint = Math.round(Integer.parseInt(itemsyresvalue));
-        setgridx = 5;
-        setgridy = 5;
-        newpanelwidth = (centerpanelwidth-((itemsxresvalueint+1)*5))/itemsxresvalueint;
-        newpanelheight = (centerpanelheight-((itemsyresvalueint+1)*5))/itemsyresvalueint;
-        centerpanel.removeAll();
+                centerpanelwidth = centerpanel.getWidth();
+                centerpanelheight = centerpanel.getHeight();
+                itemsxresvalueint = Math.round(Integer.parseInt(itemsxresvalue));
+                itemsyresvalueint = Math.round(Integer.parseInt(itemsyresvalue));
+                setgridx = 5;
+                setgridy = 5;
+                newpanelwidth = (centerpanelwidth-((itemsxresvalueint+1)*5))/itemsxresvalueint;
+                newpanelheight = (centerpanelheight-((itemsyresvalueint+1)*5))/itemsyresvalueint;
+                centerpanel.removeAll();
+            }
         }
-    }
     }
 }

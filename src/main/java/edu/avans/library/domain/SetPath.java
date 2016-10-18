@@ -19,42 +19,42 @@ public class SetPath {
     /**
     * getImageresource
     * getImageresource sets the path to the GUI images 
-     * @return 
+    * @return 
     */
     public String getImageresource(){
-	imageresource = "/Users/danielvanwilligenmbp/NetBeansProjects/ctp/src/main/resources/images/";
-	return imageresource;
+        imageresource = "/Users/danielvanwilligenmbp/NetBeansProjects/ctp/src/main/resources/images/";
+        return imageresource;
     }
 
     /**
     * getStepdataresource
     * getStepdataresource sets the path to the order images  
-     * @return 
+    * @return 
     */
     public String getStepdataresource(){
-	stepdataresource = "/Users/danielvanwilligenmbp/Documents/stepdata/";
-	return stepdataresource;
+        stepdataresource = "/Users/danielvanwilligenmbp/Documents/stepdata/";
+        return stepdataresource;
     }
 
     /**
     * getStepdataoutput
     * getStepdataoutput sets the output path of the xml  
-     * @return 
+    * @return 
     */
     public String getStepdataoutput(){
-	stepdataoutput = "/Users/danielvanwilligenmbp/Documents/stepdataoutput/";
-	return stepdataoutput;
+        stepdataoutput = "/Users/danielvanwilligenmbp/Documents/stepdataoutput/";
+        return stepdataoutput;
     }
     
     public void setImageresource(String setImageresource) {
-	imageresource = setImageresource;
+        imageresource = setImageresource;
     }
     
     public void setStepdataresource(String setStepdataresource) {
-	stepdataresource = setStepdataresource;
+        stepdataresource = setStepdataresource;
     }
     
     public void setStepdataoutput(String setStepdataoutput) {
-	stepdataoutput = setStepdataoutput;
+        stepdataoutput = setStepdataoutput;
     } 
 }

@@ -44,61 +44,61 @@ public class SetLayout {
     * createlayout creates a grid layout in the centerpanel 
     */
     public void createlayout(){
-    for (int k = 0; k < itemsyresvalueint; k++) {
-        for (int j = 0; j < itemsxresvalueint; j++) {
-        // Set sub center panel
-        subcenterpanel = new JPanel();
-	
-	// black 10%
-	int black10r = 236;
-	int black10g = 236;
-	int black10b = 236;
+        for (int k = 0; k < itemsyresvalueint; k++) {
+            for (int j = 0; j < itemsxresvalueint; j++) {
+                // Set sub center panel
+                subcenterpanel = new JPanel();
+    
+                // black 10%
+                int black10r = 236;
+                int black10g = 236;
+                int black10b = 236;
                     
-        subcenterpanel.setBackground(new Color(black10r,black10g,black10b));
-        subcenterpanel.setBounds(setgridx, setgridy,newpanelwidth,newpanelheight);
-        subcenterpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        centerpanel.add(subcenterpanel);
+                subcenterpanel.setBackground(new Color(black10r,black10g,black10b));
+                subcenterpanel.setBounds(setgridx, setgridy,newpanelwidth,newpanelheight);
+                subcenterpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+                centerpanel.add(subcenterpanel);
                     
-        Component[] totalgridfields = centerpanel.getComponents();
-        totalgridfieldsint = totalgridfields.length-1;
+                Component[] totalgridfields = centerpanel.getComponents();
+                totalgridfieldsint = totalgridfields.length-1;
                     
-        if(totalgridfields[0] instanceof JPanel){
-            JPanel gridField = (JPanel)totalgridfields[0];
-            gridField.getWidth();
-            gridField.getHeight();
+                if(totalgridfields[0] instanceof JPanel){
+                    JPanel gridField = (JPanel)totalgridfields[0];
+                    gridField.getWidth();
+                    gridField.getHeight();
 
-            ImageIcon placeblancoimage = new ImageIcon(SetPath.imageresource+"blanco.png");
-            Image blancoimage = placeblancoimage.getImage();
-            currentblancoimagewidth = placeblancoimage.getIconWidth();
-            currentblancoimageheight = placeblancoimage.getIconHeight();
-            newblancoimagewidth = gridField.getWidth()-10;
-             newblancoimageheigth = gridField.getHeight()-10;
-            Image newblancoimg = blancoimage.getScaledInstance(newblancoimagewidth, newblancoimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-            placeimage = new ImageIcon(newblancoimg);
-            img = new JLabel(placeimage);
-            img.setTransferHandler(new TransferHandler("icon"));
-            img.setName("blanco");
+                    ImageIcon placeblancoimage = new ImageIcon(SetPath.imageresource+"blanco.png");
+                    Image blancoimage = placeblancoimage.getImage();
+                    currentblancoimagewidth = placeblancoimage.getIconWidth();
+                    currentblancoimageheight = placeblancoimage.getIconHeight();
+                    newblancoimagewidth = gridField.getWidth()-10;
+                    newblancoimageheigth = gridField.getHeight()-10;
+                    Image newblancoimg = blancoimage.getScaledInstance(newblancoimagewidth, newblancoimageheigth,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+                    placeimage = new ImageIcon(newblancoimg);
+                    img = new JLabel(placeimage);
+                    img.setTransferHandler(new TransferHandler("icon"));
+                    img.setName("blanco");
             
-            subcenterpanel.add(img);
-        }
+                    subcenterpanel.add(img);
+                }
                     
-        frame.revalidate();
-        frame.repaint();
-        setgridx = setgridx + newpanelwidth + 5;
+                frame.revalidate();
+                frame.repaint();
+                setgridx = setgridx + newpanelwidth + 5;
+            }
+            setgridx = 5;
+            setgridy = setgridy + newpanelheight + 5;
         }
-        setgridx = 5;
-        setgridy = setgridy + newpanelheight + 5;
-    }
-    // Set subcenter panel        
-    subcenterpanel = new JPanel();
-    subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
-    subcenterpanel.setLayout(null);
-    centerpanel.add(subcenterpanel);
+        // Set subcenter panel        
+        subcenterpanel = new JPanel();
+        subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
+        subcenterpanel.setLayout(null);
+        centerpanel.add(subcenterpanel);
                 
-    ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
-    img = new JLabel(icon1);
-    img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
-    subcenterpanel.add(img);
-    frame.repaint();
+        ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
+        img = new JLabel(icon1);
+        img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
+        subcenterpanel.add(img);
+        frame.repaint();
     }
 }

@@ -24,7 +24,7 @@ public class ImagesNText{
     /**
     * getImg
     * getImg gets the image icon
-     * @return 
+    * @return 
     */
     public Icon getImg(){
         return img;
@@ -32,7 +32,7 @@ public class ImagesNText{
     /**
     * setImg
     * setImg sets the image icon 
-     * @param img
+    * @param img
     */
     public void setImg(Icon img){
         this.img=img;
@@ -40,7 +40,7 @@ public class ImagesNText{
     /**
     * getName
     * getName gets name 
-     * @return 
+    * @return 
     */
     public String getName(){
         return name;
@@ -48,7 +48,7 @@ public class ImagesNText{
     /**
     * setName
     * setName sets name 
-     * @param name
+    * @param name
     */
     public void setName(String name){
         this.name = name;

@@ -33,41 +33,41 @@ public class DragMouseAdapter extends MouseAdapter {
     */
     @Override
     public void mousePressed(MouseEvent e) {
-	JComponent c = (JComponent) e.getSource();
+        JComponent c = (JComponent) e.getSource();
 
-	draggedimagename = c.getName();
-	String nameshort = draggedimagename.substring(0,9);
-	ImageIcon newdraggedimage = new ImageIcon(SetPath.stepdataresource+nameshort+"/"+draggedimagename);
-	Image image = newdraggedimage.getImage();
+        draggedimagename = c.getName();
+        String nameshort = draggedimagename.substring(0,9);
+        ImageIcon newdraggedimage = new ImageIcon(SetPath.stepdataresource+nameshort+"/"+draggedimagename);
+        Image image = newdraggedimage.getImage();
         
-	Component[] totalgridfields = centerpanel.getComponents();
-	totalgridfieldsint = totalgridfields.length-1;
-	JPanel gridField = (JPanel)totalgridfields[0];
-	newimagewidth = gridField.getWidth()-10;
-	newimageheight = gridField.getHeight()-10;
+        Component[] totalgridfields = centerpanel.getComponents();
+        totalgridfieldsint = totalgridfields.length-1;
+        JPanel gridField = (JPanel)totalgridfields[0];
+        newimagewidth = gridField.getWidth()-10;
+        newimageheight = gridField.getHeight()-10;
         
-	Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
-	ImageIcon placeimage = new ImageIcon(newimg);
-	JLabel gridFieldv1 = new JLabel(placeimage);
+        Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
+        ImageIcon placeimage = new ImageIcon(newimg);
+        JLabel gridFieldv1 = new JLabel(placeimage);
        
-	TransferHandler handler = c.getTransferHandler();
-	handler.exportAsDrag(c, e, TransferHandler.COPY);
+        TransferHandler handler = c.getTransferHandler();
+        handler.exportAsDrag(c, e, TransferHandler.COPY);
         
-	Component[] newtotalgridfields = centerpanel.getComponents();
-	totalgridfieldsint = newtotalgridfields.length-1;
-	if(newtotalgridfields[0] instanceof JPanel){
-	    JPanel newgridField = (JPanel)newtotalgridfields[0];
-	    Component[] newgridlabel = newgridField.getComponents();
-	    if(newgridlabel[0] instanceof JLabel){
-		JLabel gridFieldv2 = (JLabel)newgridlabel[0];
-	    }   
-	}
+        Component[] newtotalgridfields = centerpanel.getComponents();
+        totalgridfieldsint = newtotalgridfields.length-1;
+        if(newtotalgridfields[0] instanceof JPanel){
+            JPanel newgridField = (JPanel)newtotalgridfields[0];
+            Component[] newgridlabel = newgridField.getComponents();
+            if(newgridlabel[0] instanceof JLabel){
+                JLabel gridFieldv2 = (JLabel)newgridlabel[0];
+            }   
+        }
 
-	// SET COUNTER
-	dragdropplacecounter = dragdropplacecounter+1;
-	if (dragdropplacecounter>=totalgridfieldsint){
-	    savebutton.setVisible(true);
-	    savebuttonlocked.setVisible(false);
-	}
+        // SET COUNTER
+        dragdropplacecounter = dragdropplacecounter+1;
+        if (dragdropplacecounter>=totalgridfieldsint){
+            savebutton.setVisible(true);
+            savebuttonlocked.setVisible(false);
+        }
     }
 }

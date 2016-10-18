@@ -33,7 +33,7 @@ public class AutoLayout {
     * automaticlayout creates an automatic image layout in the centerpanel
     */
     public void automaticlayout() {
-    savebutton.setVisible(true);
+        savebutton.setVisible(true);
         savebuttonlocked.setVisible(false);
                 
         // GET ITEM COUNT
@@ -56,11 +56,11 @@ public class AutoLayout {
             // SCALE IMAGE
             for (int j = 0; j < placecount; j++) {
                 if (itemstoplace.length>1){
-            int imagecounter = 1000 + gridplacecounter;
-            pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
-            imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
+                    int imagecounter = 1000 + gridplacecounter;
+                    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
+                    imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
                 } else {
-            pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+".png";
+                    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+".png";
                     imagesequence = imagesequence +nameofitemtoplace+"#";
                 }
                 ImageIcon placeimage = new ImageIcon(pathnameimage);
