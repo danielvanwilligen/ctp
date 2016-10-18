@@ -59,6 +59,23 @@ public final class JavaGUI {
     public static int gridplacecounter, childcounter, newimagewidth, newimageheight, x, y, navpanel, navsidepanel, screenwidth, screenheight, currentimagewidth, currentimageheight, newimageheigth, centerpanelwidth, centerpanelheight, itemsxresvalueint, itemsyresvalueint, setgridx, setgridy, newpanelwidth, newpanelheight, currentblancoimagewidth, currentblancoimageheight, newblancoimagewidth, newblancoimageheigth, savecounter, dragdropplacecounter;
     public static boolean menustatus;
 
+    public static final int TWO = 2;
+    public static final int ELEVEN = 11;
+    public static final int FIFTEEN = 15;
+    public static final int TWENTY = 20;
+    public static final int THIRTY = 30;
+    public static final int SEVENTY = 70;
+    public static final int NINETY = 90;
+    public static final int ONEHUNDRED = 100;
+    public static final int ONEHUNDREDTEN = 110;
+    public static final int ONEHUNDREDTWENTY = 120;
+    public static final int TWOHUNDRED = 200;
+    public static final int TWOHUNDREDTEN = 210;
+    public static final int TWOHUNDREDELEVEN = 211;
+    public static final int TWOHUNDREDTWELVE = 212;
+    public static final int TWOHUNDREDTHIRTYSIX = 236;
+    public static final int THREEHUNDRED = 300;
+    
     public JavaGUI(){
        gui();
     }
@@ -70,17 +87,17 @@ public final class JavaGUI {
         menustatus = false;
 
         // black 20%
-        int bgcrSideMenu = 210;
-        int bgcgSideMenu = 211;
-        int bgcbSideMenu = 212;
+        int bgcrSideMenu = TWOHUNDREDTEN;
+        int bgcgSideMenu = TWOHUNDREDELEVEN;
+        int bgcbSideMenu = TWOHUNDREDTWELVE;
 
         // black 10%
-        int black10r = 236;
-        int black10g = 236;
-        int black10b = 236;
-
-        navpanel = 90;
-        navsidepanel = 300;
+        int black10r = TWOHUNDREDTHIRTYSIX;
+        int black10g = TWOHUNDREDTHIRTYSIX;
+        int black10b = TWOHUNDREDTHIRTYSIX;
+        
+        navpanel = NINETY;
+        navsidepanel = THREEHUNDRED;
         x = 0;
         y = 0;
         screenwidth = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
@@ -102,7 +119,7 @@ public final class JavaGUI {
         // Set bottom panel
         bottompanel = new JPanel();
         bottompanel.setBackground(Color.WHITE);
-        bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
+        bottompanel.setBounds(x, y+screenheight-navpanel-TWENTY,screenwidth, navpanel);
         frame.add(bottompanel);
         bottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
@@ -113,12 +130,12 @@ public final class JavaGUI {
         // Set right panel
         rightpanel = new JPanel();
         rightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
+        rightpanel.setBounds(x+screenwidth-navsidepanel, y+navpanel,navsidepanel, screenheight-TWO*navpanel-TWENTY);
         rightpanel.setLayout(null);
 
         ImageIcon rigthinfoheader = new ImageIcon(IMAGERESOURCE+"images.png");
         JLabel  imgimages = new JLabel(rigthinfoheader);
-        imgimages.setSize(300, 90);
+        imgimages.setSize(THREEHUNDRED, NINETY);
         imgimages.setLocation(0, 0);
         rightpanel.add(imgimages);
         rightpanel.revalidate();
@@ -128,7 +145,7 @@ public final class JavaGUI {
         // Set sub right panel
         subrightpanel = new JPanel();
         subrightpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        subrightpanel.setBounds(x, y+90,navsidepanel, screenheight-2*navpanel-110);
+        subrightpanel.setBounds(x, y+NINETY,navsidepanel, screenheight-TWO*navpanel-ONEHUNDREDTEN);
         subrightpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         rightpanel.add(subrightpanel);
 
@@ -164,13 +181,13 @@ public final class JavaGUI {
                 specbuttonlocked.setVisible(true);
                 frame.repaint();
                 if (menustatus==false){
-                    bottompanel.setBounds(x, y+screenheight-navpanel-110,screenwidth, navpanel);
+                    bottompanel.setBounds(x, y+screenheight-navpanel-ONEHUNDREDTEN,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
 
                     subbottompanel = new JPanel(null);
                     subbottompanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-                    subbottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
+                    subbottompanel.setBounds(x, y+screenheight-navpanel-TWENTY,screenwidth, navpanel);
                     frame.add(subbottompanel);
                     subbottompanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
@@ -182,8 +199,8 @@ public final class JavaGUI {
 
                     // SIZE HEIGTH DOES NOT WORK
                     Dimension preferredSize = combo.getPreferredSize();
-                    preferredSize.height = 100;
-                    preferredSize.width = 200;
+                    preferredSize.height = ONEHUNDRED;
+                    preferredSize.width = TWOHUNDRED;
                     combo.setPreferredSize(preferredSize);
 
                     combo.setModel(populate());
@@ -191,7 +208,7 @@ public final class JavaGUI {
 
                     //EVENTS
                     combo.addActionListener((ActionEvent arg0) -> {
-                    bottompanel.setBounds(x, y+screenheight-navpanel-20,screenwidth, navpanel);
+                    bottompanel.setBounds(x, y+screenheight-navpanel-TWENTY,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
                     subbottompanel.setVisible(false);
@@ -227,7 +244,7 @@ public final class JavaGUI {
                     frame.repaint();
                     menustatus = true;
                 } else {
-                    bottompanel.setBounds(x, y+screenheight-navpanel+20,screenwidth, navpanel);
+                    bottompanel.setBounds(x, y+screenheight-navpanel+TWENTY,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
                     subbottompanel.setVisible(false);
@@ -346,93 +363,93 @@ public final class JavaGUI {
         // Set left panel
         leftpanel = new JPanel();
         leftpanel.setBackground(new Color(bgcrSideMenu,bgcgSideMenu,bgcbSideMenu));
-        leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-2*navpanel-20);
+        leftpanel.setBounds(x, y+navpanel,navsidepanel, screenheight-TWO*navpanel-TWENTY);
         leftpanel.setLayout(null);
 
         ImageIcon leftinfoheader = new ImageIcon(IMAGERESOURCE+"info.png");
         JLabel  imginfo = new JLabel(leftinfoheader);
-        imginfo.setSize(300, 90);
+        imginfo.setSize(THREEHUNDRED, NINETY);
         imginfo.setLocation(0, 0);
         leftpanel.add(imginfo);
         leftpanel.revalidate();
         leftpanel.repaint();
 
-        int sizex = 100;
-        int sizey = 30;
-        int positionx = 30;
-        int positiony = 120;
+        int sizex = ONEHUNDRED;
+        int sizey = THIRTY;
+        int positionx = THIRTY;
+        int positiony = ONEHUNDREDTWENTY;
         String [] labels = {"SPECNR", "ORDERNR", "CUSTOMER", "WIDTH", "HEIGHT", "ITEMS X", "ITEMS Y", "MFG", "SINGLE", "DIESHAPE", "BLEED"};
     
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < ELEVEN; i++) {
             JLabel leftpanellabel = new JLabel(labels[i], JLabel.LEFT);
             leftpanellabel.setSize(sizex ,sizey);
             leftpanellabel.setLocation(positionx, positiony);
             leftpanel.add(leftpanellabel);
         
             JLabel doubledot = new JLabel(":", JLabel.LEFT);
-            sizex = sizex-70;
-            positionx = positionx+100;
+            sizex = sizex-SEVENTY;
+            positionx = positionx+ONEHUNDRED;
             doubledot.setSize(sizex ,sizey);
             doubledot.setLocation(positionx, positiony);
             leftpanel.add(doubledot);
-            sizex = sizex+70;
-            positionx = positionx-100;
+            sizex = sizex+SEVENTY;
+            positionx = positionx-ONEHUNDRED;
         
-            positiony = positiony +30;
+            positiony = positiony +THIRTY;
         }
     
-        positionx = positionx+110;
-        positiony = 120;
+        positionx = positionx+ONEHUNDREDTEN;
+        positiony = ONEHUNDREDTWENTY;
         specnrres = new JLabel("-", JLabel.LEFT);
         specnrres.setSize(sizex ,sizey); 
         specnrres.setLocation(positionx, positiony);
         leftpanel.add(specnrres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         ordernrres = new JLabel("-", JLabel.LEFT);
         ordernrres.setSize(sizex ,sizey);
         ordernrres.setLocation(positionx, positiony);
         leftpanel.add(ordernrres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         customerres = new JLabel("-", JLabel.LEFT);
         customerres.setSize(sizex ,sizey); 
         customerres.setLocation(positionx, positiony);
         leftpanel.add(customerres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         widthres = new JLabel("-", JLabel.LEFT);
         widthres.setSize(sizex ,sizey);
         widthres.setLocation(positionx, positiony);
         leftpanel.add(widthres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         heightres = new JLabel("-", JLabel.LEFT);
         heightres.setSize(sizex ,sizey);
         heightres.setLocation(positionx, positiony);
         leftpanel.add(heightres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         itemsxres = new JLabel("-", JLabel.LEFT);
         itemsxres.setSize(sizex ,sizey);
         itemsxres.setLocation(positionx, positiony);
         leftpanel.add(itemsxres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         itemsyres = new JLabel("-", JLabel.LEFT);
         itemsyres.setSize(sizex ,sizey);
         itemsyres.setLocation(positionx, positiony);
         leftpanel.add(itemsyres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         mfgres = new JLabel("-", JLabel.LEFT);
         mfgres.setSize(sizex ,sizey); 
         mfgres.setLocation(positionx, positiony);
         leftpanel.add(mfgres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         singleres = new JLabel("-", JLabel.LEFT);
         singleres.setSize(sizex ,sizey);
         singleres.setLocation(positionx, positiony);
         leftpanel.add(singleres);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         dieshaperes = new JLabel("-", JLabel.LEFT);
         dieshaperes.setSize(sizex ,sizey);
         dieshaperes.setLocation(positionx, positiony);
         leftpanel.add(dieshaperes);
-        positiony = positiony +30;
+        positiony = positiony +THIRTY;
         bleedres = new JLabel("-", JLabel.LEFT);
         bleedres.setSize(sizex ,sizey);
         bleedres.setLocation(positionx, positiony);
@@ -444,18 +461,18 @@ public final class JavaGUI {
         // Set center panel
         centerpanel = new JPanel();
         centerpanel.setBackground(Color.GRAY);
-        centerpanel.setBounds(x+navsidepanel, y+navpanel,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
+        centerpanel.setBounds(x+navsidepanel, y+navpanel,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-TWENTY);
         centerpanel.setLayout(null);
         frame.add(centerpanel);
 
         // Set subcenter panel
         subcenterpanel = new JPanel();
-        subcenterpanel.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-20);
+        subcenterpanel.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-TWENTY);
         subcenterpanel.setLayout(null);
         centerpanel.add(subcenterpanel);
         ImageIcon icon1 = new ImageIcon(IMAGERESOURCE+"fuji_bg_scale.png");
         img = new JLabel(icon1);
-        img.setBounds(x, y,screenwidth-2*navsidepanel, screenheight-2*navpanel-15);
+        img.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-FIFTEEN);
         subcenterpanel.add(img);
         frame.repaint();
 
