@@ -51,6 +51,7 @@ public final class JavaGUI {
     public static JButton specbutton, savebutton, resetbutton, autobutton;
     public static ImageIcon placeimage;
     public static Image draggedimage;
+    public static String[] imagesequencearray, cleanfirstimage;
     public static String itemsxresvalue, itemsyresvalue, pathnameimage, xmloutput, imagesequence, draggedimagename, name, datestamp;
     //public static String[] imagesequencearray, cleanfirstimage;
 
