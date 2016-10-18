@@ -9,6 +9,7 @@ import edu.avans.library.domain.ImagesNText;
 import edu.avans.library.domain.ImagesTextRenderer;
 import edu.avans.library.domain.SetImages;
 import edu.avans.library.businesslogic.ProgramMgr;
+import edu.avans.library.domain.Preset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
@@ -197,37 +198,25 @@ public final class JavaGUI {
 
                     //EVENTS
                     combo.addActionListener((ActionEvent arg0) -> {
-                    bottompanel.setBounds(x, y+screenheight-navpanel-TWENTY,screenwidth, navpanel);
-                    bottompanel.revalidate();
-                    bottompanel.repaint();
-                    subbottompanel.setVisible(false);
-                    savebutton.setVisible(false);
-                    savebuttonlocked.setVisible(true);
-                    resetbutton.setVisible(true);
-                    autobutton.setVisible(true);
-                    menustatus = false;
-                    name=((ImagesNText)combo.getSelectedItem()).getName();
-                    subrightpanel.removeAll();
-                    centerpanel.removeAll();
-                    frame.repaint();
-            
-                    ProgramMgr getdata = new ProgramMgr();
-                    try {
-                        getdata.mgrreaddata();
-                    } catch (ParserConfigurationException ex) {
-                        Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (SAXException ex) {
-                        Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (IOException ex) {
-                        Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+			Preset presetlayout = new Preset();
+                        presetlayout.preset();
+                        name=((ImagesNText)combo.getSelectedItem()).getName();
+                        ProgramMgr getdata = new ProgramMgr();
+                        try {
+                            getdata.mgrreaddata();
+                        } catch (ParserConfigurationException ex) {
+                            Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (SAXException ex) {
+                            Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (IOException ex) {
+                            Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
+                        }
 
-                    SetImages setimagespanel = new SetImages();
-                    setimagespanel.setimagesrightpanel();
+                        SetImages setimagespanel = new SetImages();
+                        setimagespanel.setimagesrightpanel();
 
                         ProgramMgr mgrcenterlayout = new ProgramMgr();
                         mgrcenterlayout.mgrsetlayout();
-
                     });
                     subbottompanel.add(combo);
                     frame.repaint();
@@ -265,14 +254,12 @@ public final class JavaGUI {
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
-
             @Override
             public void mouseExited(MouseEvent evt){
                 savebutton.setIcon(new ImageIcon(imageresource+"save.png"));
                 savebutton.setMargin(new Insets(0, 0, 0, 0));
                 savebutton.setBorder(null);
             }
-
             @Override
             public void mouseReleased(MouseEvent evt){
                 ProgramMgr mgrsavexml = new ProgramMgr();
@@ -311,7 +298,6 @@ public final class JavaGUI {
             }
             @Override
             public void mouseReleased(MouseEvent evt){
-                // RESET THE INTERFACE
                 ProgramMgr mgrresetGuiInterface = new ProgramMgr();
                 mgrresetGuiInterface.mgrreset();
             }
