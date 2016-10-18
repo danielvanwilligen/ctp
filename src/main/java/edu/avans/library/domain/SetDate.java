@@ -183,7 +183,7 @@ public class SetDate {
             month = "10";
         } else if (month.contains("Nov")) {
             month = "11";
-        } else if (month.contains("Dec")) {
+        } else {
             month = "12";
         }
         // BUILD TIME STAMP
