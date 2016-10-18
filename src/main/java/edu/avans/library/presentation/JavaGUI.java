@@ -211,10 +211,8 @@ public final class JavaGUI {
                         } catch (IOException ex) {
                             Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
                         }
-
                         SetImages setimagespanel = new SetImages();
                         setimagespanel.setimagesrightpanel();
-
                         ProgramMgr mgrcenterlayout = new ProgramMgr();
                         mgrcenterlayout.mgrsetlayout();
                     });
