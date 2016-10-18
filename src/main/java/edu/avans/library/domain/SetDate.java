@@ -19,6 +19,10 @@ public class SetDate {
     private String minutes;
     private String seconds;
     
+    public static final int TWO = 2;
+    public static final int THREE = 3;
+    public static final int FIVE = 5;
+    
     /**
     * SetDate
     * SetDate creates datestamp 
@@ -38,7 +42,7 @@ public class SetDate {
         Date currentDate = new Date();
         date = currentDate.toString();
         String [] splitdate = date.split(" ");
-        year = splitdate[5];
+        year = splitdate[FIVE];
         return year;
     }
     
@@ -64,7 +68,7 @@ public class SetDate {
         Date currentDate = new Date();
         date = currentDate.toString();
         String [] splitdate = date.split(" ");
-        day = splitdate[2];
+        day = splitdate[TWO];
         return day;
     }
 
@@ -77,7 +81,7 @@ public class SetDate {
         Date currentDate = new Date();
         date = currentDate.toString();
         String [] splitdate = date.split(" ");
-        time = splitdate[3];
+        time = splitdate[THREE];
         String [] splittime = time.split(":");
         hour = splittime[0];
         return hour;
@@ -92,7 +96,7 @@ public class SetDate {
         Date currentDate = new Date();
         date = currentDate.toString();
         String [] splitdate = date.split(" ");
-        time = splitdate[3];
+        time = splitdate[THREE];
         String [] splittime = time.split(":");
         minutes = splittime[0];
         return minutes;
@@ -107,7 +111,7 @@ public class SetDate {
         Date currentDate = new Date();
         date = currentDate.toString();
         String [] splitdate = date.split(" ");
-        time = splitdate[3];
+        time = splitdate[THREE];
         String [] splittime = time.split(":");
         seconds = splittime[0];
         return seconds;
@@ -148,14 +152,14 @@ public class SetDate {
     
         date = currentDate.toString();
         String [] splitdate = date.split(" ");
-        year = splitdate[5];
-        day = splitdate[2];
+        year = splitdate[FIVE];
+        day = splitdate[TWO];
         month = splitdate[1];
-        time = splitdate[3];
+        time = splitdate[THREE];
         String [] splittime = time.split(":");
         hour = splittime[0];
         minutes = splittime[1];
-        seconds = splittime[2];
+        seconds = splittime[TWO];
     
         if (month.contains("Jan")) {
             month = "01";
