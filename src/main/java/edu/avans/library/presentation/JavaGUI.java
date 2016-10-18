@@ -53,7 +53,6 @@ public final class JavaGUI {
     public static Image draggedimage;
     public static String[] imagesequencearray, cleanfirstimage;
     public static String itemsxresvalue, itemsyresvalue, pathnameimage, xmloutput, imagesequence, draggedimagename, name, datestamp;
-    //public static String[] imagesequencearray, cleanfirstimage;
 
     public static double itemsover, totalgridfieldsint, itemstoplaceint;
     public static int gridplacecounter, childcounter, newimagewidth, newimageheight, x, y, navpanel, navsidepanel, screenwidth, screenheight, currentimagewidth, currentimageheight, newimageheigth, centerpanelwidth, centerpanelheight, itemsxresvalueint, itemsyresvalueint, setgridx, setgridy, newpanelwidth, newpanelheight, currentblancoimagewidth, currentblancoimageheight, newblancoimagewidth, newblancoimageheigth, savecounter, dragdropplacecounter;

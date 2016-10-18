@@ -76,6 +76,7 @@ public class WriteXML {
             try {
                 Files.move(new File(SetPath.stepdataresource+JavaGUI.specnrres.getText()).toPath(), new File(SetPath.stepdataoutput+"temp/"+JavaGUI.specnrres.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException ex) {
+		Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null,"Could not move the document."); 
             }
                 
