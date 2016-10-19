@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import edu.avans.library.domain.SetPath;
+import javax.swing.ImageIcon;
 
 /**
  * Avans Java Proftaak
@@ -67,7 +68,8 @@ public class WriteXML {
             try (FileWriter fw = new FileWriter(newXMLFile)) {
                 fw.write(JavaGUI.xmloutput);
                 //ADD COMMENT
-                JOptionPane.showMessageDialog(null,"Saved succesfully"); 
+                ImageIcon icon = new ImageIcon(SetPath.STEPDATARESOURCE+JavaGUI.specnrres.getText()+"/xml/"+JavaGUI.imagesequencearray[1]+"_ipreview.png");
+                JOptionPane.showMessageDialog(null,"Saved succesfully","Save", JOptionPane.INFORMATION_MESSAGE,icon);
             } catch (IOException ex) {
                 Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 //ADD COMMENT
