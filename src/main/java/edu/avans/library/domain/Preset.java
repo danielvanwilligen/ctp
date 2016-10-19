@@ -37,7 +37,7 @@ public class Preset {
         savebuttonlocked.setVisible(true);
         resetbutton.setVisible(true);
         autobutton.setVisible(true);
-        menustatus = false;
+        menustatus = "false";
         subrightpanel.removeAll();
         centerpanel.removeAll();
         frame.repaint();

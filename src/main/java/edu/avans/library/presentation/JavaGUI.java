@@ -48,11 +48,10 @@ public final class JavaGUI {
     public static ImageIcon placeimage;
     public static Image draggedimage;
     public static String[] imagesequencearray, cleanfirstimage;
-    public static String itemsxresvalue, itemsyresvalue, pathnameimage, xmloutput, imagesequence, draggedimagename, name, datestamp;
+    public static String itemsxresvalue, itemsyresvalue, pathnameimage, xmloutput, imagesequence, draggedimagename, name, datestamp, menustatus;
 
     public static double itemsover, totalgridfieldsint, itemstoplaceint;
     public static int gridplacecounter, childcounter, newimagewidth, newimageheight, x, y, navpanel, navsidepanel, screenwidth, screenheight, currentimagewidth, currentimageheight, newimageheigth, centerpanelwidth, centerpanelheight, itemsxresvalueint, itemsyresvalueint, setgridx, setgridy, newpanelwidth, newpanelheight, currentblancoimagewidth, currentblancoimageheight, newblancoimagewidth, newblancoimageheigth, savecounter, dragdropplacecounter;
-    public static boolean menustatus;
 
     public static final int TWO = 2;
     public static final int ELEVEN = 11;
@@ -79,7 +78,7 @@ public final class JavaGUI {
     * Build gui
     */
     public void gui(){
-        menustatus = false;
+        menustatus = "false";
 
         // black 20%
         int bgcrSideMenu = TWOHUNDREDTEN;
@@ -170,7 +169,7 @@ public final class JavaGUI {
                 specbutton.setVisible(false);
                 specbuttonlocked.setVisible(true);
                 frame.repaint();
-                if (menustatus==false){
+                if (menustatus=="false"){
                     bottompanel.setBounds(x, y+screenheight-navpanel-ONEHUNDREDTEN,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
@@ -218,14 +217,14 @@ public final class JavaGUI {
                     });
                     subbottompanel.add(combo);
                     frame.repaint();
-                    menustatus = true;
+                    menustatus = "true";
                 } else {
                     bottompanel.setBounds(x, y+screenheight-navpanel+TWENTY,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
                     subbottompanel.setVisible(false);
                     frame.repaint();
-                    menustatus = false;
+                    menustatus = "false";
                 }
         
             }
