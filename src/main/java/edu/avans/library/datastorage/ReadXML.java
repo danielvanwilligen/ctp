@@ -43,7 +43,7 @@ public class ReadXML {
         // read xml
         try {
             File fXmlFile = new File(SetPath.STEPDATARESOURCE+name+"/xml/"+name+".xml");
-	    
+        
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
