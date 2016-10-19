@@ -29,6 +29,8 @@ public class DragMouseAdapter extends MouseAdapter {
 
     public static final int NINE = 9;
     public static final int TEN = 10;
+    static JLabel gridFieldv1;
+    static JLabel gridFieldv2;
     /**
     * mousePressed drag
     * mousePressed drag selects the image where the mouse is pressed
@@ -51,7 +53,7 @@ public class DragMouseAdapter extends MouseAdapter {
         
         Image newimg = image.getScaledInstance(newimagewidth, newimageheight,  java.awt.Image.SCALE_SMOOTH); 
         ImageIcon placeimage = new ImageIcon(newimg);
-        JLabel gridFieldv1 = new JLabel(placeimage);
+        gridFieldv1 = new JLabel(placeimage);
        
         TransferHandler handler = c.getTransferHandler();
         handler.exportAsDrag(c, e, TransferHandler.COPY);
@@ -62,7 +64,7 @@ public class DragMouseAdapter extends MouseAdapter {
             JPanel newgridField = (JPanel)newtotalgridfields[0];
             Component[] newgridlabel = newgridField.getComponents();
             if(newgridlabel[0] instanceof JLabel){
-                JLabel gridFieldv2 = (JLabel)newgridlabel[0];
+                gridFieldv2 = (JLabel)newgridlabel[0];
             }   
         }
 
