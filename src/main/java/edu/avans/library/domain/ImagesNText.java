@@ -9,8 +9,8 @@ import javax.swing.Icon;
  */
 
 public class ImagesNText{
-    public Icon img;
-    public String name;
+    protected Icon img;
+    protected String name;
     /**
     * ImagesNText
     * ImagesNText sets the image icon and the text of the combobox 
