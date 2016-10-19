@@ -69,12 +69,12 @@ public class ReadXML {
                     itemsyresvalue = eElement.getElementsByTagName("items_on_cylinder_y").item(0).getTextContent();
                 }
             }
-        } catch (ParserConfigurationException pce) {
-            System.out.println(pce);
-        } catch (SAXException sae) {
-            System.out.println(sae);
-        } catch (IOException ioe) {
-            System.out.println(ioe);
+        } catch (ParserConfigurationException e) {
+            throw e;
+        } catch (SAXException e) {
+            throw e;
+        } catch (IOException e) {
+            throw e;
         }
     }
 }
