@@ -34,8 +34,6 @@ public class WriteXML {
     public static final String EXTENSION =".pdfsta";
 
     public void writedata() {
-
-        //try {
             JavaGUI.xmloutput = "<JOBS>" + JavaGUI.ENTER;
             JavaGUI.imagesequencearray = imagesequence.split("#");
             if (savecounter<1){
@@ -85,9 +83,6 @@ public class WriteXML {
             // RESET THE INTERFACE
             ProgramMgr mgrresetGuiInterface = new ProgramMgr();
             mgrresetGuiInterface.mgrreset();
-        //} catch (Exception e) {
-            //throw new RuntimeException(e);
-        //}
         savecounter = savecounter+1;
     }   
 }
