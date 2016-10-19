@@ -1,7 +1,5 @@
 package edu.avans.library.domain;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -25,6 +23,7 @@ public class SetDate {
     public static final int TWO = 2;
     public static final int THREE = 3;
     public static final int FIVE = 5;
+    public static final int TEN = 10;
     
     /**
     * SetDate
@@ -166,7 +165,7 @@ public class SetDate {
         cal.setTime(currentDate);
         int setmonth = cal.get(Calendar.MONTH);
         setmonth = setmonth +1;
-        if (setmonth<10) {
+        if (setmonth<TEN) {
             month = "0"+setmonth;
         } else {
             month = ""+setmonth;
