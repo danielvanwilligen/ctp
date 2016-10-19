@@ -78,7 +78,8 @@ public final class JavaGUI {
     * Build gui
     */
     public void gui(){
-        menustatus = "false";
+        String state = "false";
+        menustatus = state;
 
         // black 20%
         int bgcrSideMenu = TWOHUNDREDTEN;
@@ -169,7 +170,7 @@ public final class JavaGUI {
                 specbutton.setVisible(false);
                 specbuttonlocked.setVisible(true);
                 frame.repaint();
-                if (menustatus=="false"){
+                if (menustatus.equals(state)){
                     bottompanel.setBounds(x, y+screenheight-navpanel-ONEHUNDREDTEN,screenwidth, navpanel);
                     bottompanel.revalidate();
                     bottompanel.repaint();
@@ -224,7 +225,7 @@ public final class JavaGUI {
                     bottompanel.repaint();
                     subbottompanel.setVisible(false);
                     frame.repaint();
-                    menustatus = "false";
+                    menustatus = state;
                 }
         
             }
