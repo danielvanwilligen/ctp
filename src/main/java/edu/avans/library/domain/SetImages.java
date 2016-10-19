@@ -42,13 +42,13 @@ public class SetImages {
     * setimagesrightpanel add images to the right panel 
     */
     public void setimagesrightpanel (){
-        File imagelocation = new File(SetPath.stepdataresource+name);
+        File imagelocation = new File(SetPath.STEPDATARESOURCE+name);
         String[] filenamelist = imagelocation.list();
         for (int i = 0; i < filenamelist.length; i++) {
             if (filenamelist[i].indexOf(".png")>0){
                 
                 // SCALE IMAGE
-                placeimage = new ImageIcon(SetPath.stepdataresource+name+"/"+filenamelist[i]);
+                placeimage = new ImageIcon(SetPath.STEPDATARESOURCE+name+"/"+filenamelist[i]);
                 Image image = placeimage.getImage();
                 currentimagewidth = placeimage.getIconWidth();
                 currentimageheight = placeimage.getIconHeight();

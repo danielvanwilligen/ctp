@@ -42,7 +42,7 @@ public class DragMouseAdapter extends MouseAdapter {
 
         draggedimagename = c.getName();
         String nameshort = draggedimagename.substring(0,NINE);
-        ImageIcon newdraggedimage = new ImageIcon(SetPath.stepdataresource+nameshort+"/"+draggedimagename);
+        ImageIcon newdraggedimage = new ImageIcon(SetPath.STEPDATARESOURCE+nameshort+"/"+draggedimagename);
         Image image = newdraggedimage.getImage();
         
         Component[] totalgridfields = centerpanel.getComponents();

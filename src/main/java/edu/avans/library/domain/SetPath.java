@@ -8,9 +8,9 @@ package edu.avans.library.domain;
 
 public class SetPath {
     
-    public static String imageresource;
-    public static String stepdataresource;
-    public static String stepdataoutput;
+    public static final String IMAGERESOURCE = "/Users/danielvanwilligenmbp/NetBeansProjects/ctp/src/main/resources/images/";
+    public static final String STEPDATARESOURCE = "/Users/danielvanwilligenmbp/Documents/stepdata/";
+    public static final String STEPDATAOUTPUT = "/Users/danielvanwilligenmbp/Documents/stepdataoutput/";
     
     public SetPath(){
     
@@ -22,8 +22,7 @@ public class SetPath {
     * @return 
     */
     public String getImageresource(){
-        imageresource = "/Users/danielvanwilligenmbp/NetBeansProjects/ctp/src/main/resources/images/";
-        return imageresource;
+        return IMAGERESOURCE;
     }
 
     /**
@@ -32,8 +31,7 @@ public class SetPath {
     * @return 
     */
     public String getStepdataresource(){
-        stepdataresource = "/Users/danielvanwilligenmbp/Documents/stepdata/";
-        return stepdataresource;
+        return STEPDATARESOURCE;
     }
 
     /**
@@ -42,19 +40,6 @@ public class SetPath {
     * @return 
     */
     public String getStepdataoutput(){
-        stepdataoutput = "/Users/danielvanwilligenmbp/Documents/stepdataoutput/";
-        return stepdataoutput;
+        return STEPDATAOUTPUT;
     }
-    
-    public void setImageresource(String setImageresource) {
-        imageresource = setImageresource;
-    }
-    
-    public void setStepdataresource(String setStepdataresource) {
-        stepdataresource = setStepdataresource;
-    }
-    
-    public void setStepdataoutput(String setStepdataoutput) {
-        stepdataoutput = setStepdataoutput;
-    } 
 }

@@ -60,10 +60,10 @@ public class AutoLayout {
             for (int j = 0; j < placecount; j++) {
                 if (itemstoplace.length>1){
                     int imagecounter = ONETHOUSAND + gridplacecounter;
-                    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
+                    pathnameimage = SetPath.STEPDATARESOURCE+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
                     imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
                 } else {
-                    pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+".png";
+                    pathnameimage = SetPath.STEPDATARESOURCE+nameofitemtoplace+"/"+nameofitemtoplace+".png";
                     imagesequence = imagesequence +nameofitemtoplace+"#";
                 }
                 ImageIcon placeimage = new ImageIcon(pathnameimage);
@@ -90,10 +90,10 @@ public class AutoLayout {
         for (int i = 0; i < itemsover; i++) {
             if (itemstoplace.length>1){
                 int imagecounter = ONETHOUSAND + gridplacecounter;
-                pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
+                pathnameimage = SetPath.STEPDATARESOURCE+nameofitemtoplace+"/"+nameofitemtoplace+"_"+imagecounter+".png";
                 imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
             } else {
-                pathnameimage = SetPath.stepdataresource+nameofitemtoplace+"/"+nameofitemtoplace+".png";
+                pathnameimage = SetPath.STEPDATARESOURCE+nameofitemtoplace+"/"+nameofitemtoplace+".png";
                 imagesequence = imagesequence +nameofitemtoplace+"#";
             }
             ImageIcon placeimage = new ImageIcon(pathnameimage);

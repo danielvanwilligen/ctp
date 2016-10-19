@@ -42,7 +42,8 @@ public class ReadXML {
     public void getXMLData() throws ParserConfigurationException, SAXException, IOException {
         // read xml
         try {
-            File fXmlFile = new File(SetPath.stepdataresource+name+"/xml/"+name+".xml");
+            File fXmlFile = new File(SetPath.STEPDATARESOURCE+name+"/xml/"+name+".xml");
+	    
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);

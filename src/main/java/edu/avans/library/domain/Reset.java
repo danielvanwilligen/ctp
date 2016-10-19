@@ -48,7 +48,7 @@ public class Reset {
         JavaGUI.subcenterpanel.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(TWO*JavaGUI.navsidepanel), JavaGUI.screenheight-(TWO*JavaGUI.navpanel)-TWENTY);
         JavaGUI.subcenterpanel.setLayout(null);
         JavaGUI.centerpanel.add(JavaGUI.subcenterpanel);
-        ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
+        ImageIcon icon1 = new ImageIcon(SetPath.IMAGERESOURCE+"fuji_bg_scale.png");
         JavaGUI.img = new JLabel(icon1);
         JavaGUI.img.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(TWO*JavaGUI.navsidepanel), JavaGUI.screenheight-(TWO*JavaGUI.navpanel)-FIFTEEN);
         JavaGUI.subcenterpanel.add(JavaGUI.img);

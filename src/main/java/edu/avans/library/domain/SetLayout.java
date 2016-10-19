@@ -74,7 +74,7 @@ public class SetLayout {
                     gridField.getWidth();
                     gridField.getHeight();
 
-                    ImageIcon placeblancoimage = new ImageIcon(SetPath.imageresource+"blanco.png");
+                    ImageIcon placeblancoimage = new ImageIcon(SetPath.IMAGERESOURCE+"blanco.png");
                     Image blancoimage = placeblancoimage.getImage();
                     currentblancoimagewidth = placeblancoimage.getIconWidth();
                     currentblancoimageheight = placeblancoimage.getIconHeight();
@@ -102,7 +102,7 @@ public class SetLayout {
         subcenterpanel.setLayout(null);
         centerpanel.add(subcenterpanel);
                 
-        ImageIcon icon1 = new ImageIcon(SetPath.imageresource+"fuji_bg_scale.png");
+        ImageIcon icon1 = new ImageIcon(SetPath.IMAGERESOURCE+"fuji_bg_scale.png");
         img = new JLabel(icon1);
         img.setBounds(x, y,screenwidth-TWO*navsidepanel, screenheight-TWO*navpanel-FIFTEEN);
         subcenterpanel.add(img);

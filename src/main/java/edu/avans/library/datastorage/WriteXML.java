@@ -43,12 +43,12 @@ public class WriteXML {
             for (int i = 0; i < JavaGUI.totalgridfieldsint; i++) {
                 if (i==0){
                     if (savecounter<1){
-                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<"+TAGNAME+">"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+EXTENSION+"</"+TAGNAME+">" + JavaGUI.ENTER; 
+                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<"+TAGNAME+">"+SetPath.STEPDATARESOURCE+JavaGUI.specnrres.getText()+"/"+JavaGUI.cleanfirstimage[1]+EXTENSION+"</"+TAGNAME+">" + JavaGUI.ENTER; 
                     } else {
-                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<"+TAGNAME+">"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+EXTENSION+"</"+TAGNAME+">" + JavaGUI.ENTER; 
+                        JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<"+TAGNAME+">"+SetPath.STEPDATARESOURCE+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[0]+EXTENSION+"</"+TAGNAME+">" + JavaGUI.ENTER; 
                     }
                 } else {
-                    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<"+TAGNAME+">"+SetPath.stepdataresource+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[i]+EXTENSION+"</"+TAGNAME+">" + JavaGUI.ENTER;
+                    JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<"+TAGNAME+">"+SetPath.STEPDATARESOURCE+JavaGUI.specnrres.getText()+"/"+JavaGUI.imagesequencearray[i]+EXTENSION+"</"+TAGNAME+">" + JavaGUI.ENTER;
                 }
                 JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<Quantity>1</Quantity>" + JavaGUI.ENTER;
                 JavaGUI.xmloutput = JavaGUI.xmloutput + JavaGUI.TAB + JavaGUI.TAB + "<DieShape>"+JavaGUI.dieshaperes.getText()+"</DieShape>" + JavaGUI.ENTER;
@@ -74,7 +74,7 @@ public class WriteXML {
                 JOptionPane.showMessageDialog(null,"Could not save the document."); 
             }
             try {
-                Files.move(new File(SetPath.stepdataresource+JavaGUI.specnrres.getText()).toPath(), new File(stepdataoutput+"temp/"+JavaGUI.specnrres.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+                Files.move(new File(SetPath.STEPDATARESOURCE+JavaGUI.specnrres.getText()).toPath(), new File(stepdataoutput+"temp/"+JavaGUI.specnrres.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException ex) {
         Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null,"Could not move the document."); 
