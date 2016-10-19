@@ -1,5 +1,8 @@
 package edu.avans.library.domain;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -154,37 +157,19 @@ public class SetDate {
         String [] splitdate = date.split(" ");
         year = splitdate[FIVE];
         day = splitdate[TWO];
-        month = splitdate[1];
         time = splitdate[THREE];
         String [] splittime = time.split(":");
         hour = splittime[0];
         minutes = splittime[1];
         seconds = splittime[TWO];
-    
-        if (month.contains("Jan")) {
-            month = "01";
-        } else if (month.contains("Feb")) {
-            month = "02";
-        } else if (month.contains("Mrt")) {
-            month = "03";
-        } else if (month.contains("Apr")) {
-            month = "04";
-        } else if (month.contains("May")) {
-            month = "05";
-        } else if (month.contains("Jun")) {
-            month = "06";
-        } else if (month.contains("Jul")) {
-            month = "07";
-        } else if (month.contains("Aug")) {
-            month = "08";
-        } else if (month.contains("Sep")) {
-            month = "09";
-        } else if (month.contains("Oct")) {
-            month = "10";
-        } else if (month.contains("Nov")) {
-            month = "11";
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(currentDate);
+        int setmonth = cal.get(Calendar.MONTH);
+        setmonth = setmonth +1;
+        if (setmonth<10) {
+            month = "0"+setmonth;
         } else {
-            month = "12";
+            month = ""+setmonth;
         }
         // BUILD TIME STAMP
         timestamp = year+month+day+"_"+hour+minutes+seconds;
