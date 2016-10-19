@@ -46,7 +46,7 @@ public final class JavaGUI {
     public static JLabel img, specnrres, ordernrres, customerres, widthres, heightres, itemsxres, itemsyres, mfgres, singleres, dieshaperes, bleedres, specbuttonlocked, savebuttonlocked;
     public static JButton specbutton, savebutton, resetbutton, autobutton;
     public static ImageIcon placeimage;
-    public static Image draggedimage;
+    protected static Image draggedimage;
     public static String[] imagesequencearray, cleanfirstimage;
     public static String itemsxresvalue, itemsyresvalue, pathnameimage, xmloutput, imagesequence, draggedimagename, name, datestamp, menustatus;
 
