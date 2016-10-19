@@ -70,7 +70,7 @@ public final class JavaGUI {
     public static final int TWOHUNDREDTWELVE = 212;
     public static final int TWOHUNDREDTHIRTYSIX = 236;
     public static final int THREEHUNDRED = 300;
-    
+
     public JavaGUI(){
        gui();
     }
@@ -198,7 +198,7 @@ public final class JavaGUI {
 
                     //EVENTS
                     combo.addActionListener((ActionEvent arg0) -> {
-			Preset presetlayout = new Preset();
+                        Preset presetlayout = new Preset();
                         presetlayout.preset();
                         name=((ImagesNText)combo.getSelectedItem()).getName();
                         ProgramMgr getdata = new ProgramMgr();
