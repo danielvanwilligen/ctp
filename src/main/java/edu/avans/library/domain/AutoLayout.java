@@ -37,7 +37,6 @@ public class AutoLayout {
     * automaticlayout creates an automatic image layout in the centerpanel
     */
     public void automaticlayout() {
-	//JOptionPane.showMessageDialog(null,"hallo");
         savebutton.setVisible(true);
         savebuttonlocked.setVisible(false);
         // GET ITEM COUNT
@@ -55,39 +54,39 @@ public class AutoLayout {
         childcounter = 0;
 
         String nameofitemtoplace = specnrres.getText();
-	
-	placesequence = new String[totalgridfields.length];
-	int counter = 0;
+    
+    placesequence = new String[totalgridfields.length];
+    int counter = 0;
 
-	if (itemstoplace.length>1){
-	    for (Component itemstoplace1 : itemstoplace) {
-		for (int j = 0; j < placecount; j++) {
-		    int imagecounter = ONETHOUSAND + gridplacecounter;
-		    placesequence[counter] = nameofitemtoplace+"_"+imagecounter;
-		    imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
-		    counter = counter+1;
-		}
-		gridplacecounter = gridplacecounter+1;
-	    }
-	    itemsover = totalgridfieldsint-(itemstoplaceint*placecount);
-	    gridplacecounter = 1;
-	    for (int i = 0; i < itemsover; i++) {
-		int imagecounter = ONETHOUSAND + gridplacecounter;
-		placesequence[counter] = nameofitemtoplace+"_"+imagecounter;
-		imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
-		gridplacecounter = gridplacecounter + 1;
-		counter = counter+1;
-	    } 
-	} else {
-	    for (int i = 0; i < totalgridfields.length-1; i++) {
-		placesequence[counter] = nameofitemtoplace;
-		imagesequence = imagesequence +nameofitemtoplace+"#";
-		counter = counter+1;
-	    }
-	}
-	for (int i = 0; i < placesequence.length-1; i++) {
-	    pathnameimage = SetPath.STEPDATARESOURCE+nameofitemtoplace+"/"+placesequence[i]+".png";
-	    ImageIcon placeimage = new ImageIcon(pathnameimage);
+    if (itemstoplace.length>1){
+        for (int i = 0; i < itemstoplace.length; i++) {
+        for (int j = 0; j < placecount; j++) {
+            int imagecounter = ONETHOUSAND + gridplacecounter;
+            placesequence[counter] = nameofitemtoplace+"_"+imagecounter;
+            imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
+            counter = counter+1;
+        }
+        gridplacecounter = gridplacecounter+1;
+        }
+        itemsover = totalgridfieldsint-(itemstoplaceint*placecount);
+        gridplacecounter = 1;
+        for (int i = 0; i < itemsover; i++) {
+        int imagecounter = ONETHOUSAND + gridplacecounter;
+        placesequence[counter] = nameofitemtoplace+"_"+imagecounter;
+        imagesequence = imagesequence +nameofitemtoplace+"_"+imagecounter+"#";
+        gridplacecounter = gridplacecounter + 1;
+        counter = counter+1;
+        } 
+    } else {
+        for (int i = 0; i < totalgridfields.length-1; i++) {
+        placesequence[counter] = nameofitemtoplace;
+        imagesequence = imagesequence +nameofitemtoplace+"#";
+        counter = counter+1;
+        }
+    }
+    for (int i = 0; i < placesequence.length-1; i++) {
+        pathnameimage = SetPath.STEPDATARESOURCE+nameofitemtoplace+"/"+placesequence[i]+".png";
+        ImageIcon placeimage = new ImageIcon(pathnameimage);
             Image image = placeimage.getImage();
             int newimagewidth = totalgridfields[0].getWidth()-TEN;
             int newimageheight = totalgridfields[0].getHeight()-TEN;
@@ -101,9 +100,9 @@ public class AutoLayout {
                 gridField.add(img);
                 frame.repaint();
             }
-	    childcounter=childcounter+1;
-	}
-	autobutton.setVisible(false);
-        subrightpanel.removeAll();	
+        childcounter=childcounter+1;
+    }
+    autobutton.setVisible(false);
+        subrightpanel.removeAll();    
     }
 }

@@ -53,7 +53,7 @@ public class Reset {
         JavaGUI.img.setBounds(JavaGUI.x, JavaGUI.y,JavaGUI.screenwidth-(TWO*JavaGUI.navsidepanel), JavaGUI.screenheight-(TWO*JavaGUI.navpanel)-FIFTEEN);
         JavaGUI.subcenterpanel.add(JavaGUI.img);
         JavaGUI.frame.revalidate();
-	JavaGUI.frame.repaint();
+        JavaGUI.frame.repaint();
         JavaGUI.imagesequence = "";
         JavaGUI.frame.revalidate();
         JavaGUI.frame.repaint();

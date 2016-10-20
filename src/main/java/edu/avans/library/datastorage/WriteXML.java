@@ -36,7 +36,7 @@ public class WriteXML {
     public static final String EXTENSION =".pdfsta";
 
     public void writedata() {
-	    // RESET THE INTERFACE
+        // RESET THE INTERFACE
             ProgramMgr mgrresetGuiInterface = new ProgramMgr();
             JavaGUI.xmloutput = "<JOBS>" + JavaGUI.ENTER;
             JavaGUI.imagesequencearray = imagesequence.split("#");
