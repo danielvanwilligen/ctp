@@ -25,11 +25,7 @@ public final class JavaGUI {
     * Path to GUI resource images 
     */
     private final String imageresource = setallpaths.getImageresource();
-    /**
-    * STEPDATARESOURCE
-    * Path to order input folder 
-    */
-    private final String stepdataresource = setallpaths.getStepdataresource();
+
     public static final String ENTER = "\n";
     public static final String TAB = "\t";
     
