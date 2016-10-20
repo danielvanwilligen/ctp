@@ -48,15 +48,15 @@ public class Spec {
     * Spec
     * Spec builds specbutton(combo) in the gui 
     */
-    public void Spec(){
-	String state = "false";
+    public void createspec(){
+    String state = "false";
         menustatus = state;
-	
-	// black 20%
+    
+    // black 20%
         int bgcrSideMenu = TWOHUNDREDTEN;
         int bgcgSideMenu = TWOHUNDREDELEVEN;
         int bgcbSideMenu = TWOHUNDREDTWELVE;
-	specbutton.setVisible(false);
+    specbutton.setVisible(false);
         specbuttonlocked.setVisible(true);
         frame.repaint();
         if (menustatus.equals(state)){

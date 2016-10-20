@@ -3,18 +3,9 @@ package edu.avans.library.presentation;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.*;
 import edu.avans.library.domain.SetPath;
-import edu.avans.library.domain.ImagesNText;
-import edu.avans.library.domain.ImagesTextRenderer;
-import edu.avans.library.domain.SetImages;
 import edu.avans.library.businesslogic.ProgramMgr;
-import edu.avans.library.domain.Preset;
 import edu.avans.library.domain.Spec;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
 
 /**
  * Avans Java Proftaak
@@ -167,7 +158,7 @@ public final class JavaGUI {
             @Override
             public void mouseReleased(MouseEvent evt){
                 Spec spec = new Spec();
-                spec.Spec();
+                spec.createspec();
             }
         });
         bottompanel.add(specbutton);
