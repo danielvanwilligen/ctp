@@ -151,10 +151,6 @@ public final class JavaGUI {
                 specbutton.setMargin(new Insets(0, 0, 0, 0));
                 specbutton.setBorder(null);
             }
-            /**
-            * Specbutton mousereleased
-            * Create the submenu 
-            */
             @Override
             public void mouseReleased(MouseEvent evt){
                 Spec spec = new Spec();
