@@ -7,6 +7,7 @@ import static edu.avans.library.presentation.JavaGUI.datestamp;
 import static edu.avans.library.presentation.JavaGUI.imagesequence;
 import static edu.avans.library.presentation.JavaGUI.savecounter;
 import static edu.avans.library.presentation.JavaGUI.specnrres;
+import static edu.avans.library.presentation.JavaGUI.frame;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -35,6 +36,8 @@ public class WriteXML {
     public static final String EXTENSION =".pdfsta";
 
     public void writedata() {
+	    // RESET THE INTERFACE
+            ProgramMgr mgrresetGuiInterface = new ProgramMgr();
             JavaGUI.xmloutput = "<JOBS>" + JavaGUI.ENTER;
             JavaGUI.imagesequencearray = imagesequence.split("#");
             if (savecounter<1){
@@ -81,9 +84,6 @@ public class WriteXML {
         Logger.getLogger(JavaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null,"Could not move the document."); 
             }
-                
-            // RESET THE INTERFACE
-            ProgramMgr mgrresetGuiInterface = new ProgramMgr();
             mgrresetGuiInterface.mgrreset();
         savecounter = savecounter+1;
     }   
