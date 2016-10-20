@@ -1,7 +1,6 @@
 package edu.avans.library.domain;
 
 import edu.avans.library.presentation.JavaGUI;
-import edu.avans.library.domain.SetPath;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
